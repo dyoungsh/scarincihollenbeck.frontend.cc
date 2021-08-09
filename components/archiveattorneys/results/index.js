@@ -8,7 +8,7 @@ export default function ArchiveAttorneyResults({
   userInput,
 }) {
   return (
-    <Container className="mt-2">
+    <Container className="border-right border-left container">
       {select.length > 0 ? (
         <Filtered select={select} attorneys={attorneys} userInput={userInput} />
       ) : (

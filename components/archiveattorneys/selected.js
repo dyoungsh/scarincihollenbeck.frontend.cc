@@ -14,7 +14,7 @@ export default function ArchiveAttorneySelected({
   const nonUserInputResults = select.filter((a) => a.key !== 'query');
 
   return (
-    <Container className="border-bottom">
+    <Container className="border-bottom border-right border-left">
       <Row>
         <Col sm={12} md={10}>
           <ul className="no-dots list-inline my-2 mx-0">
@@ -28,9 +28,8 @@ export default function ArchiveAttorneySelected({
                   data-toggle="tooltip"
                   data-placement="top"
                   title="Click on link to remove filter"
-                >
-                  <strong dangerouslySetInnerHTML={createMarkup(userInput)} />
-                </Button>
+                  dangerouslySetInnerHTML={createMarkup(userInput)}
+                />
               </li>
             )}
             {nonUserInputResults.map((s) => (
@@ -45,7 +44,7 @@ export default function ArchiveAttorneySelected({
                   data-html="true"
                   title="Click on link to remove filter"
                 >
-                  <strong>{s.selected}</strong>
+                  {s.selected}
                 </Button>
               </li>
             ))}

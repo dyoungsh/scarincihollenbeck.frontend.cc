@@ -110,10 +110,9 @@ export default function Attorneys({
         offset={3}
         span={6}
       />
-      <FullWidth>
-        <div className="mb-5">
-          {/** Filters */}
-          <Filters
+     
+        {/** Filters */}
+        <Filters
             practices={sPractices}
             alphabet={alphabet}
             locations={locations}
@@ -123,10 +122,7 @@ export default function Attorneys({
             onSelect={onSelect}
             letterClick={letterClick}
           />
-          {/** End of Filters */}
-          {/** Results */}
-          <div className="w-100 border mt-sm-6 mt-md-0">
-            <ArchiveAttorneySelected
+          <ArchiveAttorneySelected
               select={select}
               clearQuery={clearQuery}
               userInput={userInput}
@@ -139,10 +135,6 @@ export default function Attorneys({
                 select={select}
               />
             )}
-          </div>
-          {/** End of Results */}
-        </div>
-      </FullWidth>
     </>
   );
 }
