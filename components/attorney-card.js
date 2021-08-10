@@ -1,17 +1,18 @@
+import { memo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from 'styles/AttorneyCard.module.css';
 import fontStyles from 'styles/Fonts.module.css';
 import textStyles from 'styles/Text.module.css';
 
-export default function AttorneyCard({
+const AttorneyCard = memo(({
   link,
   image,
   name,
   title,
   number,
   email,
-}) {
+}) => {
   return (
     <div className={`d-flex flex-row ${styles.attorneyCard}`} height={148}>
       <Link href={link}>
@@ -50,4 +51,6 @@ export default function AttorneyCard({
       </div>
     </div>
   );
-}
+});
+
+export default AttorneyCard;

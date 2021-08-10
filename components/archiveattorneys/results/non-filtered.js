@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import VirtualizedAttorneyList from 'components/virtualized-attorney-list'
 import AttorneyCard from 'components/attorney-card';
-import AttorneyVirtualizedGrid from 'components/attorney-virtualized-grid';
 import textStyles from 'styles/Text.module.css';
 
 
@@ -41,7 +41,7 @@ function AttorneyCardContainer({ content }) {
   )
 };
 
-const ArchiveAttorneyResultsNonFiltered = memo(({ attorneys }) => {
+export default function ArchiveAttorneyResultsNonFiltered({ attorneys }) {
   /// managing partners
   const managingPartners = attorneys.filter(
     (a) => a.designation === 'Managing Partner',
@@ -74,19 +74,17 @@ const ArchiveAttorneyResultsNonFiltered = memo(({ attorneys }) => {
   return (
     <>
       <AttorneySectionTitle title="Managing Partners" />
-      {(managingPartners.length <= 15) ? <AttorneyCardContainer content={managingPartners} /> : <AttorneyVirtualizedGrid content={managingPartners} />}
+      <AttorneyCardContainer content={managingPartners} /> 
       <AttorneySectionTitle title="Partners" />
-      {(partners.length <= 15) ? <AttorneyCardContainer content={partners} /> : <AttorneyVirtualizedGrid content={partners} />}
+      <AttorneyCardContainer content={partners} />
       <AttorneySectionTitle title="Counsel" />
-      {(counsel.length <= 15) ? <AttorneyCardContainer content={counsel} /> : <AttorneyVirtualizedGrid content={counsel} />}
+      <AttorneyCardContainer content={counsel} /> 
       <AttorneySectionTitle title="Of Counsel & Counsel Emeritus" />
-      {(ofCounsel.length <= 15) ? <AttorneyCardContainer content={ofCounsel} /> : <AttorneyVirtualizedGrid content={ofCounsel} />}
+      <AttorneyCardContainer content={ofCounsel} />
       <AttorneySectionTitle title="Senior Associates" />
-      {(seniorAssociates.length <= 15) ? <AttorneyCardContainer content={seniorAssociates} /> : <AttorneyVirtualizedGrid content={seniorAssociates} />}
+      <AttorneyCardContainer content={seniorAssociates} /> 
       <AttorneySectionTitle title="Associates" />
-      {(associates.length <= 15) ? <AttorneyCardContainer content={associates} /> : <AttorneyVirtualizedGrid content={associates} />}
+      <AttorneyCardContainer content={associates} />
     </>
   );
-});
-
-export default ArchiveAttorneyResultsNonFiltered;
+};
