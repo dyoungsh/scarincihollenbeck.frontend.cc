@@ -10,7 +10,7 @@ import Sidebar from 'components/post/sidebar';
 import EventSidebar from 'components/post/event-sidebar';
 import { headers } from 'utils/helpers';
 
-export default function LawFirmInsightsPost({
+export default function Post({
   title,
   postContent,
   subTitle,

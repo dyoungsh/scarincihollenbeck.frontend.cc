@@ -1,4 +1,4 @@
-import TrendingStories from 'components/non-graphql-trending-stories';
+import TrendingStories from 'components/trending-stories';
 import SubscriptionMessage from 'components/subscription-message';
 
 export default function PagesSidebar({ posts, covidPage }) {

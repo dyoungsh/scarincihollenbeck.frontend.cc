@@ -47,7 +47,7 @@ export default function PostBody({
             </li>
             {tags.map((tag, index) => (
               <li key={tag.name} className="list-inline-item">
-                <Link href={`/library?term=${tag.name}`}>
+                <Link href={`/library/search?term=${tag.name}`}>
                   <a>
                     {tag.name.toLowerCase()}
                     {tags.length - 1 !== index && ', '}

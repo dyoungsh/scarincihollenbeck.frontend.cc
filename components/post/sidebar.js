@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import TrendingStories from 'components/non-graphql-trending-stories';
+import TrendingStories from 'components/trending-stories';
 import SubscriptionMessage from 'components/subscription-message';
 import SimpleSearch from 'components/simple-search';
 import PostSocialShareSidebar from 'components/post/social-share-sidebar';
@@ -10,9 +10,9 @@ export default function PostSidebar({ title, posts, attorneys }) {
     <div className="d-print-none">
       <SimpleSearch />
       <hr />
-      <PostSocialShareSidebar title={title} />
-      <hr />
       <SubscriptionMessage />
+      <hr />
+      <PostSocialShareSidebar title={title} />
       <hr />
       <TrendingStories title="Trending Stories" content={posts} />
       {attorneys.length > 0 && (
