@@ -34,7 +34,7 @@ const NavBar = () => {
         </RowOne>
         <RowTwo>
           <SiteLogo scrollTop={scrollTop} />
-          <MainNav>
+          <MainNav scrollTop={scrollTop}>
             <SiteNavs />
           </MainNav>
         </RowTwo>
@@ -64,6 +64,8 @@ const Header = styled.header`
   padding-top: 0.25rem;
   box-shadow: ${(props) => props.theme.colors.shadowLight};
   position: sticky;
+  top: 0;
+
   z-index: 1020;
   background-color: ${(props) => props.theme.colors.white};
 `
@@ -82,7 +84,6 @@ const RowOne = styled.div`
 `
 
 const RowTwo = styled.div`
-  margin: 0.5rem 0;
   display: flex;
   flex-direction: column;
 
@@ -94,11 +95,18 @@ const RowTwo = styled.div`
   }
 `
 
-const MainNav = styled.div`
+interface MainNavProps {
+  scrollTop: boolean
+}
+
+const MainNav = styled.div<MainNavProps>`
   display: none;
 
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
     display: initial;
+    position: ${({ scrollTop }) => (scrollTop ? 'relative' : 'static')};
+    top: ${({ scrollTop }) => (scrollTop ? '-7px' : '5px')};
+    margin: ${({ scrollTop }) => (scrollTop ? '0 auto' : '0')};
   }
 `
 

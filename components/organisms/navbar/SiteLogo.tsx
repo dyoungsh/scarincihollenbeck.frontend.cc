@@ -1,7 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import SHLogo from '../../../public/images/sh-logo-diamond.svg'
 
 interface Props {
   scrollTop: boolean
@@ -18,7 +17,8 @@ const SiteLogo: React.FC<Props> = ({ scrollTop }: Props) => {
               width={360}
               height={65}
               layout="intrinsic"
-              src={SHLogo}
+              src="/images/sh-logo-diamond.svg"
+              data-testid="logo"
             />
           </a>
         </Link>
