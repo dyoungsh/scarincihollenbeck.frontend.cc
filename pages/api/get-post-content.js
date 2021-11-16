@@ -275,7 +275,7 @@ export const getPostContent = async (slug, category) => {
 export default async (req, res) => {
   try {
     const fetchPost = await getPostContent(
-      'branding-in-esports',
+      'njdep-begins-implementing-environmental-justice-law',
       'law-firm-insights',
       // 'what-to-know-about-the-secs-shadow-trading-enforcement-action',
       // 'law-firm-insights'

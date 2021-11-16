@@ -48,6 +48,7 @@ const jestConfig = {
     // TODO update this mapping whenever updating paths in tsconfig.json
     '~/(.*)': '<rootDir>/$1',
   },
+  moduleDirectories: ['.', 'node_modules'],
 
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   testPathIgnorePatterns: ['/node_modules/', '/.next/', '/coverage/', '/cypress/'],

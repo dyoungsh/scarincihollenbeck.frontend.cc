@@ -316,3 +316,5 @@ export const CORE_PRACTICES = [
     title: 'Tax, Trusts & Estates',
   },
 ];
+
+export const LAW_PAY_URL = 'https://secure.lawpay.com/pages/scarincihollenbeck/operating';

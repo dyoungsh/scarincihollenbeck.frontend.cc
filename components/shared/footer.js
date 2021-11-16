@@ -6,7 +6,9 @@ import Col from 'react-bootstrap/Col';
 import CookieConsentContainer from 'components/shared/cookie-consent';
 import styles from 'styles/Footer.module.css';
 import textStyles from 'styles/Text.module.css';
-import { FIRM_PAGES, SITE_FOOTER_NAVIGATION, OFFICE_LOCATIONS } from 'utils/constants';
+import {
+  FIRM_PAGES, SITE_FOOTER_NAVIGATION, OFFICE_LOCATIONS, LAW_PAY_URL,
+} from 'utils/constants';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -57,12 +59,7 @@ export default function Footer() {
             </p>
             <ul className={styles.linkList}>
               <li>
-                <a
-                  href="https://secure.lawpay.com/pages/scarincihollenbeck/operating"
-                  className="text-dark"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href={LAW_PAY_URL} className="text-dark" target="_blank" rel="noreferrer">
                   Make a payment
                 </a>
               </li>

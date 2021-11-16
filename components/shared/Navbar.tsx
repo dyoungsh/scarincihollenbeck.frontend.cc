@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react'
 import Container from 'layouts/Container'
 import styled from 'styled-components'
 // import HamburgerMobileMenu from 'components/shared/navbar/hamburger-mobile-menu';
-import GlobalSearch from 'components/shared/global-search'
-import TopNavLinks from 'components/shared/navbar/top-nav-links'
-// import SiteNavs from 'components/shared/navbar/site-navs';
-// import SiteLogo from 'components/shared/navbar/site-logo';
+import GlobalSearch from 'components/shared/GlobalSearch'
+import TopNavLinks from 'components/organisms/navbar/TopNavLinks'
+import SiteNavs from 'components/organisms/navbar/SiteNavs'
+import SiteLogo from 'components/organisms/navbar/SiteLogo'
 // import navBarStyles from 'styles/Navbar.module.css';
 
 const NavBar = () => {
@@ -32,14 +32,13 @@ const NavBar = () => {
           </div>
           <TopNavLinks />
         </RowOne>
-        {/* <Row className="my-2 border-bottom">
-          <Col sm={12} md={4}>
-            
-          </Col>
-          <Col sm={12} md={8} className={`d-flex ${navBarStyles.contactBanner} pr-0`}>
-            
-          </Col>
-        </Row>
+        <RowTwo>
+          <SiteLogo scrollTop={scrollTop} />
+          <MainNav>
+            <SiteNavs />
+          </MainNav>
+        </RowTwo>
+        {/* 
         <Row>
           <Col
             xs={12}
@@ -77,7 +76,37 @@ const RowOne = styled.div`
 
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding-bottom: 8px;
+  }
+`
+
+const RowTwo = styled.div`
+  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+`
+
+const MainNav = styled.div`
+  display: none;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    display: initial;
+  }
+`
+
+const MobileNav = styled.div`
+  display: initial;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    display: none;
   }
 `
 

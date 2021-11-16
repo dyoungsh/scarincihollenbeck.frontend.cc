@@ -7,8 +7,8 @@ import {
   Pagination,
 } from 'react-instantsearch-dom'
 import styled from 'styled-components'
-import Hit from 'components/shared/global-search/Hit'
-import SearchBox from 'components/shared/global-search/SearchBox'
+import Hit from 'components/organisms/global-search/Hit'
+import SearchBox from 'components/organisms/global-search/SearchBox'
 
 import { ALGOLIA_PUBLIC_API, ALGOLIA_APP_ID, ALGOLIA_SEARCH_INDEX } from 'utils/constants'
 

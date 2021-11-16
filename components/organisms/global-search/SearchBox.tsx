@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 interface Props {
-  currentRefinement: string
-  refine: (value: string) => void
+  currentRefinement: string | number | readonly string[] | undefined
+  refine?: (value: string) => void
 }
 
 const SearchBox = ({ currentRefinement, refine }: Props) => {
@@ -15,6 +15,7 @@ const SearchBox = ({ currentRefinement, refine }: Props) => {
         value={currentRefinement}
         onChange={(e) => refine(e.currentTarget.value)}
         placeholder="Search..."
+        aria-label="search-site"
       />
     </Form>
   )
@@ -23,7 +24,8 @@ const SearchBox = ({ currentRefinement, refine }: Props) => {
 const Form = styled.form`
   position: relative;
   ${(props) => props.theme.fonts.lg};
-  width: 100%;
+  max-width: 100%;
+  margin: 0 16px 16px 24px;
 
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
     width: 350px;
