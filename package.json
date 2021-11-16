@@ -8,7 +8,10 @@
     "start": "next start -p 7300",
     "lint": " eslint . --fix",
     "format": "prettier --write .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "jest .",
+    "test:ci": "jest --ci --coverage --silent",
+    "test:coverage": "jest --coverage ."
   },
   "lint-staged": {
     "*.js": [
@@ -25,6 +28,8 @@
   },
   "license": "ISC",
   "dependencies": {
+    "@types/node": "^16.11.7",
+    "@types/react": "^17.0.35",
     "algoliasearch": "^4.10.5",
     "animate.css": "^4.1.1",
     "axios": "^0.24.0",
@@ -32,7 +37,7 @@
     "dotenv": "^10.0.0",
     "kwesforms": "^2.0.5",
     "mysql2": "^2.3.0",
-    "next": "^11.1.2",
+    "next": "12",
     "next-seo": "^4.7.3",
     "node-fetch": "^2.6.1",
     "nookies": "^2.3.2",
@@ -57,6 +62,13 @@
     "swr": "^0.4.1"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/react-hooks": "^7.0.2",
+    "@types/jest": "^27.0.2",
+    "@types/styled-components": "^5.1.15",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
     "babel-plugin-styled-components": "^1.13.2",
     "eslint": "^7.5.0",
     "eslint-config-airbnb": "^18.2.0",
@@ -65,7 +77,13 @@
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.8",
     "husky": "^7.0.0",
+    "jest": "^27.3.1",
+    "jest-styled-components": "^7.0.6",
+    "jest-transform-stub": "^2.0.0",
     "lint-staged": "^11.1.2",
-    "next-sitemap": "^1.6.140"
+    "next-sitemap": "^1.6.140",
+    "ts-jest": "^27.0.7",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
   }
 }

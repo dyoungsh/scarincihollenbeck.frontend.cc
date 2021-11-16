@@ -2,8 +2,12 @@ import React, { useEffect } from 'react';
 import Router, { useRouter } from 'next/router';
 import Head from 'next/head';
 import NProgress from 'nprogress';
+import { ThemeProvider } from 'styled-components';
 import NavBar from 'components/shared/navbar';
 import Footer from 'components/shared/footer';
+
+import GlobalStyles from 'styles/global-styles';
+import theme from 'styles/theme';
 import * as gtag from 'utils/gtag';
 
 /**
@@ -19,7 +23,7 @@ import 'animate.css/animate.min.css';
 /**
  * Custom Style Sheets
  * */
-import 'styles/globals.css';
+
 import 'styles/carousel.css';
 
 /**
@@ -62,11 +66,14 @@ export default function SHSite({ Component, pageProps }) {
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
-      <NavBar />
-      <main>
-        <Component {...pageProps} />
-      </main>
-      <Footer />
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <NavBar />
+        <main>
+          <Component {...pageProps} />
+        </main>
+        <Footer />
+      </ThemeProvider>
     </>
   );
 }
