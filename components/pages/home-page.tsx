@@ -74,9 +74,6 @@ const HomePage: React.FC<Props> = ({
         <Awards />
         <OfficeLocations locations={sortByKey(locations, 'id')} />
         <ArticleHero featuredPost={featuredPost} articleList={articleList} />
-        {/* <div className={marginStyles.mt6}>
-          <ArticleHero content={posts} />
-        </div> */}
       </Container>
     </>
   )

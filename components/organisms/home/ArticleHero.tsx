@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import FeaturedPost from 'components/molecules/ArticleHero/FeaturedPost'
-import PostList from '~/components/molecules/ArticleHero/PostList'
+import FeaturedPost from '~/components/molecules/article-hero/FeaturedPost'
+import PostList from '~/components/molecules/article-hero/PostList'
 import PageLink from 'components/molecules/home/PageLink'
 import { FeaturedArticle, ArticleList } from 'types/Home'
 

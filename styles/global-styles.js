@@ -157,6 +157,15 @@ const GlobalStyles = createGlobalStyle`
       display: none !important;
     }
   } 
+
+  /** Hide element in print view **/
+  @media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}
 `
 
 export default GlobalStyles
