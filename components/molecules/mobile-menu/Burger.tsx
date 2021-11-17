@@ -68,12 +68,8 @@ const StyledBurger = styled.button<Pick<Props, 'open'>>`
 
   @media (min-width: 449px) {
     position: absolute;
-    top: -3.1em;
-    right: 2rem;
-  }
-
-  @media (min-width: 768px) {
-    top: 0em;
+    right: 48px;
+    margin: 16px 0;
   }
 `
 

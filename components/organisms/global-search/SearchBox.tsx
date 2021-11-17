@@ -24,12 +24,8 @@ const SearchBox = ({ currentRefinement, refine }: Props) => {
 const Form = styled.form`
   position: relative;
   ${(props) => props.theme.fonts.lg};
-  max-width: 100%;
+  width: 350px;
   margin: 0 16px 16px 24px;
-
-  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
-    width: 350px;
-  }
 `
 const Label = styled.label`
   position: absolute;

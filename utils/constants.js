@@ -318,3 +318,5 @@ export const CORE_PRACTICES = [
 ];
 
 export const LAW_PAY_URL = 'https://secure.lawpay.com/pages/scarincihollenbeck/operating';
+
+export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID;

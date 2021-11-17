@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react'
-import Container from 'layouts/Container'
 import styled from 'styled-components'
-// import HamburgerMobileMenu from 'components/shared/navbar/hamburger-mobile-menu';
+import Container from 'layouts/Container'
 import GlobalSearch from 'components/shared/GlobalSearch'
 import TopNavLinks from 'components/organisms/navbar/TopNavLinks'
 import SiteNavs from 'components/organisms/navbar/SiteNavs'
 import SiteLogo from 'components/organisms/navbar/SiteLogo'
-// import navBarStyles from 'styles/Navbar.module.css';
+import MobileNav from 'components/organisms/navbar/MobileNav'
 
 const NavBar = () => {
   const [scrollTop, setScrollTop] = useState(false)
@@ -27,9 +26,7 @@ const NavBar = () => {
     <Header>
       <Container>
         <RowOne>
-          <div>
-            <GlobalSearch />
-          </div>
+          <GlobalSearch />
           <TopNavLinks />
         </RowOne>
         <RowTwo>
@@ -37,23 +34,10 @@ const NavBar = () => {
           <MainNav scrollTop={scrollTop}>
             <SiteNavs />
           </MainNav>
+          <MobileNavContainer>
+            <MobileNav />
+          </MobileNavContainer>
         </RowTwo>
-        {/* 
-        <Row>
-          <Col
-            xs={12}
-            lg={6}
-            className={`${navBarStyles.logoBanner} ${scrollTop ? 'mt-0' : 'mt-2'} ml-0 pl-0`}
-          >
-            <SiteLogo scrollTop={scrollTop} />
-          </Col>
-          <Col xs={12} lg={6} className={scrollTop ? 'offset-lg-3' : 'mt-sm-2 mt-lg-3 pr-0 pl-0'}>
-            <SiteNavs />
-            <div className={navBarStyles.mobileMenu}>
-              <HamburgerMobileMenu />
-            </div>
-          </Col>
-        </Row> */}
       </Container>
     </Header>
   )
@@ -76,7 +60,7 @@ const RowOne = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     flex-direction: row;
     justify-content: space-between;
     padding-bottom: 8px;
@@ -85,9 +69,8 @@ const RowOne = styled.div`
 
 const RowTwo = styled.div`
   display: flex;
-  flex-direction: column;
 
-  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+  @media (min-width: ${(props) => props.theme.breakpoints.xl}) {
     flex-direction: row;
     justify-content: space-between;
     padding-top: 4px;
@@ -101,8 +84,7 @@ interface MainNavProps {
 
 const MainNav = styled.div<MainNavProps>`
   display: none;
-
-  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+  @media (min-width: ${(props) => props.theme.breakpoints.xl}) {
     display: initial;
     position: ${({ scrollTop }) => (scrollTop ? 'relative' : 'static')};
     top: ${({ scrollTop }) => (scrollTop ? '-7px' : '5px')};
@@ -110,10 +92,10 @@ const MainNav = styled.div<MainNavProps>`
   }
 `
 
-const MobileNav = styled.div`
+const MobileNavContainer = styled.div`
   display: initial;
 
-  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+  @media (min-width: ${(props) => props.theme.breakpoints.xl}) {
     display: none;
   }
 `
