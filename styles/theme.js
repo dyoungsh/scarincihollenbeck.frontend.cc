@@ -32,6 +32,7 @@ const colors = {
   secondaryGray: '#dee2e6',
   thirdGray: '#ced4da',
   fourthGray: '#a9a9a9',
+  fifthGray: '#444444',
   secondaryBlue: '#33667d',
   gradientRed: 'linear-gradient(360deg, #901918 60%, #dd2624 100%), #333333',
   shadowNormal: '0 5px 10px 0 rgba(138, 155, 165, 0.15)',

@@ -1,60 +1,34 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import { NextSeo } from 'next-seo'
 import Container from 'layouts/Container'
 import HomeBanner from 'components/organisms/home/HomeBanner'
 import HoneyComb from 'components/organisms/home/HoneyComb'
-import HomeLocations from 'components/organisms/home/locations'
 import MainTag from 'components/organisms/home/MainTag'
 import WhoWeAre from 'components/organisms/home/WhoWeAre'
-import Leadership from 'components/organisms/home/Leadership'
-import HomeOurLeadership from 'components/organisms/home/our-leadership'
-import HomeReviews from 'components/organisms/home/reviews'
-import HomePageLink from 'components/organisms/home/page-link'
-import ArticleHero from 'components/shared/article-hero'
+import FirmLeadership from 'components/organisms/home/FirmLeadership'
+import Awards from 'components/organisms/home/Awards'
+import ArticleHero from 'components/organisms/home/ArticleHero'
 import { sortByKey } from 'utils/helpers'
-import marginStyles from 'styles/Margins.module.css'
 import { buildBusinessSchema } from 'utils/json-ld-schemas'
 import { SITE_URL } from 'utils/constants'
+import { SEO, Office, Leadership, FeaturedArticle, ArticleList } from 'types/Home'
+import OfficeLocations from '../organisms/home/OfficeLocations'
 
-const HONEY_COMBS = [
-  {
-    image: {
-      url: '/images/goalssh-400x400.png',
-      alt: 'meet our attorneys',
-    },
-    position: 'left',
-    content: {
-      title: 'MEET OUR TEAM',
-      description: `Our attorneys collaborate across the firm’s practice areas to achieve the best
-      combination of knowledge, experience, and efficiency. We are dedicated to delivering
-      outstanding client service.`,
-      url: {
-        label: 'Meet our attorneys',
-        slug: '/attorneys',
-      },
-    },
-  },
-  {
-    image: {
-      url: '/images/colabsh2-400x400.png',
-      alt: 'our legal services',
-    },
-    position: 'right',
-    content: {
-      title: 'OUR SERVICES',
-      description: `We help our clients achieve their goals by providing tailored services with the
-      focused experience of a boutique firm by drawing upon the resources of the firm’s
-      core practice areas.`,
-      url: {
-        label: 'See what we do',
-        slug: '/practices',
-      },
-    },
-  },
-]
+interface Props {
+  seo: SEO
+  locations: Office[]
+  leadership: Leadership[]
+  featuredPost: FeaturedArticle
+  articleList: ArticleList[]
+}
 
-export default function HomePage({ seo, posts, locations, leadership }) {
+const HomePage: React.FC<Props> = ({
+  seo,
+  locations,
+  leadership,
+  featuredPost,
+  articleList,
+}: Props) => {
   return (
     <>
       <NextSeo
@@ -94,22 +68,18 @@ export default function HomePage({ seo, posts, locations, leadership }) {
       <HomeBanner />
       <Container>
         <MainTag />
-        <HoneyComb content={HONEY_COMBS} />
+        <HoneyComb />
         <WhoWeAre />
-        <Leadership />
-        {/* <HomeOurLeadership attorneys={leadership} /> */}
-        <HomeReviews />
-        <HomePageLink link="/awards" title="Award Methodology" />
-        <HomeLocations locations={sortByKey(locations.offices, 'id')} />
-        <div className={marginStyles.mt6}>
+        <FirmLeadership leadership={leadership} />
+        <Awards />
+        <OfficeLocations locations={sortByKey(locations, 'id')} />
+        <ArticleHero featuredPost={featuredPost} articleList={articleList} />
+        {/* <div className={marginStyles.mt6}>
           <ArticleHero content={posts} />
-        </div>
-        <HomePageLink
-          link="/library/category/firm-news"
-          title="Read more articles about our attorneys"
-          margins="my-5"
-        />
+        </div> */}
       </Container>
     </>
   )
 }
+
+export default HomePage

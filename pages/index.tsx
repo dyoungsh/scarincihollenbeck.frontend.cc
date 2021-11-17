@@ -1,32 +1,43 @@
 import HomePage from 'components/pages/home-page'
 import { BASE_API_URL } from 'utils/constants'
-import { headers } from 'utils/helpers'
+import { headers, formatDate, setTextLen } from 'utils/helpers'
+import { SEO, Office, Leadership, FeaturedArticle, ArticleList } from 'types/Home'
 
 const santizeMember = (list: any, designation: string, title: string) => {
   return list
     .filter((a) => a.acf.designation === designation)
     .map((ds) => ({
       name: ds.title.rendered.replace(/&#8220;/g, '"').replace(/&#8221;/g, '"'),
-      link: ds.link,
+      slug: ds.link.replace('https://wp.scarincihollenbeck.com', ''),
       image: ds.better_featured_image.source_url,
       title: [title],
+      lastName: ds.acf.last_name,
     }))
 }
 
 interface Props {
-  seo: {
-    title: string
-    metaDescription: string
-    canonicalLink: string
-  }
+  seo: SEO
+  locations: Office[]
+  leadership: Leadership[]
+  featuredPost: FeaturedArticle
+  articleList: ArticleList[]
 }
-const Home = ({ seo, posts, locations, leadership }) => {
+
+const Home: React.FC<Props> = ({
+  seo,
+  locations,
+  leadership,
+  featuredPost,
+  articleList,
+}: Props) => {
   const homePageProps = {
     seo,
-    posts,
     locations,
     leadership,
+    featuredPost,
+    articleList,
   }
+
   return <HomePage {...homePageProps} />
 }
 
@@ -65,7 +76,7 @@ export async function getStaticProps() {
     .filter((a) => a.acf.last_name !== 'Eynon')
     .map((leader) => ({
       name: leader.title.rendered,
-      link: leader.link,
+      slug: leader.link.replace('https://wp.scarincihollenbeck.com', ''),
       lastName: leader.acf.last_name,
       image: leader.better_featured_image.source_url,
       title: leader.acf.chair
@@ -104,11 +115,39 @@ export async function getStaticProps() {
   )
   const katerinTraugh = santizeMember(administration, 'Executive Director', 'Executive Director')
 
+  const formattedLocations = locations.offices.map((location) => ({
+    id: location.id,
+    slug: location.slug,
+    featuredImg: location.featuredImg,
+    title: location.title,
+  }))
+
+  const featuredPost = {
+    slug: posts[0].link.replace('https://scarincihollenbeck.com', ''),
+    image: posts[0].better_featured_image.source_url.replace('Feature', 'Body'),
+    title: posts[0].title.rendered,
+    date: formatDate(posts[0].date),
+    authors: posts[0]._embedded.author.map(({ name, link }) => ({
+      name,
+      link,
+    })),
+    excerpt: setTextLen(posts[0].excerpt.rendered, 220),
+  }
+
+  const articleList = posts.splice(0, 4).map((article) => ({
+    id: article.id,
+    slug: article.link.replace('https://scarincihollenbeck.com', ''),
+    image: article.better_featured_image.source_url,
+    title: article.title.rendered,
+    description: setTextLen(article.excerpt.rendered.replace('<p>', '').replace('</p>', ''), 130),
+  }))
+
   return {
     props: {
       seo,
-      posts: posts.splice(0, 5),
-      locations,
+      locations: formattedLocations,
+      featuredPost,
+      articleList,
       leadership: [
         ...katerinTraugh,
         ...donaldScarinci,

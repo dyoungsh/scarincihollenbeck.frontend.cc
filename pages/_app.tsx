@@ -5,7 +5,7 @@ import Head from 'next/head'
 import NProgress from 'nprogress'
 import { ThemeProvider } from 'styled-components'
 import NavBar from 'components/shared/Navbar'
-import Footer from 'components/shared/footer'
+import Footer from 'components/shared/Footer'
 
 import GlobalStyles from 'styles/global-styles'
 import theme from 'styles/theme'

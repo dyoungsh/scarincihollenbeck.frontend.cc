@@ -320,3 +320,30 @@ export const CORE_PRACTICES = [
 export const LAW_PAY_URL = 'https://secure.lawpay.com/pages/scarincihollenbeck/operating';
 
 export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID;
+
+export const AWARDS = [
+  {
+    url: '/images/reviews/Power50-ScarinciHollenbeck.png',
+    alt: "NJBiz's 2021 Law Power 50 List ",
+    width: 190,
+    height: 190,
+  },
+  {
+    url: '/images/reviews/BestLawFirmsStandardBadge.png',
+    alt: 'U.S. News & World Report',
+    width: 203,
+    height: 200,
+  },
+  {
+    url: '/images/reviews/TopLawyersLogo_Bergen_2021.png',
+    alt: 'Top Lawyers Bergen County',
+    width: 190,
+    height: 190,
+  },
+  {
+    url: '/images/reviews/sl-badge-l-g-2021.png',
+    alt: 'Super Lawyers',
+    width: 179,
+    height: 149,
+  },
+];

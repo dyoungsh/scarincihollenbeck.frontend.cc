@@ -3,28 +3,47 @@ import styled from 'styled-components'
 import BlockImage from 'components/molecules/home/honey-comb/BlockImage'
 import BlockContent from 'components/molecules/home/honey-comb/BlockContent'
 
-interface Props {
-  content: {
+const HONEY_COMBS = [
+  {
     image: {
-      url: string
-      alt: string
-    }
-    position: string
+      url: '/images/goalssh-400x400.png',
+      alt: 'meet our attorneys',
+    },
+    position: 'left',
     content: {
-      title: string
-      description: string
+      title: 'MEET OUR TEAM',
+      description: `Our attorneys collaborate across the firm’s practice areas to achieve the best
+      combination of knowledge, experience, and efficiency. We are dedicated to delivering
+      outstanding client service.`,
       url: {
-        label: string
-        slug: string
-      }
-    }
-  }[]
-}
+        label: 'Meet our attorneys',
+        slug: '/attorneys',
+      },
+    },
+  },
+  {
+    image: {
+      url: '/images/colabsh2-400x400.png',
+      alt: 'our legal services',
+    },
+    position: 'right',
+    content: {
+      title: 'OUR SERVICES',
+      description: `We help our clients achieve their goals by providing tailored services with the
+      focused experience of a boutique firm by drawing upon the resources of the firm’s
+      core practice areas.`,
+      url: {
+        label: 'See what we do',
+        slug: '/practices',
+      },
+    },
+  },
+]
 
-const HoneyComb: React.FC<Props> = ({ content }: Props) => {
+const HoneyComb = () => {
   return (
     <HoneyCombContainer>
-      {content.map((comb) =>
+      {HONEY_COMBS.map((comb) =>
         comb.position == 'left' ? (
           <Comb key={comb.content.title}>
             <BlockImage url={comb.image.url} alt={comb.image.alt} position={comb.position} />
