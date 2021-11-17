@@ -6,17 +6,16 @@ import HomeBanner from 'components/organisms/home/HomeBanner'
 import HoneyComb from 'components/organisms/home/HoneyComb'
 import HomeLocations from 'components/organisms/home/locations'
 import MainTag from 'components/organisms/home/MainTag'
+import WhoWeAre from 'components/organisms/home/WhoWeAre'
+import Leadership from 'components/organisms/home/Leadership'
 import HomeOurLeadership from 'components/organisms/home/our-leadership'
 import HomeReviews from 'components/organisms/home/reviews'
-import HomeWhoWeAreSection from 'components/organisms/home/who-we-are-section'
 import HomePageLink from 'components/organisms/home/page-link'
 import ArticleHero from 'components/shared/article-hero'
 import { sortByKey } from 'utils/helpers'
-import styles from 'styles/Home.module.css'
 import marginStyles from 'styles/Margins.module.css'
 import { buildBusinessSchema } from 'utils/json-ld-schemas'
 import { SITE_URL } from 'utils/constants'
-import WhoWeAre from '../organisms/home/WhoWeAre'
 
 const HONEY_COMBS = [
   {
@@ -97,7 +96,8 @@ export default function HomePage({ seo, posts, locations, leadership }) {
         <MainTag />
         <HoneyComb content={HONEY_COMBS} />
         <WhoWeAre />
-        <HomeOurLeadership attorneys={leadership} />
+        <Leadership />
+        {/* <HomeOurLeadership attorneys={leadership} /> */}
         <HomeReviews />
         <HomePageLink link="/awards" title="Award Methodology" />
         <HomeLocations locations={sortByKey(locations.offices, 'id')} />
