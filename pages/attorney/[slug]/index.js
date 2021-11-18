@@ -1,4 +1,4 @@
-import AttorneyProfile from 'components/pages/attorney-profile'
+import AttorneyProfile from 'components/pages/AttorneyProfile'
 import SiteLoader from 'components/shared/site-loader'
 import { useRouter } from 'next/router'
 import { getAttorneyContent, getAttorneyPaths } from 'utils/queries'

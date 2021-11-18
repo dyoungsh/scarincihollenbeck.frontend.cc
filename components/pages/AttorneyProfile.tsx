@@ -3,20 +3,21 @@ import AttorneyProfileBody from 'components/organisms/attorney/body'
 import AttorneyProfileClients from 'components/organisms/attorney/clients'
 import AttorneyProfileContact from 'components/organisms/attorney/contact'
 import AttorneyProfileEducation from 'components/organisms/attorney/education'
-import AttorneyProfileFooter from 'components/organisms/attorney/footer'
+// import AttorneyProfileFooter from 'components/organisms/attorney/footer'
 import AttorneyProfileHead from 'components/organisms/attorney/head'
-import AttorneyProfileHeader from 'components/organisms/attorney/header'
 import AttorneyBioLinks from 'components/organisms/attorney/links'
 import AttorneyProfileMatters from 'components/organisms/attorney/matters'
 import AttorneyProfileSidebar from 'components/organisms/attorney/sidebar'
 import AttorneyProfileTab from 'components/organisms/attorney/table'
 import AttorneyProfileVideo from 'components/organisms/attorney/video'
+import Container from 'layouts/Container'
 import { useRouter } from 'next/router'
 import Col from 'react-bootstrap/Col'
-import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 
-function renderBody(param, content, slug, header, defaultTabTitle) {
+import ProfileHeader from '~/components/organisms/attorney/ProfileHeader'
+
+const renderBody = (param, content, slug, header, defaultTabTitle) => {
   switch (param) {
     case 'biography':
       return <AttorneyProfileBody title="Biography" content={content} />
@@ -64,6 +65,7 @@ function renderBody(param, content, slug, header, defaultTabTitle) {
       return <AttorneyProfileBody title={defaultTabTitle} content={content} />
   }
 }
+
 export default function AttorneyProfile({
   seo,
   header,
@@ -96,9 +98,9 @@ export default function AttorneyProfile({
   return (
     <>
       <AttorneyProfileHead seo={seo} />
-      <AttorneyProfileHeader image={header.image} profile={header.profile} slug={slug} />
+      <ProfileHeader image={header.image} profile={header.profile} slug={slug} />
       <Container>
-        <Row>
+        {/* <Row>
           <Col sm={12}>
             <AttorneyBioLinks links={bioMenuItems} slug={slug} mobileLinks={bioMobileMenuItems} />
           </Col>
@@ -114,14 +116,14 @@ export default function AttorneyProfile({
             />
           </Col>
           <Col sm={12}>
-            <AttorneyProfileFooter
+             <AttorneyProfileFooter
               slug={slug}
               clients={body.bio.mainPageContent.clients}
               attorneyFooterBlogArticles={attorneyFooterBlogArticles}
               attorneyFooterNewsArticles={attorneyFooterNewsArticles}
-            />
+            /> 
           </Col>
-        </Row>
+        </Row> */}
       </Container>
     </>
   )
