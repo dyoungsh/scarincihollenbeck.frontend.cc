@@ -1,20 +1,20 @@
-import { useRef } from 'react';
-import { useVirtual } from 'react-virtual';
-import Link from 'next/link';
-import Image from 'next/image';
-import styles from 'styles/Library.module.css';
-import fontStyles from 'styles/Fonts.module.css';
-import textStyles from 'styles/Text.module.css';
+import Image from 'next/image'
+import Link from 'next/link'
+import { useRef } from 'react'
+import { useVirtual } from 'react-virtual'
+import fontStyles from 'styles/Fonts.module.css'
+import styles from 'styles/Library.module.css'
+import textStyles from 'styles/Text.module.css'
 
 export default function PracticeMembers({ members }) {
-  const parentRef = useRef();
+  const parentRef = useRef()
 
   const rowVirtualizer = useVirtual({
     size: members.length,
     parentRef,
     paddingStart: 10,
     paddingEnd: 10,
-  });
+  })
 
   return (
     <>
@@ -68,13 +68,9 @@ export default function PracticeMembers({ members }) {
                       {members[virtualRow.index].designation}
                     </strong>
                     <br />
-                    <strong>Phone: </strong>
-                    {' '}
-                    {members[virtualRow.index].contact}
+                    <strong>Phone: </strong> {members[virtualRow.index].contact}
                     <br />
-                    <strong>Email: </strong>
-                    {' '}
-                    {members[virtualRow.index].email}
+                    <strong>Email: </strong> {members[virtualRow.index].email}
                   </p>
                 </a>
               </Link>
@@ -83,5 +79,5 @@ export default function PracticeMembers({ members }) {
         </div>
       </div>
     </>
-  );
+  )
 }

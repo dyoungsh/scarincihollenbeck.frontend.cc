@@ -1,8 +1,8 @@
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Image from 'next/image';
-import marginStyles from 'styles/Margins.module.css';
-import grayTitleStyles from 'styles/BigGrayTitle.module.css';
+import Image from 'next/image'
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
+import grayTitleStyles from 'styles/BigGrayTitle.module.css'
+import marginStyles from 'styles/Margins.module.css'
 
 export default function AttorneyProfileClients({ clients }) {
   return (
@@ -22,5 +22,5 @@ export default function AttorneyProfileClients({ clients }) {
         </Col>
       ))}
     </Row>
-  );
+  )
 }

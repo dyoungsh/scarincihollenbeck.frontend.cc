@@ -1,7 +1,7 @@
+import BlockContent from 'components/molecules/home/honey-comb/BlockContent'
+import BlockImage from 'components/molecules/home/honey-comb/BlockImage'
 import React from 'react'
 import styled from 'styled-components'
-import BlockImage from 'components/molecules/home/honey-comb/BlockImage'
-import BlockContent from 'components/molecules/home/honey-comb/BlockContent'
 
 const HONEY_COMBS = [
   {
@@ -44,7 +44,7 @@ const HoneyComb = () => {
   return (
     <HoneyCombContainer>
       {HONEY_COMBS.map((comb) =>
-        comb.position == 'left' ? (
+        comb.position === 'left' ? (
           <Comb key={comb.content.title}>
             <BlockImage url={comb.image.url} alt={comb.image.alt} position={comb.position} />
             <BlockContent {...comb.content} />

@@ -1,9 +1,9 @@
+import FeaturedPost from 'components/molecules/home/article-hero/FeaturedPost'
+import PostList from 'components/molecules/home/article-hero/PostList'
+import PageLink from 'components/molecules/home/PageLink'
 import React from 'react'
 import styled from 'styled-components'
-import FeaturedPost from '~/components/molecules/article-hero/FeaturedPost'
-import PostList from '~/components/molecules/article-hero/PostList'
-import PageLink from 'components/molecules/home/PageLink'
-import { FeaturedArticle, ArticleList } from 'types/Home'
+import { ArticleList, FeaturedArticle } from 'types/Home'
 
 interface Props {
   featuredPost: FeaturedArticle
@@ -30,8 +30,8 @@ const ArticleHero: React.FC<Props> = ({ featuredPost, articleList }: Props) => {
 const ArticleContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin: auto;
-  margin-top: 64px;
+  margin: 0 auto;
+  align-items: center;
 
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
     flex-direction: row;

@@ -1,18 +1,17 @@
-import Link from 'next/link';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import PopularList from 'components/organisms/library/popular-list';
-import MainArticle from 'components/organisms/library/main-article';
-import FeaturedArticle from 'components/organisms/library/featured-article';
-import OlderArticles from 'components/organisms/library/older-articles';
-import FirmAuthors from 'components/organisms/library/firm-authors';
-import SubscriptionContainer from 'components/organisms/library/subscription-container';
-import marginStyles from 'styles/Margins.module.css';
+import FeaturedArticle from 'components/organisms/library/featured-article'
+import FirmAuthors from 'components/organisms/library/firm-authors'
+import MainArticle from 'components/organisms/library/main-article'
+import OlderArticles from 'components/organisms/library/older-articles'
+import PopularList from 'components/organisms/library/popular-list'
+import SubscriptionContainer from 'components/organisms/library/subscription-container'
+import Link from 'next/link'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import marginStyles from 'styles/Margins.module.css'
+import { CLIENT_ALERTS } from 'utils/constants'
 
-import { CLIENT_ALERTS } from 'utils/constants';
-
-const filterNoPosts = (category) => category.filter((item) => item.postCount > 1);
+const filterNoPosts = (category) => category.filter((item) => item.postCount > 1)
 
 export default function LibraryLayout({
   results,
@@ -32,9 +31,7 @@ export default function LibraryLayout({
                 <Link href={results[0].link}>
                   <a className="border-bottom d-block pb-5">
                     <strong className="lead mt-5 d-block">
-                      {results[0].title}
-                      {' '}
-                      - Attorney profile
+                      {results[0].title} - Attorney profile
                     </strong>
                   </a>
                 </Link>
@@ -80,11 +77,7 @@ export default function LibraryLayout({
             <div className="text-center m-3">
               <h4>
                 <strong className="text-capitalize">
-                  Sorry, no results found for
-                  {' '}
-                  <u>{pageTitle.replace(/-/g, ' ')}</u>
-                  {' '}
-                  query.
+                  Sorry, no results found for <u>{pageTitle.replace(/-/g, ' ')}</u> query.
                 </strong>
               </h4>
             </div>
@@ -108,5 +101,5 @@ export default function LibraryLayout({
         </Col>
       </Row>
     </Container>
-  );
+  )
 }

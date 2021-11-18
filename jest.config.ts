@@ -17,7 +17,7 @@ const jestConfig = {
     '!**/*.d.ts', // ignore TypeScript types files
     '!**/__mock__/*.{js,ts}', // ignore mocks
     '!**/descriptor.{js,ts}', // ignore descriptors
-    '!**/*.stories.{ts,tsx}', //ignore stories
+    '!**/*.stories.{ts,tsx}', // ignore stories
     '!**/__test__/**/*.{js,jsx,ts,tsx}', // ignore test and test cases
   ],
 

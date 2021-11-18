@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
 import LineTitle from 'components/atoms/LineTitle'
 import PageLink from 'components/molecules/home/PageLink'
+import React from 'react'
+import styled from 'styled-components'
 
 const WhoWeAre = () => (
   <BlockContainer>
@@ -24,13 +24,19 @@ const WhoWeAre = () => (
 )
 
 const BlockContainer = styled.div`
+  margin: auto;
   margin-top: 36px;
+  padding: 16px;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    padding: 0;
+  }
 `
 
 const Block = styled.div`
   width: 100%;
   text-align: center;
-  margin-top: 36px;
+  margin-top: 56px;
 
   p {
     ${(props) => props.theme.fonts.xxl}

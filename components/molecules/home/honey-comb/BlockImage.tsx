@@ -1,5 +1,5 @@
-import React from 'react'
 import Image from 'next/image'
+import React from 'react'
 import styled from 'styled-components'
 
 interface Props {
@@ -23,8 +23,10 @@ const ImageContainer = styled.div<Pick<ImageProps, 'position'>>`
   width: 100%;
   display: flex;
   justify-content: flex-start;
+  padding: 16px;
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
     width: 50%;
+    padding: 0;
     justify-content: ${({ position }) => (position === 'left' ? 'flex-start' : 'flex-end')};
   }
 `

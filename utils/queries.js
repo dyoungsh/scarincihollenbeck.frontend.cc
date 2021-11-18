@@ -1,40 +1,40 @@
-import { headers } from 'utils/helpers';
-import { BASE_API_URL } from 'utils/constants';
+import { BASE_API_URL } from 'utils/constants'
+import { headers } from 'utils/helpers'
 
-const fetch = require('node-fetch');
+const fetch = require('node-fetch')
 
 // querires for page/administration
 const getAdmininstrationPaths = async () => {
-  const url = `${BASE_API_URL}/wp-json/admin-search/admin`;
+  const url = `${BASE_API_URL}/wp-json/admin-search/admin`
   const request = await fetch(url, { headers })
     .then((data) => data.json())
-    .catch((err) => err);
+    .catch((err) => err)
 
-  const paths = request.admins.map((a) => a.link);
+  const paths = request.admins.map((a) => a.link)
 
-  return paths;
-};
+  return paths
+}
 
 const getAdministrationContent = async (slug) => {
-  const url = `${BASE_API_URL}/wp-json/individual-admin/admin/${slug}`;
+  const url = `${BASE_API_URL}/wp-json/individual-admin/admin/${slug}`
   const request = await fetch(url, {
     headers,
   })
     .then((data) => data.json())
-    .catch((err) => err);
+    .catch((err) => err)
 
-  return request;
-};
+  return request
+}
 
 // queries for pages/attorneys
 const getAttorneyPaths = async () => {
-  const url = `${BASE_API_URL}/wp-json/attorney-search/attorneys`;
+  const url = `${BASE_API_URL}/wp-json/attorney-search/attorneys`
   const request = await fetch(url, { headers })
     .then((data) => data.json())
-    .catch((err) => err);
+    .catch((err) => err)
 
-  return request;
-};
+  return request
+}
 
 const getAttorneyContent = async (slug) => {
   const [bio, contact, content, attorneyBlogArticles, attorneyNewsArticles] = await Promise.all([
@@ -54,14 +54,14 @@ const getAttorneyContent = async (slug) => {
       .catch((err) => err),
     fetch(
       `${BASE_API_URL}/wp-json/attorney-profile/attorney/${slug}/back-page/news-press-releases`,
-      { headers },
+      { headers }
     )
       .then((data) => data.json())
       .catch((err) => err),
-  ]);
+  ])
 
-  return [bio, contact, content, attorneyBlogArticles, attorneyNewsArticles];
-};
+  return [bio, contact, content, attorneyBlogArticles, attorneyNewsArticles]
+}
 
 const getAttorneyBackPageContent = async (slug, type) => {
   const [bio, contact, content, attorneyBlogArticles, attorneyNewsArticles] = await Promise.all([
@@ -81,90 +81,95 @@ const getAttorneyBackPageContent = async (slug, type) => {
       .catch((err) => err),
     fetch(
       `${BASE_API_URL}/wp-json/attorney-profile/attorney/${slug}/back-page/news-press-releases`,
-      { headers },
+      { headers }
     )
       .then((data) => data.json())
       .catch((err) => err),
-  ]);
+  ])
 
-  return [bio, contact, content, attorneyBlogArticles, attorneyNewsArticles];
-};
+  return [bio, contact, content, attorneyBlogArticles, attorneyNewsArticles]
+}
 // queries for pages/careers
 const getCareersPaths = async () => {
-  const url = `${BASE_API_URL}/wp-json/career-portal/careers`;
+  const url = `${BASE_API_URL}/wp-json/career-portal/careers`
   const request = await fetch(url, { headers })
     .then((data) => data.json())
-    .catch((err) => err);
+    .catch((err) => err)
 
-  const paths = request.careers.map((c) => `/career${c.slug}`);
+  const paths = request.careers.map((c) => `/career${c.slug}`)
 
-  return paths;
-};
+  return paths
+}
 
 const getCareersContent = async (slug) => {
-  const url = `${BASE_API_URL}/wp-json/individual-career/career/${slug}`;
+  const url = `${BASE_API_URL}/wp-json/individual-career/career/${slug}`
   const request = await fetch(url, { headers })
     .then((data) => data.json())
-    .catch((err) => err);
+    .catch((err) => err)
 
-  return request;
-};
+  return request
+}
 
 // query for pages/firm-pages
 const getFirmPagesContent = async (slug) => {
   const request = await fetch(`${BASE_API_URL}/wp-json/firm-page/page/${slug}`, { headers })
     .then((data) => data.json())
-    .catch((err) => err);
+    .catch((err) => err)
 
-  return request;
-};
+  return request
+}
 
 // query for pages/index
 
 // query for pages/post
 const getPostBySlugAndCategory = async (slug, category) => {
-  const url = `${BASE_API_URL}/wp-json/single/post/${slug}/${category}`;
+  const url = `${BASE_API_URL}/wp-json/single/post/${slug}/${category}`
   const request = await fetch(url, { mode: 'no-cors', headers })
     .then((data) => data.body())
-    .catch((err) => err);
+    .catch((err) => err)
 
-  return request;
-};
+  return request
+}
 
 // query page content
 const getPageContent = async (slug) => {
   const request = await fetch(`${BASE_API_URL}/wp-json/single-page/page/${slug}`, { headers })
     .then((data) => data.json())
-    .catch((err) => err);
+    .catch((err) => err)
 
-  return request;
-};
+  return request
+}
 
 // queries pages/library/category
 const getCategoryPaths = async () => {
   const request = await fetch(`${BASE_API_URL}/wp-json/all-categories/list`, { headers })
     .then((data) => data.json())
-    .catch((err) => err);
+    .catch((err) => err)
 
   const paths = request
     .filter((a, b) => a.link !== b.link)
-    .map((a) => `/library/category/${a.link}`);
+    .map((a) => `/library/category/${a.link}`)
 
-  return paths;
-};
+  return paths
+}
 
 const getAuthorPaths = async () => {
   const request = await fetch(`${BASE_API_URL}/wp-json/author/list`, { headers })
     .then((data) => data.json())
-    .catch((err) => err);
+    .catch((err) => err)
 
-  const paths = request.map((a) => `/library/author/${a}`);
+  const paths = request.map((a) => `/library/author/${a}`)
 
-  return paths;
-};
+  return paths
+}
 
 const getLibraryCategoryContent = async (tempChildCat) => {
-  const [authors, childrenOfCurrentCategory, popularCategories, categoryDetails] = await Promise.all([
+  const [
+    authors,
+    childrenOfCurrentCategory,
+    popularCategories,
+    categoryDetails,
+  ] = await Promise.all([
     fetch(`${BASE_API_URL}/wp-json/author/full-list`, { headers })
       .then((data) => data.json())
       .catch((err) => err),
@@ -179,13 +184,19 @@ const getLibraryCategoryContent = async (tempChildCat) => {
     })
       .then((data) => data.json())
       .catch((err) => err),
-  ]);
+  ])
 
-  return [authors, childrenOfCurrentCategory, popularCategories, categoryDetails];
-};
+  return [authors, childrenOfCurrentCategory, popularCategories, categoryDetails]
+}
 
 const getAuthorContent = async (slug) => {
-  const [results, authors, childrenOfCurrentCategory, popularCategories, authorBio] = await Promise.all([
+  const [
+    results,
+    authors,
+    childrenOfCurrentCategory,
+    popularCategories,
+    authorBio,
+  ] = await Promise.all([
     fetch(`${BASE_API_URL}/wp-json/author/posts/${slug}/1`, { headers })
       .then((data) => data.json())
       .catch((err) => err),
@@ -201,10 +212,10 @@ const getAuthorContent = async (slug) => {
     fetch(`${BASE_API_URL}/wp-json/author/bio/${slug}`, { headers })
       .then((data) => data.json())
       .catch((err) => err),
-  ]);
+  ])
 
-  return [results, authors, childrenOfCurrentCategory, popularCategories, authorBio];
-};
+  return [results, authors, childrenOfCurrentCategory, popularCategories, authorBio]
+}
 
 // queries for pages/location
 const getLocationPaths = async () => {
@@ -212,12 +223,12 @@ const getLocationPaths = async () => {
     headers,
   })
     .then((data) => data.json())
-    .catch((err) => err);
+    .catch((err) => err)
 
-  const paths = request.offices.map((o) => o.slug);
+  const paths = request.offices.map((o) => o.slug)
 
-  return paths;
-};
+  return paths
+}
 
 const getLocationContent = async (slug) => {
   const [locations, currentOffice, currentOfficePosts] = await Promise.all([
@@ -230,22 +241,22 @@ const getLocationContent = async (slug) => {
     fetch(`${BASE_API_URL}/wp-json/individual-location/posts/${slug}`, { headers })
       .then((data) => data.json())
       .catch((err) => err),
-  ]);
+  ])
 
-  return [locations, currentOffice, currentOfficePosts];
-};
+  return [locations, currentOffice, currentOfficePosts]
+}
 
 // get pages/practice
 const getPracticePaths = async (isArticles) => {
   const request = await fetch(`${BASE_API_URL}/wp-json/practice-portal/all-links`, { headers })
     .then((data) => data.json())
-    .catch((err) => err);
+    .catch((err) => err)
 
-  const genPath = (slug) => (isArticles ? `/practice/${slug}/articles` : `/practice/${slug}`);
+  const genPath = (slug) => (isArticles ? `/practice/${slug}/articles` : `/practice/${slug}`)
 
-  const paths = await request.map((slug) => genPath(slug));
-  return paths;
-};
+  const paths = await request.map((slug) => genPath(slug))
+  return paths
+}
 
 const getPracticeContent = async (slug) => {
   const [res, practices] = await Promise.all([
@@ -255,10 +266,10 @@ const getPracticeContent = async (slug) => {
     fetch(`${BASE_API_URL}/wp-json/practice-portal/page`, { headers })
       .then((data) => data.json())
       .catch((err) => err),
-  ]);
+  ])
 
-  return [res, practices];
-};
+  return [res, practices]
+}
 
 const getPracticePosts = async (practiceSlug, blogId) => {
   const request = await fetch(
@@ -269,17 +280,17 @@ const getPracticePosts = async (practiceSlug, blogId) => {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
-    },
+    }
   )
     .then((data) => data.json())
     .catch((err) => {
-      console.warn('ERROR');
-      console.warn('===============');
-      console.error(new Error(err));
-    });
+      console.warn('ERROR')
+      console.warn('===============')
+      console.error(new Error(err))
+    })
 
-  return request;
-};
+  return request
+}
 
 const getAttorneysPageContent = async () => {
   const [attorneys, locations, designations, practices, seo] = await Promise.all([
@@ -298,10 +309,10 @@ const getAttorneysPageContent = async () => {
     fetch(`${BASE_API_URL}/wp-json/attorney-search/meta`, { headers })
       .then((data) => data.json())
       .catch((err) => err),
-  ]);
+  ])
 
-  return [attorneys, locations, designations, practices, seo];
-};
+  return [attorneys, locations, designations, practices, seo]
+}
 
 // queries for pages/covid-19-crisis-management...
 const getCovid19BasedPages = async (slug, id) => {
@@ -312,10 +323,10 @@ const getCovid19BasedPages = async (slug, id) => {
     fetch(`${BASE_API_URL}/wp-json/wp/v2/posts?categories=${id}&per_page=100`, { headers })
       .then((data) => data.json())
       .catch((err) => err),
-  ]);
+  ])
 
-  return [request, posts];
-};
+  return [request, posts]
+}
 module.exports = {
   getAdmininstrationPaths,
   getAdministrationContent,
@@ -338,4 +349,4 @@ module.exports = {
   getPracticePosts,
   getAttorneysPageContent,
   getCovid19BasedPages,
-};
+}

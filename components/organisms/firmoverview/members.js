@@ -1,8 +1,8 @@
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import AttorneyCard from 'components/shared/attorney-card';
-import textStyles from 'styles/Text.module.css';
+import AttorneyCard from 'components/shared/attorney-card'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import textStyles from 'styles/Text.module.css'
 
 export default function FirmOverviewMembers({ title, members, type }) {
   return (
@@ -30,5 +30,5 @@ export default function FirmOverviewMembers({ title, members, type }) {
         </Row>
       </Container>
     </div>
-  );
+  )
 }

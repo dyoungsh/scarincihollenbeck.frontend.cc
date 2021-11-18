@@ -1,10 +1,10 @@
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import AttorneyCard from 'components/shared/attorney-card';
-import PracticeMembers from 'components/molecules/practice/members';
-import lineHeadingStyles from 'styles/LineHeader.module.css';
-import { sortByKey } from 'utils/helpers';
+import PracticeMembers from 'components/molecules/practice/members'
+import AttorneyCard from 'components/shared/attorney-card'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import lineHeadingStyles from 'styles/LineHeader.module.css'
+import { sortByKey } from 'utils/helpers'
 
 export default function PracticeRelatedAttorneys({ members, chair, title }) {
   return (
@@ -44,5 +44,5 @@ export default function PracticeRelatedAttorneys({ members, chair, title }) {
         </Container>
       )}
     </>
-  );
+  )
 }

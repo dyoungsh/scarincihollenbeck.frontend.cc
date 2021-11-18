@@ -1,10 +1,10 @@
-import Link from 'next/link';
-import Button from 'react-bootstrap/Button';
-import textStyles from 'styles/Text.module.css';
-import { getDirectionsFromLocation, sortByKey } from 'utils/helpers';
+import Link from 'next/link'
+import Button from 'react-bootstrap/Button'
+import textStyles from 'styles/Text.module.css'
+import { getDirectionsFromLocation, sortByKey } from 'utils/helpers'
 
 export default function LocationsSidebar({ offices }) {
-  const officeList = sortByKey(offices, 'title');
+  const officeList = sortByKey(offices, 'title')
 
   return (
     <>
@@ -31,15 +31,11 @@ export default function LocationsSidebar({ offices }) {
                 </li>
               ))}
               <li className="my-0">
-                <strong>Phone: </strong>
-                {' '}
-                {office.phone}
+                <strong>Phone: </strong> {office.phone}
               </li>
               {office.fax && (
                 <li className="my-0">
-                  <strong>Fax: </strong>
-                  {' '}
-                  {office.fax}
+                  <strong>Fax: </strong> {office.fax}
                 </li>
               )}
               <li className="my-0">
@@ -77,5 +73,5 @@ export default function LocationsSidebar({ offices }) {
         </style>
       </ul>
     </>
-  );
+  )
 }

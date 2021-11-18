@@ -1,78 +1,80 @@
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import AttorneyCard from 'components/shared/attorney-card';
-import { filterByKey } from 'utils/helpers';
-import textStyles from 'styles/Text.module.css';
+import AttorneyCard from 'components/shared/attorney-card'
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
+import textStyles from 'styles/Text.module.css'
+import { filterByKey } from 'utils/helpers'
 
 export default function ArchiveAttorneyResultsFiltered({ attorneys, userInput, select }) {
   // filter through results
-  const practices = filterByKey(select, 'practices');
-  const letter = filterByKey(select, 'letter');
-  const desgination = filterByKey(select, 'title');
-  const location = filterByKey(select, 'location');
+  const practices = filterByKey(select, 'practices')
+  const letter = filterByKey(select, 'letter')
+  const desgination = filterByKey(select, 'title')
+  const location = filterByKey(select, 'location')
 
   // filter by key -- practice
   const filterPractices = (attorney) => {
     if (practices.length > 0) {
-      const prunedPracticeList = attorney.practices_array.map((p) => p.replace(/[^a-zA-Z ]/g, '').toLowerCase());
-      return prunedPracticeList.indexOf(practices[0].replace(/[^a-zA-Z ]/g, '').toLowerCase()) > -1;
+      const prunedPracticeList = attorney.practices_array.map((p) =>
+        p.replace(/[^a-zA-Z ]/g, '').toLowerCase()
+      )
+      return prunedPracticeList.indexOf(practices[0].replace(/[^a-zA-Z ]/g, '').toLowerCase()) > -1
     }
 
-    return attorney;
-  };
+    return attorney
+  }
 
   // filter by key -- location
   const filterLocation = (attorney) => {
     if (location.length > 0) {
-      return attorney.location.indexOf(location[0]) >= 0;
+      return attorney.location.indexOf(location[0]) >= 0
     }
-    return attorney;
-  };
+    return attorney
+  }
 
   // filter by key -- designation
   const filterDesignation = (attorney) => {
     if (desgination.length > 0) {
       if (desgination[0] === 'Of Counsel') {
         return (
-          attorney.designation.indexOf(desgination[0]) === 0
-          && attorney.designation !== 'Of Counsel/Partner Emeritus'
-        );
+          attorney.designation.indexOf(desgination[0]) === 0 &&
+          attorney.designation !== 'Of Counsel/Partner Emeritus'
+        )
       }
-      return attorney.designation.indexOf(desgination[0]) === 0;
+      return attorney.designation.indexOf(desgination[0]) === 0
     }
-    return attorney;
-  };
+    return attorney
+  }
 
   // filter by key -- query
   const filterQuery = (attorney) => {
-    const practiceList = attorney.practices.replace(/&amp;/g, '&');
+    const practiceList = attorney.practices.replace(/&amp;/g, '&')
 
     if (userInput) {
       if (attorney.title.indexOf(userInput) >= 0) {
-        return attorney;
+        return attorney
       }
       if (practiceList.indexOf(userInput.trim()) >= 0) {
-        return attorney;
+        return attorney
       }
     }
 
-    return true;
-  };
+    return true
+  }
 
   // filter by key -- letter
   const filterLetter = (attorney) => {
     if (letter.length > 0) {
-      return attorney.last_name.charAt(0).toLowerCase() === letter[0].toLowerCase();
+      return attorney.last_name.charAt(0).toLowerCase() === letter[0].toLowerCase()
     }
-    return attorney;
-  };
+    return attorney
+  }
 
   const aFiltered = attorneys
     .filter(filterPractices)
     .filter(filterLocation)
     .filter(filterDesignation)
     .filter(filterLetter)
-    .filter(filterQuery);
+    .filter(filterQuery)
 
   return (
     <Row>
@@ -96,5 +98,5 @@ export default function ArchiveAttorneyResultsFiltered({ attorneys, userInput, s
         </h3>
       )}
     </Row>
-  );
+  )
 }

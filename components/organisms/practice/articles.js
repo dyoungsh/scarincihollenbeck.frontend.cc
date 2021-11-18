@@ -1,26 +1,26 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-return-assign */
-import React, { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import ClipLoader from 'react-spinners/ClipLoader';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button';
-import grayTitleStyles from 'styles/BigGrayTitle.module.css';
+import Image from 'next/image'
+import Link from 'next/link'
+import React, { useState } from 'react'
+import Button from 'react-bootstrap/Button'
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
+import ClipLoader from 'react-spinners/ClipLoader'
+import grayTitleStyles from 'styles/BigGrayTitle.module.css'
 
-const removeDuplicates = (arr) => arr.filter((v, i, a) => a.findIndex((t) => t.id === v.id) === i);
+const removeDuplicates = (arr) => arr.filter((v, i, a) => a.findIndex((t) => t.id === v.id) === i)
 
-const ArticleTitle = ({ title }) => <p className={grayTitleStyles.title}>{title}</p>;
+const ArticleTitle = ({ title }) => <p className={grayTitleStyles.title}>{title}</p>
 
 export default function PracticeArticles({ initalArticles, title, articleLoading }) {
-  const [loading, setLoading] = useState(false);
-  const [pageIndex, setPageIndex] = useState(11);
+  const [loading, setLoading] = useState(false)
+  const [pageIndex, setPageIndex] = useState(11)
 
   async function handleClick() {
-    setLoading(true);
-    setPageIndex((pi) => (pi += 11));
-    setLoading(false);
+    setLoading(true)
+    setPageIndex((pi) => (pi += 11))
+    setLoading(false)
   }
 
   if (articleLoading) {
@@ -31,7 +31,7 @@ export default function PracticeArticles({ initalArticles, title, articleLoading
           <ClipLoader size={32} color="#DB0222" />
         </Col>
       </Row>
-    );
+    )
   }
 
   if (initalArticles.length > 0) {
@@ -70,7 +70,7 @@ export default function PracticeArticles({ initalArticles, title, articleLoading
           )}
         </Row>
       </Col>
-    );
+    )
   }
 
   return (
@@ -80,5 +80,5 @@ export default function PracticeArticles({ initalArticles, title, articleLoading
         <strong>Thare are no articles or blow posts for this practice area.</strong>
       </p>
     </Col>
-  );
+  )
 }

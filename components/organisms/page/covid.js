@@ -1,5 +1,5 @@
-import ContactForm from 'components/contact-form';
-import { createMarkup } from 'utils/helper';
+import ContactForm from 'components/contact-form'
+import { createMarkup } from 'utils/helper'
 
 export default function PagesCovid({ content, covidPosts, articleTitle }) {
   return (
@@ -12,8 +12,8 @@ export default function PagesCovid({ content, covidPosts, articleTitle }) {
         <hr />
         <div className="container">
           <div className="row mh-75">
-            {covidPosts.length > 0
-              && covidPosts.map((post) => (
+            {covidPosts.length > 0 &&
+              covidPosts.map((post) => (
                 <div key={post.id} className="col-sm-12 col-md-12 col-lg-6 my-3">
                   <div className="card" id="covid-post">
                     <img
@@ -42,5 +42,5 @@ export default function PagesCovid({ content, covidPosts, articleTitle }) {
         <ContactForm />
       </div>
     </div>
-  );
+  )
 }

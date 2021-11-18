@@ -1,14 +1,14 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import Nav from 'react-bootstrap/Nav';
-import Dropdown from 'react-bootstrap/Dropdown';
-import styles from 'styles/Tabs.module.css';
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import Dropdown from 'react-bootstrap/Dropdown'
+import Nav from 'react-bootstrap/Nav'
+import styles from 'styles/Tabs.module.css'
 
 export default function AttorneyBioLinks({ links, slug, mobileLinks }) {
-  const router = useRouter();
+  const router = useRouter()
   const activeKey = !router.asPath.includes('content')
     ? `${router.asPath}/content/biography`
-    : router.asPath;
+    : router.asPath
 
   return (
     <>
@@ -36,22 +36,24 @@ export default function AttorneyBioLinks({ links, slug, mobileLinks }) {
                 More
               </Dropdown.Toggle>
               <Dropdown.Menu style={{ fontSize: '1rem', backgroundColor: '#e9e9e9' }}>
-                {links.more.map((m) => (m.label === 'News Press Releases' || m.label === 'Blogs' ? (
-                  <a
-                    key={m.label}
-                    href={`/attorney/${slug}${m.link}`}
-                    className="text-dark dropdown-item"
-                    role="button"
-                  >
-                    {m.label === 'News Press Releases' ? 'News & Press Releases' : m.label}
-                  </a>
-                ) : (
-                  <Link key={m.label} scroll={false} href={`/attorney/${slug}${m.link}`}>
-                    <a className="text-dark dropdown-item" role="button">
-                      {m.label}
+                {links.more.map((m) =>
+                  m.label === 'News Press Releases' || m.label === 'Blogs' ? (
+                    <a
+                      key={m.label}
+                      href={`/attorney/${slug}${m.link}`}
+                      className="text-dark dropdown-item"
+                      role="button"
+                    >
+                      {m.label === 'News Press Releases' ? 'News & Press Releases' : m.label}
                     </a>
-                  </Link>
-                )))}
+                  ) : (
+                    <Link key={m.label} scroll={false} href={`/attorney/${slug}${m.link}`}>
+                      <a className="text-dark dropdown-item" role="button">
+                        {m.label}
+                      </a>
+                    </Link>
+                  )
+                )}
               </Dropdown.Menu>
             </Dropdown>
           )}
@@ -73,5 +75,5 @@ export default function AttorneyBioLinks({ links, slug, mobileLinks }) {
         </Dropdown>
       </div>
     </>
-  );
+  )
 }

@@ -1,5 +1,5 @@
-import fontStyles from 'styles/Fonts.module.css';
-import SubscriptionFormWithButton from 'components/molecules/subscription/subscription-form-with-button';
+import SubscriptionFormWithButton from 'components/molecules/subscription/subscription-form-with-button'
+import fontStyles from 'styles/Fonts.module.css'
 
 export default function SubscriptionMessage() {
   return (
@@ -13,5 +13,5 @@ export default function SubscriptionMessage() {
       </p>
       <SubscriptionFormWithButton />
     </div>
-  );
+  )
 }

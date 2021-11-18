@@ -1,9 +1,7 @@
-import { NextSeo, ArticleJsonLd } from 'next-seo';
-import { SITE_URL } from 'utils/constants';
+import { ArticleJsonLd, NextSeo } from 'next-seo'
+import { SITE_URL } from 'utils/constants'
 
-export default function PostHead({
-  seo, canonicalUrl, metaAuthorLinks, post, authors,
-}) {
+export default function PostHead({ seo, canonicalUrl, metaAuthorLinks, post, authors }) {
   return (
     <>
       <NextSeo
@@ -47,5 +45,5 @@ export default function PostHead({
         description={`${seo.metaDescription}`}
       />
     </>
-  );
+  )
 }

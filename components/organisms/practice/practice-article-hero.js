@@ -1,34 +1,34 @@
 /* eslint-disable no-underscore-dangle */
-import { useEffect, useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import { BASE_API_URL } from 'utils/constants';
+import Image from 'next/image'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import { BASE_API_URL } from 'utils/constants'
 
 export default function ArticleHeroPractice({ link, blogId }) {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState([])
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const url = `${BASE_API_URL}/wp-json/wp/v2/posts?categories=${blogId}`;
-      const request = await fetch(url).then((data) => data.json());
+      const url = `${BASE_API_URL}/wp-json/wp/v2/posts?categories=${blogId}`
+      const request = await fetch(url).then((data) => data.json())
       const modPosts = request.map((post) => ({
         title: post.title.rendered,
         link: post.link.replace('https://scarincihollenbeck.com', ''),
         image: post.better_featured_image
           ? post.better_featured_image.source_url
           : '/images/no-image-found-diamond-750x350.png',
-      }));
+      }))
 
-      setPosts(modPosts);
-    };
+      setPosts(modPosts)
+    }
 
     if (posts.length <= 0) {
-      fetchPosts();
+      fetchPosts()
     }
-  }, [blogId]);
+  }, [blogId])
 
   return (
     <Container>
@@ -65,5 +65,5 @@ export default function ArticleHeroPractice({ link, blogId }) {
         </Link>
       </Row>
     </Container>
-  );
+  )
 }

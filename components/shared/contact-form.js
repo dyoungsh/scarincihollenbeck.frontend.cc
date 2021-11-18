@@ -1,11 +1,12 @@
-import { useRouter } from 'next/router';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button';
-import FormScripts from './form-scripts';
+import { useRouter } from 'next/router'
+import Button from 'react-bootstrap/Button'
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
+
+import FormScripts from './form-scripts'
 
 export default function ContactForm() {
-  const router = useRouter();
+  const router = useRouter()
 
   return (
     <div className="px-2 mb-3">
@@ -110,5 +111,5 @@ export default function ContactForm() {
         </Button>
       </form>
     </div>
-  );
+  )
 }

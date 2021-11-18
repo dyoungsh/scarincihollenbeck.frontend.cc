@@ -1,9 +1,9 @@
-import { NextSeo } from 'next-seo';
-import ArchiveAttorneySelected from 'components/organisms/attorneys/selected';
-import Filters from 'components/organisms/attorneys/filters';
-import Results from 'components/organisms/attorneys/results';
-import SingleSubHeader from 'layouts/single-sub-header';
-import FullWidth from 'layouts/full-width';
+import Filters from 'components/organisms/attorneys/filters'
+import Results from 'components/organisms/attorneys/results'
+import ArchiveAttorneySelected from 'components/organisms/attorneys/selected'
+import FullWidth from 'layouts/full-width'
+import SingleSubHeader from 'layouts/single-sub-header'
+import { NextSeo } from 'next-seo'
 
 export default function AttorneysPage({
   sPractices,
@@ -56,5 +56,5 @@ export default function AttorneysPage({
         </div>
       </FullWidth>
     </>
-  );
+  )
 }

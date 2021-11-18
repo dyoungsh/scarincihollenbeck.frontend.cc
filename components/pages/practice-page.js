@@ -1,25 +1,25 @@
-import { NextSeo } from 'next-seo';
-import Link from 'next/link';
-import Image from 'next/image';
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import PracticeContent from 'components/organisms/practice/content';
-import PracticeLinks from 'components/organisms/practice/links';
-import RelatedAttorneys from 'components/organisms/practice/related-attorneys';
-import PracticeClientSlider from 'components/organisms/practice/client-slider';
-import ArticleHeroPractice from 'components/organisms/practice/practice-article-hero';
-import ArticleArchives from 'components/organisms/library/article-archives';
-import SubscriptionMessage from 'components/molecules/subscription/subscription-message';
-import CovidResourceBox from 'components/organisms/practice/covid-resource-box';
-import PracticeSidebar from 'components/organisms/practice/sidebar';
-import SingleSubHeader from 'layouts/single-sub-header';
-import lineStyles from 'styles/LineHeader.module.css';
-import textStyles from 'styles/Text.module.css';
-import { SITE_URL } from 'utils/constants';
-import { buildBusinessSchema } from 'utils/json-ld-schemas';
+import SubscriptionMessage from 'components/molecules/subscription/subscription-message'
+import ArticleArchives from 'components/organisms/library/article-archives'
+import PracticeClientSlider from 'components/organisms/practice/client-slider'
+import PracticeContent from 'components/organisms/practice/content'
+import CovidResourceBox from 'components/organisms/practice/covid-resource-box'
+import PracticeLinks from 'components/organisms/practice/links'
+import ArticleHeroPractice from 'components/organisms/practice/practice-article-hero'
+import RelatedAttorneys from 'components/organisms/practice/related-attorneys'
+import PracticeSidebar from 'components/organisms/practice/sidebar'
+import SingleSubHeader from 'layouts/single-sub-header'
+import Head from 'next/head'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { NextSeo } from 'next-seo'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import lineStyles from 'styles/LineHeader.module.css'
+import textStyles from 'styles/Text.module.css'
+import { SITE_URL } from 'utils/constants'
+import { buildBusinessSchema } from 'utils/json-ld-schemas'
 
 export default function PracticePage({
   corePractices,
@@ -31,10 +31,10 @@ export default function PracticePage({
   type,
   articleLoading = false,
 }) {
-  const router = useRouter();
+  const router = useRouter()
 
   function handleLink(e) {
-    router.push(e.target.value);
+    router.push(e.target.value)
   }
 
   return (
@@ -174,5 +174,5 @@ export default function PracticePage({
         </Row>
       </Container>
     </>
-  );
+  )
 }

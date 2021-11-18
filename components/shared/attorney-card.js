@@ -1,12 +1,10 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import styles from 'styles/AttorneyCard.module.css';
-import fontStyles from 'styles/Fonts.module.css';
-import textStyles from 'styles/Text.module.css';
+import Image from 'next/image'
+import Link from 'next/link'
+import styles from 'styles/AttorneyCard.module.css'
+import fontStyles from 'styles/Fonts.module.css'
+import textStyles from 'styles/Text.module.css'
 
-export default function AttorneyCard({
-  link, image, name, title, number, email,
-}) {
+export default function AttorneyCard({ link, image, name, title, number, email }) {
   return (
     <div className={`d-flex flex-row ${styles.attorneyCard}`} height={148}>
       <Link href={link}>
@@ -26,15 +24,11 @@ export default function AttorneyCard({
           </a>
         </Link>
         <div className={fontStyles.smallExcerpt}>
-          <strong>Phone: </strong>
-          {' '}
-          {number}
+          <strong>Phone: </strong> {number}
           <br />
-          <strong>Email: </strong>
-          {' '}
-          {email}
+          <strong>Email: </strong> {email}
         </div>
       </div>
     </div>
-  );
+  )
 }

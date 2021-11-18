@@ -7,7 +7,7 @@ const HOLIDAY_REWRITES = [
     source: '/holiday/2020-happy-holidays',
     destination: '/holiday/2020-happy-holidays',
   },
-];
+]
 
 const FUNERAL_REWRITES = [
   {
@@ -18,7 +18,7 @@ const FUNERAL_REWRITES = [
     source: '/passing-attorney-david-a-einhorn',
     destination: '/funeral-announcements/passing-attorney-david-a-einhorn',
   },
-];
+]
 
 const POST_TYPE_REWRITES = [
   {
@@ -37,7 +37,7 @@ const POST_TYPE_REWRITES = [
     source: '/careers/:path*',
     destination: '/career/:path*',
   },
-];
+]
 
 const POST_CATEOGRY_REWRITES = [
   {
@@ -100,7 +100,7 @@ const POST_CATEOGRY_REWRITES = [
     source: '/mandarin/:slug*',
     destination: '/post/:slug*?category=mandarin',
   },
-];
+]
 
 const FIRM_PAGES_REWRITES = [
   {
@@ -119,7 +119,7 @@ const FIRM_PAGES_REWRITES = [
     source: '/women-lead',
     destination: '/firm-pages/women-lead',
   },
-];
+]
 
 module.exports = {
   HOLIDAY_REWRITES,
@@ -127,4 +127,4 @@ module.exports = {
   POST_TYPE_REWRITES,
   POST_CATEOGRY_REWRITES,
   FIRM_PAGES_REWRITES,
-};
+}

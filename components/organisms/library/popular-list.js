@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import fontStyles from 'styles/Fonts.module.css';
+import Link from 'next/link'
+import fontStyles from 'styles/Fonts.module.css'
 
 export default function PopularList({ term, list, displayCount = true }) {
   return (
@@ -39,5 +39,5 @@ export default function PopularList({ term, list, displayCount = true }) {
         `}
       </style>
     </>
-  );
+  )
 }

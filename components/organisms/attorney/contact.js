@@ -1,10 +1,10 @@
-import marginStyles from 'styles/Margins.module.css';
-import grayTitleStyles from 'styles/BigGrayTitle.module.css';
-import AttorneyProfileContactForm from 'components/organisms/attorney/contact-form';
+import AttorneyProfileContactForm from 'components/organisms/attorney/contact-form'
+import grayTitleStyles from 'styles/BigGrayTitle.module.css'
+import marginStyles from 'styles/Margins.module.css'
 
 export default function AttorneyProfileContact({ content, forwardEmail }) {
-  const { profile } = content;
-  const { name } = profile;
+  const { profile } = content
+  const { name } = profile
 
   return (
     <div className={marginStyles.mtMinusMd2}>
@@ -14,5 +14,5 @@ export default function AttorneyProfileContact({ content, forwardEmail }) {
       </p>
       <AttorneyProfileContactForm forwardEmail={forwardEmail} currentAttorney={name} />
     </div>
-  );
+  )
 }

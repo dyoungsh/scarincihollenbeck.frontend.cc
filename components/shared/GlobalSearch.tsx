@@ -1,16 +1,15 @@
 import algoliasearch from 'algoliasearch/lite'
+import Hit from 'components/organisms/global-search/Hit'
+import SearchBox from 'components/organisms/global-search/SearchBox'
 import {
-  InstantSearch,
   connectStateResults,
   createConnector,
   Hits,
+  InstantSearch,
   Pagination,
 } from 'react-instantsearch-dom'
 import styled from 'styled-components'
-import Hit from 'components/organisms/global-search/Hit'
-import SearchBox from 'components/organisms/global-search/SearchBox'
-
-import { ALGOLIA_PUBLIC_API, ALGOLIA_APP_ID, ALGOLIA_SEARCH_INDEX } from 'utils/constants'
+import { ALGOLIA_APP_ID, ALGOLIA_PUBLIC_API, ALGOLIA_SEARCH_INDEX } from 'utils/constants'
 
 const searchClient = algoliasearch(ALGOLIA_APP_ID, ALGOLIA_PUBLIC_API)
 

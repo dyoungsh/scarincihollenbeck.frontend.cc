@@ -1,7 +1,8 @@
-import HomePage from 'components/pages/home-page'
+import { ArticleList, FeaturedArticle, Leadership, Office, SEO } from 'types/Home'
 import { BASE_API_URL } from 'utils/constants'
-import { headers, formatDate, setTextLen } from 'utils/helpers'
-import { SEO, Office, Leadership, FeaturedArticle, ArticleList } from 'types/Home'
+import { formatDate, headers, setTextLen } from 'utils/helpers'
+
+import HomePage from '~/components/pages/HomePage'
 
 const santizeMember = (list: any, designation: string, title: string) => {
   return list

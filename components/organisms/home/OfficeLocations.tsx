@@ -1,7 +1,7 @@
+import LineTitle from 'components/atoms/LineTitle'
+import LocationCard from 'components/molecules/home/LocationCard'
 import React from 'react'
 import styled from 'styled-components'
-import LineTitle from 'components/atoms/LineTitle'
-import LocationCard from 'components/molecules/LocationCard'
 import { Office } from 'types/Home'
 
 interface Props {
@@ -22,6 +22,10 @@ const OfficeLocations: React.FC<Props> = ({ locations }: Props) => {
 
 const BlockContainer = styled.div`
   margin-top: 96px;
+  padding: 16px;
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    padding 0;
+  }
 `
 
 const LocationContainer = styled.div`

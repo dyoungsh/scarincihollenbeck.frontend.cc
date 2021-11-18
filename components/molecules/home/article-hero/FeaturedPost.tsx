@@ -1,6 +1,6 @@
-import React from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react'
 import styled from 'styled-components'
 import { createMarkup } from 'utils/helpers'
 
@@ -51,8 +51,14 @@ const FeaturedPost: React.FC<Props> = ({ slug, image, title, authors, date, exce
 const ArticleContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
-  margin-right: 48px;
+  padding: 0 16px;
+  width: 100%;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    width: 50%;
+    padding: 0;
+    margin-right: 48px;
+  }
 
   a {
     color: inherit;

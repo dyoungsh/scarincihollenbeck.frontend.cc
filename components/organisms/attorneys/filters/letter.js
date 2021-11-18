@@ -1,6 +1,6 @@
-import { memo } from 'react';
-import Button from 'react-bootstrap/Button';
-import fontStyles from 'styles/Fonts.module.css';
+import { memo } from 'react'
+import Button from 'react-bootstrap/Button'
+import fontStyles from 'styles/Fonts.module.css'
 
 const LetterButton = memo(({ letter, letterClick }) => (
   <Button
@@ -12,8 +12,9 @@ const LetterButton = memo(({ letter, letterClick }) => (
   >
     {letter}
   </Button>
-));
+))
 
-const ArchiveAttorneyFitlersLetter = ({ alphabet, letterClick }) => alphabet.map((letter) => <LetterButton key={letter} letter={letter} letterClick={letterClick} />);
+const ArchiveAttorneyFitlersLetter = ({ alphabet, letterClick }) =>
+  alphabet.map((letter) => <LetterButton key={letter} letter={letter} letterClick={letterClick} />)
 
-export default ArchiveAttorneyFitlersLetter;
+export default ArchiveAttorneyFitlersLetter

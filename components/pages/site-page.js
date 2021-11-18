@@ -1,13 +1,11 @@
-import { NextSeo } from 'next-seo';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import PagesBody from 'components/organisms/page/body';
-import SingleSubHeader from 'layouts/single-sub-header';
+import PagesBody from 'components/organisms/page/body'
+import SingleSubHeader from 'layouts/single-sub-header'
+import { NextSeo } from 'next-seo'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
 
-export default function SitePage({
-  seo, site, canonicalUrl, bodyContent,
-}) {
+export default function SitePage({ seo, site, canonicalUrl, bodyContent }) {
   return (
     <>
       <NextSeo title={seo.title} description={seo.metaDescription} canonical={canonicalUrl} />
@@ -20,5 +18,5 @@ export default function SitePage({
         </Row>
       </Container>
     </>
-  );
+  )
 }

@@ -1,31 +1,33 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-return-assign */
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button';
-import ClipLoader from 'react-spinners/ClipLoader';
-import grayTitleStyles from 'styles/BigGrayTitle.module.css';
-import marginStyles from 'styles/Margins.module.css';
+import Link from 'next/link'
+import React, { useEffect, useState } from 'react'
+import Button from 'react-bootstrap/Button'
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
+import ClipLoader from 'react-spinners/ClipLoader'
+import grayTitleStyles from 'styles/BigGrayTitle.module.css'
+import marginStyles from 'styles/Margins.module.css'
 
 export default function AttorneyProfileArticles({ title, initalArticles }) {
-  const [loading, setLoading] = useState(false);
-  const [pageIndex, setPageIndex] = useState(11);
-  const [articleList, setArticleList] = useState([]);
+  const [loading, setLoading] = useState(false)
+  const [pageIndex, setPageIndex] = useState(11)
+  const [articleList, setArticleList] = useState([])
 
   async function handleClick() {
-    setLoading(true);
-    setPageIndex((pi) => (pi += 11));
-    setLoading(false);
+    setLoading(true)
+    setPageIndex((pi) => (pi += 11))
+    setLoading(false)
   }
 
   useEffect(() => {
     if (initalArticles.length > 0) {
-      const sortArticles = initalArticles.sort((a, b) => (new Date(a.date) < new Date(b.date) ? 1 : -1));
-      setArticleList(sortArticles);
+      const sortArticles = initalArticles.sort((a, b) =>
+        new Date(a.date) < new Date(b.date) ? 1 : -1
+      )
+      setArticleList(sortArticles)
     }
-  }, []);
+  }, [])
 
   return (
     <Row className={marginStyles.mtMinusMd2}>
@@ -76,5 +78,5 @@ export default function AttorneyProfileArticles({ title, initalArticles }) {
         </Col>
       )}
     </Row>
-  );
+  )
 }

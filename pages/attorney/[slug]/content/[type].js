@@ -1,7 +1,7 @@
-import { useRouter } from 'next/router';
-import SiteLoader from 'components/shared/site-loader';
-import AttorneyProfile from 'components/pages/attorney-profile';
-import { getAttorneyPaths, getAttorneyBackPageContent } from 'utils/queries';
+import AttorneyProfile from 'components/pages/attorney-profile'
+import SiteLoader from 'components/shared/site-loader'
+import { useRouter } from 'next/router'
+import { getAttorneyBackPageContent, getAttorneyPaths } from 'utils/queries'
 
 export default function AttorneyContent({
   bio,
@@ -12,14 +12,14 @@ export default function AttorneyContent({
   attorneyFooterBlogArticles,
   attorneyFooterNewsArticles,
 }) {
-  const router = useRouter();
+  const router = useRouter()
 
   if (router.isFallback) {
     return (
       <div className="my-5 py-5">
         <SiteLoader />
       </div>
-    );
+    )
   }
 
   const attorneyProps = {
@@ -35,61 +35,67 @@ export default function AttorneyContent({
       image: bio.headerContent.profileImage || bio.headerContent.profilImageUrl,
       profile: { ...bio.headerContent, ...contact },
     },
-  };
+  }
 
-  return <AttorneyProfile {...attorneyProps} />;
+  return <AttorneyProfile {...attorneyProps} />
 }
 
 export async function getStaticPaths() {
-  const request = await getAttorneyPaths();
-  const paths = [];
+  const request = await getAttorneyPaths()
+  const paths = []
 
-  request.forEach((attorney) => attorney.sidebarLinks.forEach((link) => paths.push(link)));
+  request.forEach((attorney) => attorney.sidebarLinks.forEach((link) => paths.push(link)))
 
   return {
     paths,
     fallback: true,
-  };
+  }
 }
 
 export async function getStaticProps({ params }) {
-  const [bio, contact, content, attorneyBlogArticles, attorneyNewsArticles] = await getAttorneyBackPageContent(params.slug, params.type);
+  const [
+    bio,
+    contact,
+    content,
+    attorneyBlogArticles,
+    attorneyNewsArticles,
+  ] = await getAttorneyBackPageContent(params.slug, params.type)
 
   if (bio.status === 404) {
     return {
       notFound: true,
-    };
+    }
   }
 
-  let attorneyFooterBlogArticles = [];
-  let attorneyFooterNewsArticles = [];
+  let attorneyFooterBlogArticles = []
+  let attorneyFooterNewsArticles = []
 
   if (!Object.keys(attorneyBlogArticles).includes('status')) {
     const firstThreeBlogs = attorneyBlogArticles
       .sort((a, b) => (new Date(a.date) < new Date(b.date) ? 1 : -1))
-      .filter((_, i) => i <= 3);
+      .filter((_, i) => i <= 3)
 
-    attorneyFooterBlogArticles = [...firstThreeBlogs];
+    attorneyFooterBlogArticles = [...firstThreeBlogs]
   }
 
   if (!Object.keys(attorneyNewsArticles).includes('status')) {
     const firstThreeNews = attorneyNewsArticles
       .sort((a, b) => (new Date(a.date) < new Date(b.date) ? 1 : -1))
-      .filter((_, i) => i <= 3);
+      .filter((_, i) => i <= 3)
 
-    attorneyFooterNewsArticles = [...firstThreeNews];
+    attorneyFooterNewsArticles = [...firstThreeNews]
   }
 
-  let typeToTerm = '';
+  let typeToTerm = ''
 
   if (params.type === 'news-press-releases') {
-    typeToTerm = 'News & Press Releases';
+    typeToTerm = 'News & Press Releases'
   } else {
-    const splitType = params.type.split('-');
+    const splitType = params.type.split('-')
     const capitalizeEachWord = splitType
       .map((word) => `${word[0].toUpperCase()}${word.slice(1, word.length)}`)
-      .join(' ');
-    typeToTerm = capitalizeEachWord;
+      .join(' ')
+    typeToTerm = capitalizeEachWord
   }
 
   const seo = {
@@ -99,7 +105,7 @@ export async function getStaticProps({ params }) {
     image: bio.seo.featuredImg,
     designation: bio.headerContent.title,
     socialMediaLinks: bio.seo.socialMedia,
-  };
+  }
 
   return {
     props: {
@@ -112,5 +118,5 @@ export async function getStaticProps({ params }) {
       attorneyFooterNewsArticles,
     },
     revalidate: 1,
-  };
+  }
 }

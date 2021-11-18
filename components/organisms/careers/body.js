@@ -1,5 +1,5 @@
-import CareersFilterForms from 'components/organisms/careers/filter-forms';
-import Results from 'components/organisms/careers/results';
+import CareersFilterForms from 'components/organisms/careers/filter-forms'
+import Results from 'components/organisms/careers/results'
 
 export default function Body({
   careers,
@@ -24,5 +24,5 @@ export default function Body({
       />
       <Results positions={careers} />
     </div>
-  );
+  )
 }

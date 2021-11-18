@@ -1,19 +1,19 @@
-import { useRef } from 'react';
-import { useVirtual } from 'react-virtual';
-import Link from 'next/link';
-import { urlify } from 'utils/helpers';
-import styles from 'styles/Library.module.css';
-import fontStyles from 'styles/Fonts.module.css';
+import Link from 'next/link'
+import { useRef } from 'react'
+import { useVirtual } from 'react-virtual'
+import fontStyles from 'styles/Fonts.module.css'
+import styles from 'styles/Library.module.css'
+import { urlify } from 'utils/helpers'
 
 export default function FirmAuthors({ authors }) {
-  const parentRef = useRef();
+  const parentRef = useRef()
 
   const rowVirtualizer = useVirtual({
     size: authors.length,
     parentRef,
     paddingStart: 10,
     paddingEnd: 10,
-  });
+  })
 
   return (
     <>
@@ -60,5 +60,5 @@ export default function FirmAuthors({ authors }) {
         </div>
       </div>
     </>
-  );
+  )
 }

@@ -1,9 +1,9 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import HomePageLink from 'components/organisms/home/page-link';
-import lineStyles from 'styles/LineHeader.module.css';
+import HomePageLink from 'components/organisms/home/page-link'
+import Image from 'next/image'
+import Link from 'next/link'
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
+import lineStyles from 'styles/LineHeader.module.css'
 
 function ClientSection({ slug, clients }) {
   return (
@@ -30,12 +30,10 @@ function ClientSection({ slug, clients }) {
         <HomePageLink link={`/attorney/${slug}/clients`} title="See More Clients" />
       </Row>
     </>
-  );
+  )
 }
 
-function ArticleSection({
-  articles, slug, title, type,
-}) {
+function ArticleSection({ articles, slug, title, type }) {
   return (
     <Row className="mt-5 mb-3">
       {articles.map((article) => (
@@ -58,7 +56,7 @@ function ArticleSection({
       ))}
       <HomePageLink link={`/attorney/${slug}/content/${type}`} title={`More ${title}`} />
     </Row>
-  );
+  )
 }
 
 export default function AttorneyProfileFooter({
@@ -97,5 +95,5 @@ export default function AttorneyProfileFooter({
         </>
       )}
     </div>
-  );
+  )
 }

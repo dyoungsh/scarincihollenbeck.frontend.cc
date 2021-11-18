@@ -1,6 +1,6 @@
+import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
-import Link from 'next/link'
 
 interface Props {
   title: string
@@ -27,7 +27,9 @@ const BlockContent: React.FC<Props> = ({ title, description, url }: Props) => {
 
 const BlockContainer = styled.div`
   width: 100%;
+  padding: 16px;
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    padding: 0;
     width: 50%;
   }
 `

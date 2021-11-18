@@ -1,21 +1,19 @@
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router'
+import Button from 'react-bootstrap/Button'
+import { FaEnvelope, FaFacebookSquare, FaLinkedin, FaPrint, FaTwitterSquare } from 'react-icons/fa'
 import {
   EmailShareButton,
   FacebookShareButton,
   LinkedinShareButton,
   TwitterShareButton,
-} from 'react-share';
-import {
-  FaLinkedin, FaFacebookSquare, FaTwitterSquare, FaEnvelope, FaPrint,
-} from 'react-icons/fa';
-import Button from 'react-bootstrap/Button';
-import { printScreen } from 'utils/helpers';
-import { SITE_URL } from 'utils/constants';
-import fontStyles from 'styles/Fonts.module.css';
+} from 'react-share'
+import fontStyles from 'styles/Fonts.module.css'
+import { SITE_URL } from 'utils/constants'
+import { printScreen } from 'utils/helpers'
 
 export default function PostSocialShareSidebar({ title }) {
-  const router = useRouter();
-  const postUrl = `${SITE_URL}${router.asPath}`;
+  const router = useRouter()
+  const postUrl = `${SITE_URL}${router.asPath}`
 
   return (
     <div className="mt-4">
@@ -48,8 +46,7 @@ export default function PostSocialShareSidebar({ title }) {
       </p>
       <p className="mb-2">
         <EmailShareButton subject={title} body={postUrl} separator="">
-          <FaEnvelope />
-          {' '}
+          <FaEnvelope />{' '}
           <u className="link">
             <strong>Email</strong>
           </u>
@@ -78,5 +75,5 @@ export default function PostSocialShareSidebar({ title }) {
         `}
       </style>
     </div>
-  );
+  )
 }

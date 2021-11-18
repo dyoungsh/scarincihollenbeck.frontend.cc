@@ -1,12 +1,10 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import Button from 'react-bootstrap/Button';
-import { createMarkup } from 'utils/helpers';
-import fontStyles from 'styles/Fonts.module.css';
+import Image from 'next/image'
+import Link from 'next/link'
+import Button from 'react-bootstrap/Button'
+import fontStyles from 'styles/Fonts.module.css'
+import { createMarkup } from 'utils/helpers'
 
-export default function MainArticle({
-  title, link, description, date, image, author,
-}) {
+export default function MainArticle({ title, link, description, date, image, author }) {
   return (
     <>
       <Link href={link}>
@@ -18,13 +16,9 @@ export default function MainArticle({
         </a>
       </Link>
       <p className={`${fontStyles.ft12rem} my-3`}>
-        <strong>Author: </strong>
-        {' '}
-        {author}
+        <strong>Author: </strong> {author}
         <span className="ml-5">
-          <strong>Date:</strong>
-          {' '}
-          {date}
+          <strong>Date:</strong> {date}
         </span>
       </p>
       <div
@@ -37,5 +31,5 @@ export default function MainArticle({
         </Link>
       </Button>
     </>
-  );
+  )
 }

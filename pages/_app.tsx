@@ -1,16 +1,3 @@
-import React, { useEffect } from 'react'
-import Router, { useRouter } from 'next/router'
-import { AppProps } from 'next/app'
-import Head from 'next/head'
-import NProgress from 'nprogress'
-import { ThemeProvider } from 'styled-components'
-import NavBar from 'components/shared/Navbar'
-import Footer from 'components/shared/Footer'
-
-import GlobalStyles from 'styles/global-styles'
-import theme from 'styles/theme'
-import * as gtag from 'utils/gtag'
-
 /**
  *
  * 3rd Party Resources
@@ -20,12 +7,22 @@ import 'nprogress/nprogress.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'react-multi-carousel/lib/styles.css'
 import 'animate.css/animate.min.css'
-
 /**
  * Custom Style Sheets
  * */
-
 import 'styles/carousel.css'
+
+import Footer from 'components/shared/Footer'
+import NavBar from 'components/shared/Navbar'
+import { AppProps } from 'next/app'
+import Head from 'next/head'
+import Router, { useRouter } from 'next/router'
+import NProgress from 'nprogress'
+import React, { useEffect } from 'react'
+import { ThemeProvider } from 'styled-components'
+import GlobalStyles from 'styles/global-styles'
+import theme from 'styles/theme'
+import * as gtag from 'utils/gtag'
 
 /**
  *  Add page transition loader

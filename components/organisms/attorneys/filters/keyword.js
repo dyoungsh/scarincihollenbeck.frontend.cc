@@ -1,4 +1,4 @@
-import Form from 'react-bootstrap/Form';
+import Form from 'react-bootstrap/Form'
 
 export default function ArchiveAttorneyFitlersKeyword({ handleChange }) {
   return (
@@ -10,5 +10,5 @@ export default function ArchiveAttorneyFitlersKeyword({ handleChange }) {
         className="w-100 mb-2"
       />
     </Form>
-  );
+  )
 }

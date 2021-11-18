@@ -4,7 +4,7 @@ const {
   POST_TYPE_REWRITES,
   POST_CATEOGRY_REWRITES,
   FIRM_PAGES_REWRITES,
-} = require('./utils/rewrites');
+} = require('./utils/rewrites')
 
 module.exports = {
   env: {
@@ -32,6 +32,6 @@ module.exports = {
       ...FIRM_PAGES_REWRITES,
       ...FUNERAL_REWRITES,
       ...HOLIDAY_REWRITES,
-    ];
+    ]
   },
-};
+}

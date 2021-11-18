@@ -1,57 +1,57 @@
-import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
-import SiteLoader from 'components/shared/site-loader';
-import CareersPage from 'components/pages/careers-page';
-import { headers } from 'utils/helpers';
-import { BASE_API_URL, SITE_URL } from 'utils/constants';
+import CareersPage from 'components/pages/careers-page'
+import SiteLoader from 'components/shared/site-loader'
+import { useRouter } from 'next/router'
+import React, { useEffect, useState } from 'react'
+import { BASE_API_URL, SITE_URL } from 'utils/constants'
+import { headers } from 'utils/helpers'
 
 const seo = {
   title: 'Careers & Positions | Scarinci Hollenbeck, LLC',
   metaDescription:
     "Scarinci Hollenbeck's commitment to diversity and equal opportunity enables Scarinci Hollenbeck to recruit, retain, and promote the best attorneys.",
   canonicalUrl: `${SITE_URL}/careers`,
-};
+}
 
 const site = {
   title: 'Careers & Available Positions',
   description:
     'Our commitment to diversity and equal opportunity enables Scarinci Hollenbeck to recruit, retain, and promote the best attorneys.',
-};
+}
 export default function Careers({ positionTypes, locations, careerList }) {
-  const router = useRouter();
-  const [query, setQuery] = useState('');
-  const [location, setLocation] = useState('');
-  const [positionType, setPositionType] = useState('');
-  const [careers, setCareers] = useState([]);
+  const router = useRouter()
+  const [query, setQuery] = useState('')
+  const [location, setLocation] = useState('')
+  const [positionType, setPositionType] = useState('')
+  const [careers, setCareers] = useState([])
 
   if (router.isFallback) {
-    return <SiteLoader />;
+    return <SiteLoader />
   }
 
   useEffect(() => {
-    setCareers(careerList);
-  }, [careerList]);
+    setCareers(careerList)
+  }, [careerList])
 
   function executeSearch() {
     function filterPostionType(career) {
       if (positionType) {
-        return career.positionType.indexOf(positionType) >= 0;
+        return career.positionType.indexOf(positionType) >= 0
       }
 
-      return career;
+      return career
     }
 
     function filterPositionLocation(career) {
       if (location) {
-        return career.positionLocation.indexOf(location) >= 0;
+        return career.positionLocation.indexOf(location) >= 0
       }
 
-      return career;
+      return career
     }
 
-    const careerListFiltered = careers.filter(filterPostionType).filter(filterPositionLocation);
+    const careerListFiltered = careers.filter(filterPostionType).filter(filterPositionLocation)
 
-    setCareers(careerListFiltered);
+    setCareers(careerListFiltered)
   }
 
   const careerProps = {
@@ -65,9 +65,9 @@ export default function Careers({ positionTypes, locations, careerList }) {
     setLocation,
     setPositionType,
     executeSearch,
-  };
+  }
 
-  return <CareersPage {...careerProps} />;
+  return <CareersPage {...careerProps} />
 }
 
 export async function getStaticProps() {
@@ -75,7 +75,7 @@ export async function getStaticProps() {
     headers,
   })
     .then((data) => data.json())
-    .catch((err) => err);
+    .catch((err) => err)
 
   return {
     props: {
@@ -84,5 +84,5 @@ export async function getStaticProps() {
       positionTypes: ['Administration', 'Attorney'],
     },
     revalidate: 1,
-  };
+  }
 }

@@ -1,11 +1,11 @@
-import { NextSeo } from 'next-seo';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import SingleSubHeader from 'layouts/single-sub-header';
-import FullWidth from 'layouts/full-width';
-import AttorneyCard from 'components/shared/attorney-card';
-import { sortByKey } from 'utils/helpers';
+import AttorneyCard from 'components/shared/attorney-card'
+import FullWidth from 'layouts/full-width'
+import SingleSubHeader from 'layouts/single-sub-header'
+import { NextSeo } from 'next-seo'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import { sortByKey } from 'utils/helpers'
 
 export default function AdministrationPage({ admins, seo, site }) {
   return (
@@ -32,5 +32,5 @@ export default function AdministrationPage({ admins, seo, site }) {
         </Container>
       </FullWidth>
     </>
-  );
+  )
 }

@@ -1,6 +1,6 @@
-import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import React from 'react'
 import styled from 'styled-components'
 
 interface Props {
@@ -11,7 +11,7 @@ interface Props {
   location?: string
   email?: string
 }
-const ProfileCard: React.FC<Props> = ({ name, image, slug, title, location, email }: Props) => {
+const ProfileCard: React.FC<Props> = ({ name, image, slug, title, email }: Props) => {
   return (
     <CardContainer>
       <ImageContainer>

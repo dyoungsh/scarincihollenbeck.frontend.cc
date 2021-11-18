@@ -1,9 +1,7 @@
-import { FaLinkedinIn } from 'react-icons/fa';
-import { BsChatDots, BsCloudDownload, BsCardText } from 'react-icons/bs';
+import { BsCardText, BsChatDots, BsCloudDownload } from 'react-icons/bs'
+import { FaLinkedinIn } from 'react-icons/fa'
 
-export default function ContactIcons({
-  slug, linkedIn, pdf, vizibility,
-}) {
+export default function ContactIcons({ slug, linkedIn, pdf, vizibility }) {
   return (
     <ul className="list-unstyled mr-0 ml-lg-5">
       <li>
@@ -75,5 +73,5 @@ export default function ContactIcons({
         </a>
       </li>
     </ul>
-  );
+  )
 }

@@ -1,12 +1,12 @@
-import Head from 'next/head';
-import { NextSeo } from 'next-seo';
-import ArchivePracticeSimpleList from 'components/organisms/practices/simple-list';
-import ArchivePracticeBlockList from 'components/organisms/practices/block-list';
-import SingleSubHeader from 'layouts/single-sub-header';
-import FullWidth from 'layouts/full-width';
-import { buildBusinessSchema } from 'utils/json-ld-schemas';
-import { SITE_URL } from 'utils/constants';
-import lineHeaderStyles from 'styles/LineHeader.module.css';
+import ArchivePracticeBlockList from 'components/organisms/practices/block-list'
+import ArchivePracticeSimpleList from 'components/organisms/practices/simple-list'
+import FullWidth from 'layouts/full-width'
+import SingleSubHeader from 'layouts/single-sub-header'
+import Head from 'next/head'
+import { NextSeo } from 'next-seo'
+import lineHeaderStyles from 'styles/LineHeader.module.css'
+import { SITE_URL } from 'utils/constants'
+import { buildBusinessSchema } from 'utils/json-ld-schemas'
 
 export default function PracticesPage({
   site,
@@ -82,5 +82,5 @@ export default function PracticesPage({
         <ArchivePracticeSimpleList list={sortedBusienssPractices} />
       </FullWidth>
     </>
-  );
+  )
 }

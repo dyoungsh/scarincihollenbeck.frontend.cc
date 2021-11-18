@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
 import LineTitle from 'components/atoms/LineTitle'
 import ProfileCard from 'components/atoms/ProfileCard'
+import React from 'react'
+import styled from 'styled-components'
 import { Leadership } from 'types/Home'
 
 interface Props {
@@ -21,10 +21,16 @@ const FirmLeadership: React.FC<Props> = ({ leadership }: Props) => {
 }
 
 const BlockContainer = styled.div`
+  margin: auto;
   margin-top: 96px;
+  padding: 16px;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    padding: 0;
+  }
 `
 const LeaderContainer = styled.div`
-  margin-top: 56px;
+  margin-top: 92px;
   display: flex;
   flex-direction: column;
 

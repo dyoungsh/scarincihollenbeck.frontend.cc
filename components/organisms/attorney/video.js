@@ -1,9 +1,9 @@
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import { createMarkup, formatDate } from 'utils/helpers';
-import marginStyles from 'styles/Margins.module.css';
-import grayTitleStyles from 'styles/BigGrayTitle.module.css';
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import grayTitleStyles from 'styles/BigGrayTitle.module.css'
+import marginStyles from 'styles/Margins.module.css'
+import { createMarkup, formatDate } from 'utils/helpers'
 
 export default function AttorneyProfileVideo({ content }) {
   return (
@@ -25,5 +25,5 @@ export default function AttorneyProfileVideo({ content }) {
         ))}
       </Row>
     </Container>
-  );
+  )
 }

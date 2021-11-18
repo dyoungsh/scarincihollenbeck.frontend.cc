@@ -1,6 +1,6 @@
-import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import React from 'react'
 import styled from 'styled-components'
 import { Office } from 'types/Home'
 
@@ -36,6 +36,7 @@ const LocationContainer = styled.div`
 const Card = styled.div`
   border: 0.5px solid ${(props) => props.theme.colors.gray};
   border-radius: 8px;
+  width: 100%;
 
   a {
     color: inherit;
@@ -55,7 +56,8 @@ const Card = styled.div`
 
     p {
       ${(props) => props.theme.fonts.lg};
-      padding 0 8px;
+      margin: 0;
+      padding 16px 8px;
       font-family: ${(props) => props.theme.fonts.proximaBold};
       color: ${(props) => props.theme.colors.secondaryRed};
     }

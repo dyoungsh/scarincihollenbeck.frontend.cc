@@ -1,6 +1,6 @@
-import Col from 'react-bootstrap/Col';
-import styles from 'styles/FeaturedLinks.module.css';
-import Button from 'react-bootstrap/Button';
+import Button from 'react-bootstrap/Button'
+import Col from 'react-bootstrap/Col'
+import styles from 'styles/FeaturedLinks.module.css'
 
 export default function FeaturedLinks() {
   return (
@@ -38,5 +38,5 @@ export default function FeaturedLinks() {
         `}
       </style>
     </Col>
-  );
+  )
 }

@@ -1,5 +1,5 @@
-import pageContentStyles from 'styles/PageContent.module.css';
-import { createMarkup } from 'utils/helpers';
+import pageContentStyles from 'styles/PageContent.module.css'
+import { createMarkup } from 'utils/helpers'
 
 export default function SinglePracticeContent({ content }) {
   return (
@@ -7,5 +7,5 @@ export default function SinglePracticeContent({ content }) {
       className={`${pageContentStyles.p} mt-3`}
       dangerouslySetInnerHTML={createMarkup(content)}
     />
-  );
+  )
 }

@@ -1,10 +1,10 @@
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import PostHead from 'components/organisms/post/head';
-import SingleSubHeader from 'layouts/single-sub-header';
-import Body from 'components/organisms/post/body';
-import PrintOnlyBody from 'components/organisms/post/print-only-body';
-import Sidebar from 'components/organisms/post/sidebar';
+import Body from 'components/organisms/post/body'
+import PostHead from 'components/organisms/post/head'
+import PrintOnlyBody from 'components/organisms/post/print-only-body'
+import Sidebar from 'components/organisms/post/sidebar'
+import SingleSubHeader from 'layouts/single-sub-header'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
 
 export default function PostPage({
   post,
@@ -62,5 +62,5 @@ export default function PostPage({
         date={post.date}
       />
     </>
-  );
+  )
 }

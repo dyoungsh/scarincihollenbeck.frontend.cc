@@ -28,7 +28,8 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: ${theme.fonts.proximaRegular};
-    ${theme.fonts.base}
+    ${theme.fonts.base};
+    height: 100vh;
   }
 
   a {

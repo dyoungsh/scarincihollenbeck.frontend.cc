@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import styles from 'styles/SidebarTitle.module.css';
+import Link from 'next/link'
+import styles from 'styles/SidebarTitle.module.css'
 
 export default function AboutFirm() {
   return (
@@ -31,5 +31,5 @@ export default function AboutFirm() {
         </ul>
       </div>
     </div>
-  );
+  )
 }

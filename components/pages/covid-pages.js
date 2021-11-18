@@ -1,22 +1,19 @@
-import { NextSeo } from 'next-seo';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import ContactForm from 'components/shared/contact-form';
-import { createMarkup } from 'utils/helpers';
-import grayTitleStyles from 'styles/BigGrayTitle.module.css';
-import pageContentStyles from 'styles/PageContent.module.css';
-import ArticleArchives from 'components/organisms/library/article-archives';
-import SubscriptionMessage from 'components/molecules/subscription/subscription-message';
-import CommonSidebarLinks from 'components/molecules/common-sidebar-links';
-import PopularList from 'components/organisms/library/popular-list';
-import SingleSubHeader from 'layouts/single-sub-header';
+import CommonSidebarLinks from 'components/molecules/common-sidebar-links'
+import SubscriptionMessage from 'components/molecules/subscription/subscription-message'
+import ArticleArchives from 'components/organisms/library/article-archives'
+import PopularList from 'components/organisms/library/popular-list'
+import ContactForm from 'components/shared/contact-form'
+import SingleSubHeader from 'layouts/single-sub-header'
+import { NextSeo } from 'next-seo'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import grayTitleStyles from 'styles/BigGrayTitle.module.css'
+import pageContentStyles from 'styles/PageContent.module.css'
+import { CLIENT_ALERTS } from 'utils/constants'
+import { createMarkup } from 'utils/helpers'
 
-import { CLIENT_ALERTS } from 'utils/constants';
-
-export default function CovidPage({
-  title, seo, bodyContent, canonicalUrl, subTitle, archiveUrl,
-}) {
+export default function CovidPage({ title, seo, bodyContent, canonicalUrl, subTitle, archiveUrl }) {
   const sidebar = (
     <>
       <SubscriptionMessage />
@@ -24,7 +21,7 @@ export default function CovidPage({
       <hr />
       <PopularList term="Client Alerts" list={CLIENT_ALERTS} displayCount={false} />
     </>
-  );
+  )
   return (
     <>
       <NextSeo title={seo.title} description={seo.metaDescr} canonical={canonicalUrl} />
@@ -48,5 +45,5 @@ export default function CovidPage({
         </Row>
       </Container>
     </>
-  );
+  )
 }

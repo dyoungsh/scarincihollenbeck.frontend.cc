@@ -1,6 +1,6 @@
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Dropdown from 'react-bootstrap/Dropdown';
-import styles from 'styles/AttorneyArchives.module.css';
+import Dropdown from 'react-bootstrap/Dropdown'
+import DropdownButton from 'react-bootstrap/DropdownButton'
+import styles from 'styles/AttorneyArchives.module.css'
 
 export default function ArchiveAttorneyFitlersTitle({ designation, onSelect }) {
   return (
@@ -21,5 +21,5 @@ export default function ArchiveAttorneyFitlersTitle({ designation, onSelect }) {
         </Dropdown.Item>
       ))}
     </DropdownButton>
-  );
+  )
 }

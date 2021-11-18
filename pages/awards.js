@@ -1,12 +1,12 @@
-import { SITE_URL } from 'utils/constants';
-import { getPageContent } from 'utils/queries';
-import SitePage from 'components/pages/site-page';
+import SitePage from 'components/pages/site-page'
+import { SITE_URL } from 'utils/constants'
+import { getPageContent } from 'utils/queries'
 
 export default function Awards({ title, content, seo }) {
-  const extractSubTitle = content.match(/<h2(.*?)>(.*?)<\/h2>/g);
-  const subTitle = extractSubTitle !== null ? extractSubTitle[0].replace(/<[^>]*>?/gm, '') : '';
-  const bodyContent = content.replace(subTitle, '');
-  const canonicalUrl = `${SITE_URL}/awards`;
+  const extractSubTitle = content.match(/<h2(.*?)>(.*?)<\/h2>/g)
+  const subTitle = extractSubTitle !== null ? extractSubTitle[0].replace(/<[^>]*>?/gm, '') : ''
+  const bodyContent = content.replace(subTitle, '')
+  const canonicalUrl = `${SITE_URL}/awards`
 
   const awardsPageProps = {
     seo,
@@ -16,14 +16,14 @@ export default function Awards({ title, content, seo }) {
     },
     canonicalUrl,
     bodyContent,
-  };
+  }
 
-  return <SitePage {...awardsPageProps} />;
+  return <SitePage {...awardsPageProps} />
 }
 
 export async function getStaticProps() {
-  const request = await getPageContent('awards');
-  const { content, seo } = request;
+  const request = await getPageContent('awards')
+  const { content, seo } = request
 
   return {
     props: {
@@ -32,5 +32,5 @@ export async function getStaticProps() {
       seo,
     },
     revalidate: 1,
-  };
+  }
 }

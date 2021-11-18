@@ -1,11 +1,9 @@
+import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
-import Link from 'next/link'
-
 import { SITE_FOOTER_NAVIGATION } from 'utils/constants'
 
 const TopMenu = () => {
-  console.log(SITE_FOOTER_NAVIGATION)
   return (
     <TopMenuContainer>
       {SITE_FOOTER_NAVIGATION.map((nav) => (
@@ -21,9 +19,15 @@ const TopMenuContainer = styled.div`
   background-color: ${(props) => props.theme.colors.fifthGray};
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding: 16px 0;
+
+  &:not(:last-child) {
+    padding-right: 8px;
+    border-right: 4px solid ${(props) => props.theme.colors.white};
+  }
 
   a {
     color: ${(props) => props.theme.colors.white};
@@ -35,6 +39,10 @@ const TopMenuContainer = styled.div`
       color: ${(props) => props.theme.colors.white};
       text-decoration: underline;
     }
+  }
+
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    flex-direction: row;
   }
 `
 export default TopMenu

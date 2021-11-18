@@ -1,8 +1,8 @@
-import React from 'react'
 import Document, { DocumentContext, Head, Html, Main, NextScript } from 'next/document'
+import React from 'react'
 import { ServerStyleSheet } from 'styled-components'
-import { createMarkup } from 'utils/helpers'
 import { GA_TRACKING_ID } from 'utils/constants'
+import { createMarkup } from 'utils/helpers'
 
 const GA_TAG_MANAGER_URL = `https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`
 const GA_SNIPPET = `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config','${GA_TRACKING_ID}',{page_path: window.location.pathname});`

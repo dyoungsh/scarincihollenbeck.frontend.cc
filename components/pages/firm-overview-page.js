@@ -1,8 +1,8 @@
-import { NextSeo } from 'next-seo';
-import SingleSubHeader from 'layouts/single-sub-header';
-import FullWidth from 'layouts/full-width';
-import FirmMembers from 'components/organisms/firmoverview/members';
-import { createMarkup } from 'utils/helpers';
+import FirmMembers from 'components/organisms/firmoverview/members'
+import FullWidth from 'layouts/full-width'
+import SingleSubHeader from 'layouts/single-sub-header'
+import { NextSeo } from 'next-seo'
+import { createMarkup } from 'utils/helpers'
 
 export default function FirmOverviewPage({
   mainTabs,
@@ -44,5 +44,5 @@ export default function FirmOverviewPage({
         </div>
       </FullWidth>
     </>
-  );
+  )
 }

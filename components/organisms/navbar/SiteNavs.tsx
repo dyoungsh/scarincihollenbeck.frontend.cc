@@ -1,5 +1,5 @@
-import React, { useRef, useState, useEffect } from 'react'
 import Link from 'next/link'
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { SITE_NAVIGATION } from 'utils/constants'
 

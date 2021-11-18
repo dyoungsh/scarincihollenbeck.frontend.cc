@@ -1,9 +1,9 @@
-import Link from 'next/link';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
-import SingleSubHeader from 'layouts/single-sub-header';
+import SingleSubHeader from 'layouts/single-sub-header'
+import Link from 'next/link'
+import Card from 'react-bootstrap/Card'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
 
 export default function ErrorPage({ title, subTitle, mainMessage }) {
   return (
@@ -19,21 +19,17 @@ export default function ErrorPage({ title, subTitle, mainMessage }) {
           <Col sm={12} className="border-top border-bottom py-5">
             <p className="lead text-center">
               {' '}
-              If you are a client, please get in touch with your
-              {' '}
+              If you are a client, please get in touch with your{' '}
               <Link href="/attorneys">
                 <a className="blue-title">
                   <u>Scarinci Hollenbeck attorney</u>
                 </a>
-              </Link>
-              {' '}
+              </Link>{' '}
               contact directly.
             </p>
             <p className="lead text-center">
               If you are looking to get in touch with an attorney under the terms as to becoming a
-              new client please call
-              {' '}
-              <strong>201-896-4100.</strong>
+              new client please call <strong>201-896-4100.</strong>
             </p>
           </Col>
           <Col sm={12} md={{ span: 7, offset: 2 }}>
@@ -87,5 +83,5 @@ export default function ErrorPage({ title, subTitle, mainMessage }) {
         </Row>
       </Container>
     </>
-  );
+  )
 }

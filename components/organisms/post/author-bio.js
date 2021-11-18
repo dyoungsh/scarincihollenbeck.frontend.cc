@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import lineHeaderStyles from 'styles/LineHeader.module.css';
-import { createMarkup } from 'utils/helpers';
+import Link from 'next/link'
+import lineHeaderStyles from 'styles/LineHeader.module.css'
+import { createMarkup } from 'utils/helpers'
 
 export default function PostAuthorBio({ authors }) {
   return (
@@ -31,5 +31,5 @@ export default function PostAuthorBio({ authors }) {
         </div>
       ))}
     </div>
-  );
+  )
 }

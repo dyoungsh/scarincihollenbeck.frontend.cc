@@ -1,8 +1,8 @@
 // import useSWR from 'swr';
-import Col from 'react-bootstrap/Col';
 // import TrendingStories from 'components/shared/trending-stories';
-import SubscriptionMessage from 'components/molecules/subscription/subscription-message';
-import PostSocialShareSidebar from 'components/organisms/post/social-share-sidebar';
+import SubscriptionMessage from 'components/molecules/subscription/subscription-message'
+import PostSocialShareSidebar from 'components/organisms/post/social-share-sidebar'
+import Col from 'react-bootstrap/Col'
 // import RelatedAttorneys from 'components/organisms/post/related-attorneys';
 // import EventDetails from 'components/organisms/post/event-details';
 // import { BASE_API_URL } from 'utils/constants';
@@ -27,5 +27,5 @@ export default function PostSidebar({ title }) {
         </>
       )} */}
     </Col>
-  );
+  )
 }

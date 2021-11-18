@@ -8,4 +8,4 @@ module.exports = {
   ],
   changefreq: 'monthly',
   generateRobotsTxt: false,
-};
+}

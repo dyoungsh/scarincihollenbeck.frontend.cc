@@ -1,5 +1,5 @@
-import { createMarkup } from 'utils/helpers';
-import styles from 'styles/BasicContent.module.css';
+import styles from 'styles/BasicContent.module.css'
+import { createMarkup } from 'utils/helpers'
 
 export default function PagesBody({ content }) {
   return (
@@ -7,5 +7,5 @@ export default function PagesBody({ content }) {
       <div className={styles.content} dangerouslySetInnerHTML={createMarkup(content)} />
       <br />
     </>
-  );
+  )
 }

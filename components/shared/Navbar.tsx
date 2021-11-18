@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react'
-import styled from 'styled-components'
-import Container from 'layouts/Container'
-import GlobalSearch from 'components/shared/GlobalSearch'
-import TopNavLinks from 'components/organisms/navbar/TopNavLinks'
-import SiteNavs from 'components/organisms/navbar/SiteNavs'
-import SiteLogo from 'components/organisms/navbar/SiteLogo'
 import MobileNav from 'components/organisms/navbar/MobileNav'
+import SiteLogo from 'components/organisms/navbar/SiteLogo'
+import SiteNavs from 'components/organisms/navbar/SiteNavs'
+import TopNavLinks from 'components/organisms/navbar/TopNavLinks'
+import GlobalSearch from 'components/shared/GlobalSearch'
+import Container from 'layouts/Container'
+import { useEffect, useState } from 'react'
+import styled from 'styled-components'
 
 const NavBar = () => {
   const [scrollTop, setScrollTop] = useState(false)

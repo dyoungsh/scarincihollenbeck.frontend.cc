@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import styled from 'styled-components';
+import Image from 'next/image'
+import Link from 'next/link'
+import styled from 'styled-components'
 
 const ArticleContainer = styled.div`
   width: 100%;
@@ -11,7 +11,7 @@ const ArticleContainer = styled.div`
     margin-left: 1em;
     text-align: left;
   }
-`;
+`
 
 const ArticleImage = styled.div`
   max-width: 300%;
@@ -19,7 +19,7 @@ const ArticleImage = styled.div`
   @media (min-width: 768px) {
     text-align: left;
   }
-`;
+`
 
 export default function FeaturedArticle({ articles }) {
   return articles.map((article) => (
@@ -44,5 +44,5 @@ export default function FeaturedArticle({ articles }) {
         </a>
       </Link>
     </li>
-  ));
+  ))
 }

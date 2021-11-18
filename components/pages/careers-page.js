@@ -1,8 +1,8 @@
-import { NextSeo } from 'next-seo';
-import FullWidth from 'layouts/full-width';
-import SingleSubHeader from 'layouts/single-sub-header';
-import Body from 'components/organisms/careers/body';
-import CareersEqualOpportunity from 'components/organisms/careers/equal-opportunity';
+import Body from 'components/organisms/careers/body'
+import CareersEqualOpportunity from 'components/organisms/careers/equal-opportunity'
+import FullWidth from 'layouts/full-width'
+import SingleSubHeader from 'layouts/single-sub-header'
+import { NextSeo } from 'next-seo'
 
 export default function CareersPage({
   careers,
@@ -36,5 +36,5 @@ export default function CareersPage({
         <CareersEqualOpportunity />
       </FullWidth>
     </>
-  );
+  )
 }

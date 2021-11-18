@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Dropdown from 'react-bootstrap/Dropdown';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import styles from 'styles/AttorneyArchives.module.css';
+import React, { useState } from 'react'
+import Button from 'react-bootstrap/Button'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Dropdown from 'react-bootstrap/Dropdown'
+import DropdownButton from 'react-bootstrap/DropdownButton'
+import Form from 'react-bootstrap/Form'
+import Row from 'react-bootstrap/Row'
+import styles from 'styles/AttorneyArchives.module.css'
 
 export default function ArchiveCareersFilterForms({
   setQuery,
@@ -17,8 +17,8 @@ export default function ArchiveCareersFilterForms({
   setPositionType,
   setLocation,
 }) {
-  const [locationTitle, setLocationTitle] = useState('Filter by location');
-  const [positionTitle, setPositionTitle] = useState('Filter by type');
+  const [locationTitle, setLocationTitle] = useState('Filter by location')
+  const [positionTitle, setPositionTitle] = useState('Filter by type')
   return (
     <>
       <Container className={`${styles.lightGrayBackground} border p-2`}>
@@ -45,8 +45,8 @@ export default function ArchiveCareersFilterForms({
                   key={location}
                   value={location}
                   onClick={() => {
-                    setLocationTitle(location);
-                    setLocation(location);
+                    setLocationTitle(location)
+                    setLocation(location)
                   }}
                 >
                   {location}
@@ -65,8 +65,8 @@ export default function ArchiveCareersFilterForms({
                   key={position}
                   value={position}
                   onClick={() => {
-                    setPositionTitle(position);
-                    setPositionType(position);
+                    setPositionTitle(position)
+                    setPositionType(position)
                   }}
                 >
                   {position}
@@ -82,5 +82,5 @@ export default function ArchiveCareersFilterForms({
         </Row>
       </Container>
     </>
-  );
+  )
 }

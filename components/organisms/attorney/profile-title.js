@@ -1,8 +1,6 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
-export default function ProfileTitle({
-  name, designation, chair, coChair,
-}) {
+export default function ProfileTitle({ name, designation, chair, coChair }) {
   return (
     <>
       <h1 className="h2 animate__animated animate__fadeInDown animate__slow mb-0">
@@ -15,8 +13,7 @@ export default function ProfileTitle({
             <span className="mx-1">
               <strong>|</strong>
             </span>
-            Chair:
-            {' '}
+            Chair:{' '}
             {chair.map((c, i) => (
               <Link href={c.link.replace('https://wp.scarincihollenbeck.com/', '')} key={c.title}>
                 <a className="text-white">
@@ -34,8 +31,7 @@ export default function ProfileTitle({
             </span>
             {coChair.map((c) => (
               <span className="my-1" key={c.title}>
-                Co-Chair:
-                {' '}
+                Co-Chair:{' '}
                 <Link href={c.link.replace('https://wp.scarincihollenbeck.com/', '')} key={c.title}>
                   <a className="text-white">{c.title}</a>
                 </Link>
@@ -59,5 +55,5 @@ export default function ProfileTitle({
         `}
       </style>
     </>
-  );
+  )
 }

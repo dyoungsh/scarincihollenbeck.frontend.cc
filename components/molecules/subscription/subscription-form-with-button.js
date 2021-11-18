@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import Image from 'next/image';
-import { useRouter } from 'next/router';
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
-import fontsStyles from 'styles/Fonts.module.css';
-import formsStyles from 'styles/Forms.module.css';
-import { checkboxes } from 'utils/categories';
-import FormScripts from 'components/shared/form-scripts';
+import FormScripts from 'components/shared/form-scripts'
+import Image from 'next/image'
+import { useRouter } from 'next/router'
+import React, { useState } from 'react'
+import Button from 'react-bootstrap/Button'
+import Modal from 'react-bootstrap/Modal'
+import fontsStyles from 'styles/Fonts.module.css'
+import formsStyles from 'styles/Forms.module.css'
+import { checkboxes } from 'utils/categories'
 
 export default function SubscriptionFormWithButton() {
-  const [show, setShow] = useState(false);
-  const router = useRouter();
+  const [show, setShow] = useState(false)
+  const router = useRouter()
 
   return (
     <>
@@ -103,5 +103,5 @@ export default function SubscriptionFormWithButton() {
         </Modal.Body>
       </Modal>
     </>
-  );
+  )
 }

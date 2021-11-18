@@ -1,12 +1,12 @@
-import { NextSeo } from 'next-seo';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import CurrentAttorneyNameForm from 'components/organisms/site-form/current-attorney-form';
-import NewAttorneyNameForm from 'components/organisms/site-form/new-attorney-form';
-import FormScripts from 'components/shared/form-scripts';
-import textStyles from 'styles/Text.module.css';
-import Button from 'react-bootstrap/Button';
+import CurrentAttorneyNameForm from 'components/organisms/site-form/current-attorney-form'
+import NewAttorneyNameForm from 'components/organisms/site-form/new-attorney-form'
+import FormScripts from 'components/shared/form-scripts'
+import { NextSeo } from 'next-seo'
+import Button from 'react-bootstrap/Button'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import textStyles from 'styles/Text.module.css'
 
 export default function SiteFormPage({
   attorney,
@@ -147,20 +147,14 @@ export default function SiteFormPage({
           </h3>
           <fieldset data-kw-group data-kw-rules="required">
             <div className="mb-2">
-              <input type="radio" name="recieve-profile-messages" value="You" />
-              {' '}
-              By you
+              <input type="radio" name="recieve-profile-messages" value="You" /> By you
             </div>
             <div className="mb-2">
-              <input type="radio" name="recieve-profile-messages" value="Your secretary" />
-              {' '}
-              Your
+              <input type="radio" name="recieve-profile-messages" value="Your secretary" /> Your
               secretary
             </div>
             <div className="mb-2">
-              <input type="radio" name="recieve-profile-messages" value="All the above" />
-              {' '}
-              All the
+              <input type="radio" name="recieve-profile-messages" value="All the above" /> All the
               above
             </div>
           </fieldset>
@@ -216,5 +210,5 @@ export default function SiteFormPage({
         `}
       </style>
     </Container>
-  );
+  )
 }

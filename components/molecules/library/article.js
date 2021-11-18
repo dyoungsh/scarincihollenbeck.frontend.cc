@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import Col from 'react-bootstrap/Col';
-import { formatDate, createMarkup, extractDescription } from 'utils/helpers';
+import Link from 'next/link'
+import Col from 'react-bootstrap/Col'
+import { createMarkup, extractDescription, formatDate } from 'utils/helpers'
 
 export default function Article({ post }) {
   return (
@@ -18,5 +18,5 @@ export default function Article({ post }) {
         </a>
       </Link>
     </Col>
-  );
+  )
 }

@@ -14,5 +14,5 @@ export default function NewAttorneyNameForm({ attorney, setAttorney }) {
         onChange={(e) => setAttorney(e.target.value)}
       />
     </label>
-  );
+  )
 }

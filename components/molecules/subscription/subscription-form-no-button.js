@@ -1,13 +1,13 @@
-import React from 'react';
-import { useRouter } from 'next/router';
-import Button from 'react-bootstrap/Button';
-import fontsStyles from 'styles/Fonts.module.css';
-import formsStyles from 'styles/Forms.module.css';
-import { checkboxes } from 'utils/categories';
-import FormScripts from 'components/shared/form-scripts';
+import FormScripts from 'components/shared/form-scripts'
+import { useRouter } from 'next/router'
+import React from 'react'
+import Button from 'react-bootstrap/Button'
+import fontsStyles from 'styles/Fonts.module.css'
+import formsStyles from 'styles/Forms.module.css'
+import { checkboxes } from 'utils/categories'
 
 export default function SubscriptionFormNoButton() {
-  const router = useRouter();
+  const router = useRouter()
 
   return (
     <>
@@ -75,5 +75,5 @@ export default function SubscriptionFormNoButton() {
         </div>
       </form>
     </>
-  );
+  )
 }

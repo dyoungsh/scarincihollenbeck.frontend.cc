@@ -1,16 +1,16 @@
-import { NextSeo } from 'next-seo';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import SubscriptionMessage from 'components/molecules/subscription/subscription-message';
-import SidebarContent from 'components/organisms/practice/sidebar';
-import PageArticleHero from 'components/organisms/page/page-article-hero';
-import SingleSubHeader from 'layouts/single-sub-header';
-import { createMarkup } from 'utils/helpers';
-import { FIRM_BLOG_PAGES } from 'utils/constants';
-import lineHeaderStyles from 'styles/LineHeader.module.css';
-import grayTitleStyles from 'styles/BigGrayTitle.module.css';
-import sidebarStyles from 'styles/Sidebar.module.css';
+import SubscriptionMessage from 'components/molecules/subscription/subscription-message'
+import PageArticleHero from 'components/organisms/page/page-article-hero'
+import SidebarContent from 'components/organisms/practice/sidebar'
+import SingleSubHeader from 'layouts/single-sub-header'
+import { NextSeo } from 'next-seo'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import grayTitleStyles from 'styles/BigGrayTitle.module.css'
+import lineHeaderStyles from 'styles/LineHeader.module.css'
+import sidebarStyles from 'styles/Sidebar.module.css'
+import { FIRM_BLOG_PAGES } from 'utils/constants'
+import { createMarkup } from 'utils/helpers'
 
 export default function FirmPage({ page, relatedPages, canonicalUrl }) {
   return (
@@ -50,5 +50,5 @@ export default function FirmPage({ page, relatedPages, canonicalUrl }) {
         </Row>
       </Container>
     </>
-  );
+  )
 }

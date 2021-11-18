@@ -1,26 +1,25 @@
-import { useRouter } from 'next/router';
-import Link from 'next/link';
-import { NextSeo } from 'next-seo';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import SingleSubHeader from 'layouts/single-sub-header';
-import BodyHeader from 'components/organisms/library/body-header';
-import MainArticle from 'components/organisms/library/main-article';
-import FeaturedArticle from 'components/organisms/library/featured-article';
-import PopularList from 'components/organisms/library/popular-list';
-import FirmAuthors from 'components/organisms/library/firm-authors';
-import ArticleArchives from 'components/organisms/library/article-archives';
-import styles from 'styles/Text.module.css';
+import ArticleArchives from 'components/organisms/library/article-archives'
+import BodyHeader from 'components/organisms/library/body-header'
+import FeaturedArticle from 'components/organisms/library/featured-article'
+import FirmAuthors from 'components/organisms/library/firm-authors'
+import MainArticle from 'components/organisms/library/main-article'
+import PopularList from 'components/organisms/library/popular-list'
+import SingleSubHeader from 'layouts/single-sub-header'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { NextSeo } from 'next-seo'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import styles from 'styles/Text.module.css'
+import { CLIENT_ALERTS } from 'utils/constants'
 
-import { CLIENT_ALERTS } from 'utils/constants';
-
-const filterNoPosts = (category) => category.filter((item) => item.postCount > 1);
+const filterNoPosts = (category) => category.filter((item) => item.postCount > 1)
 
 const getLastWord = (words) => {
-  const n = words.split(' ');
-  return n[n.length - 1];
-};
+  const n = words.split(' ')
+  return n[n.length - 1]
+}
 
 export default function LibraryPage({
   results,
@@ -33,10 +32,10 @@ export default function LibraryPage({
   archiveUrl,
   profileUrl,
 }) {
-  const router = useRouter();
-  const mainArticle = results[0];
-  const featuredArticles = results.slice(1, results.length);
-  const isAuthor = router.asPath.includes('author');
+  const router = useRouter()
+  const mainArticle = results[0]
+  const featuredArticles = results.slice(1, results.length)
+  const isAuthor = router.asPath.includes('author')
 
   const sortedAuthors = authors
     .map((author) => ({
@@ -44,7 +43,7 @@ export default function LibraryPage({
       fullName: author.display_name,
       lastName: getLastWord(author.display_name),
     }))
-    .sort((a, b) => (a.lastName > b.lastName ? 1 : -1));
+    .sort((a, b) => (a.lastName > b.lastName ? 1 : -1))
 
   return (
     <>
@@ -79,9 +78,7 @@ export default function LibraryPage({
                 <Link href={profileUrl}>
                   <a className={`${styles.redTitle} h6`}>
                     <strong>
-                      <u>Visit Attorney&apos;s Profile</u>
-                      {' '}
-                      &raquo;
+                      <u>Visit Attorney&apos;s Profile</u> &raquo;
                     </strong>
                   </a>
                 </Link>
@@ -105,5 +102,5 @@ export default function LibraryPage({
         </Row>
       </Container>
     </>
-  );
+  )
 }

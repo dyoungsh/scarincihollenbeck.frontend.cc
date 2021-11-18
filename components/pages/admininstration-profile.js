@@ -1,10 +1,10 @@
-import { NextSeo, SocialProfileJsonLd } from 'next-seo';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import AdminProfileHeader from 'components/organisms/admin/header';
-import grayTitleStyles from 'styles/BigGrayTitle.module.css';
-import { createMarkup } from 'utils/helpers';
+import AdminProfileHeader from 'components/organisms/admin/header'
+import { NextSeo, SocialProfileJsonLd } from 'next-seo'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import grayTitleStyles from 'styles/BigGrayTitle.module.css'
+import { createMarkup } from 'utils/helpers'
 
 export default function AdministrationProfile({ response, profile, canonicalUrl }) {
   return (
@@ -53,5 +53,5 @@ export default function AdministrationProfile({ response, profile, canonicalUrl 
         </Row>
       </Container>
     </>
-  );
+  )
 }

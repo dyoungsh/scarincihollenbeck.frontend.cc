@@ -1,12 +1,12 @@
-import { useRouter } from 'next/router';
-import Button from 'react-bootstrap/Button';
-import { checkboxes } from 'utils/categories';
-import fontsStyles from 'styles/Fonts.module.css';
-import formsStyles from 'styles/Forms.module.css';
-import FormScripts from 'components/shared/form-scripts';
+import FormScripts from 'components/shared/form-scripts'
+import { useRouter } from 'next/router'
+import Button from 'react-bootstrap/Button'
+import fontsStyles from 'styles/Fonts.module.css'
+import formsStyles from 'styles/Forms.module.css'
+import { checkboxes } from 'utils/categories'
 
 export default function SubscriptionFormColumn() {
-  const router = useRouter();
+  const router = useRouter()
 
   return (
     <>
@@ -69,5 +69,5 @@ export default function SubscriptionFormColumn() {
         </div>
       </form>
     </>
-  );
+  )
 }

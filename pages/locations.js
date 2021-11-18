@@ -1,32 +1,30 @@
-import { useRouter } from 'next/router';
-import SiteLoader from 'components/shared/site-loader';
-import LocationPage from 'components/pages/location-page';
-import { getLocationContent } from 'utils/queries';
+import LocationPage from 'components/pages/location-page'
+import SiteLoader from 'components/shared/site-loader'
+import { useRouter } from 'next/router'
+import { getLocationContent } from 'utils/queries'
 
-export default function AllLocations({
-  seo, offices, currentOffice, posts,
-}) {
-  const router = useRouter();
+export default function AllLocations({ seo, offices, currentOffice, posts }) {
+  const router = useRouter()
   const locationProps = {
     seo,
     offices,
     currentOffice,
     posts,
-  };
-
-  if (router.isFallback) {
-    return <SiteLoader />;
   }
 
-  return <LocationPage {...locationProps} />;
+  if (router.isFallback) {
+    return <SiteLoader />
+  }
+
+  return <LocationPage {...locationProps} />
 }
 
 export async function getStaticProps() {
-  const [locations, currentOffice, currentOfficePosts] = await getLocationContent('lyndhurst');
+  const [locations, currentOffice, currentOfficePosts] = await getLocationContent('lyndhurst')
   if (currentOffice.status === 404) {
     return {
       notFound: true,
-    };
+    }
   }
 
   return {
@@ -37,5 +35,5 @@ export async function getStaticProps() {
       posts: currentOfficePosts,
     },
     revalidate: 1,
-  };
+  }
 }

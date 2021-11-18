@@ -1,15 +1,13 @@
-import Head from 'next/head';
-import { NextSeo } from 'next-seo';
-import SingleSubHeader from 'layouts/single-sub-header';
-import LargeSidebar from 'layouts/large-sidebar';
-import BodyContent from 'components/organisms/locations/body';
-import SideBar from 'components/organisms/locations/sidebar';
-import { buildLocationSchema } from 'utils/json-ld-schemas';
-import { SITE_URL } from 'utils/constants';
+import BodyContent from 'components/organisms/locations/body'
+import SideBar from 'components/organisms/locations/sidebar'
+import LargeSidebar from 'layouts/large-sidebar'
+import SingleSubHeader from 'layouts/single-sub-header'
+import Head from 'next/head'
+import { NextSeo } from 'next-seo'
+import { SITE_URL } from 'utils/constants'
+import { buildLocationSchema } from 'utils/json-ld-schemas'
 
-export default function LocationPage({
-  seo, offices, currentOffice, posts,
-}) {
+export default function LocationPage({ seo, offices, currentOffice, posts }) {
   return (
     <>
       <NextSeo
@@ -33,23 +31,23 @@ export default function LocationPage({
         span={7}
       />
       <LargeSidebar
-        body={(
+        body={
           <BodyContent
             attorneys={currentOffice.attorneys}
             practices={currentOffice.practices}
             map={currentOffice.mapLink}
             title={currentOffice.name}
           />
-        )}
-        sidebar={(
+        }
+        sidebar={
           <SideBar
             title={currentOffice.name}
             posts={posts}
             offices={offices}
             startingKey={currentOffice.name}
           />
-        )}
+        }
       />
     </>
-  );
+  )
 }

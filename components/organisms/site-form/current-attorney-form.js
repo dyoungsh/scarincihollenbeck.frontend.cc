@@ -21,5 +21,5 @@ export default function CurrentAttorneyNameForm({ attorney, setAttorney, attorne
         ))}
       </select>
     </label>
-  );
+  )
 }

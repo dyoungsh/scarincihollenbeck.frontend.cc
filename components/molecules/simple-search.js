@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
-import { useRouter } from 'next/router';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import { urlify } from 'utils/helpers';
+import { useRouter } from 'next/router'
+import React, { useState } from 'react'
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
+import { urlify } from 'utils/helpers'
 
 export default function SimpleSearch({ searchId = 'simplesearch' }) {
-  const router = useRouter();
-  const [term, setTerm] = useState('');
-  const [loading, setLoading] = useState(false);
+  const router = useRouter()
+  const [term, setTerm] = useState('')
+  const [loading, setLoading] = useState(false)
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    const santizeTerm = urlify(term.replace(/[^a-zA-Z ]/g, ''));
-    setLoading(true);
+    e.preventDefault()
+    const santizeTerm = urlify(term.replace(/[^a-zA-Z ]/g, ''))
+    setLoading(true)
 
     router.push({
       pathname: '/library/search',
       query: { term: santizeTerm },
-    });
-  };
+    })
+  }
 
   return (
     <div className="my-0 py-0">
@@ -39,5 +39,5 @@ export default function SimpleSearch({ searchId = 'simplesearch' }) {
         </Button>
       </Form>
     </div>
-  );
+  )
 }

@@ -1,21 +1,19 @@
-import Image from 'next/image';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import ProfileTitle from 'components/organisms/attorney/profile-title';
-import ProfileDetails from 'components/organisms/attorney/profile-details';
-import ContactIcons from 'components/organisms/attorney/contact-icons';
-import profileStyles from 'styles/ProfileImage.module.css';
-import styles from 'styles/Banner.module.css';
+import ContactIcons from 'components/organisms/attorney/contact-icons'
+import ProfileDetails from 'components/organisms/attorney/profile-details'
+import ProfileTitle from 'components/organisms/attorney/profile-title'
+import Image from 'next/image'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import styles from 'styles/Banner.module.css'
+import profileStyles from 'styles/ProfileImage.module.css'
 
 export default function AdminProfileHeader({ image, profile }) {
-  const {
-    name, designation, offices, phoneNumber, email, vizibility, socialMedia,
-  } = profile;
+  const { name, designation, offices, phoneNumber, email, vizibility, socialMedia } = profile
 
-  const contact = { phoneNumber, email };
+  const contact = { phoneNumber, email }
 
-  const linkedIn = socialMedia.filter((a) => a.channel === 'LinkedIn')[0];
+  const linkedIn = socialMedia.filter((a) => a.channel === 'LinkedIn')[0]
   return (
     <>
       <div className={styles.backPageBanner}>
@@ -56,5 +54,5 @@ export default function AdminProfileHeader({ image, profile }) {
         </Container>
       </div>
     </>
-  );
+  )
 }

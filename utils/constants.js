@@ -14,7 +14,7 @@ export const FIRM_BLOG_PAGES = [
     title: 'Firm Insights',
     slug: '/library/category/law-firm-insights',
   },
-];
+]
 
 export const FIRM_PAGES = [
   {
@@ -37,7 +37,7 @@ export const FIRM_PAGES = [
     title: 'Diversity',
     slug: '/diversity',
   },
-];
+]
 
 export const SITE_NAVIGATION = [
   {
@@ -156,7 +156,7 @@ export const SITE_NAVIGATION = [
     menuId: 'contact',
     children: null,
   },
-];
+]
 
 export const SITE_FOOTER_NAVIGATION = [
   {
@@ -191,27 +191,27 @@ export const SITE_FOOTER_NAVIGATION = [
     slug: '/locations',
     label: 'Locations',
   },
-];
+]
 export const ERROR_PAGE_CONTENT = {
   subTitle: 'Sorry, there was an issue getting your requested page',
   mainMessage:
     "It's possible you entered the address incorrectly, we moved the desired page, or there is an issue on our servers. Try searching our site to find what you are looking for.",
-};
+}
 
 export const FUNERAL_SLUGS = [
   '/funeral-announcements/passing-attorney-harvey-r-poe',
   '/funeral-announcements/passing-attorney-david-a-einhorn',
-];
+]
 
-export const SITE_FORM_SLUGS = ['/site-forms/new-attorney', '/site-forms/current-attorney'];
+export const SITE_FORM_SLUGS = ['/site-forms/new-attorney', '/site-forms/current-attorney']
 
-export const HOLIDAY_SLUGS = ['/holiday/2019-happy-holidays', '/holiday/2020-happy-holidays'];
+export const HOLIDAY_SLUGS = ['/holiday/2019-happy-holidays', '/holiday/2020-happy-holidays']
 
-export const BASE_API_URL = process.env.NEXT_PUBLIC_BASE_API_URL;
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL;
-export const ALGOLIA_PUBLIC_API = process.env.NEXT_PUBLIC_ALGOLIA_PUBLIC_API;
-export const ALGOLIA_APP_ID = process.env.NEXT_PUBLIC_ALGOLIA_APP_ID;
-export const ALGOLIA_SEARCH_INDEX = process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_INDEX;
+export const BASE_API_URL = process.env.NEXT_PUBLIC_BASE_API_URL
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL
+export const ALGOLIA_PUBLIC_API = process.env.NEXT_PUBLIC_ALGOLIA_PUBLIC_API
+export const ALGOLIA_APP_ID = process.env.NEXT_PUBLIC_ALGOLIA_APP_ID
+export const ALGOLIA_SEARCH_INDEX = process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_INDEX
 
 export const CLIENT_ALERTS = [
   {
@@ -234,7 +234,7 @@ export const CLIENT_ALERTS = [
     slug: 'cyber-security-client-alert',
     name: 'Cyber Security Client Alert',
   },
-];
+]
 
 export const OFFICE_LOCATIONS = [
   {
@@ -257,7 +257,7 @@ export const OFFICE_LOCATIONS = [
     slug: '/location/washington-dc',
     label: 'Washington, D.C.',
   },
-];
+]
 
 export const CORE_PRACTICES = [
   {
@@ -315,35 +315,48 @@ export const CORE_PRACTICES = [
     slug: '/practices/tax-trusts-estates',
     title: 'Tax, Trusts & Estates',
   },
-];
+]
 
-export const LAW_PAY_URL = 'https://secure.lawpay.com/pages/scarincihollenbeck/operating';
+export const LAW_PAY_URL = 'https://secure.lawpay.com/pages/scarincihollenbeck/operating'
 
-export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID;
+export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID
 
 export const AWARDS = [
   {
     url: '/images/reviews/Power50-ScarinciHollenbeck.png',
     alt: "NJBiz's 2021 Law Power 50 List ",
-    width: 190,
-    height: 190,
+    width: 290,
+    height: 290,
   },
   {
     url: '/images/reviews/BestLawFirmsStandardBadge.png',
     alt: 'U.S. News & World Report',
-    width: 203,
-    height: 200,
+    width: 290,
+    height: 285,
   },
   {
     url: '/images/reviews/TopLawyersLogo_Bergen_2021.png',
     alt: 'Top Lawyers Bergen County',
-    width: 190,
-    height: 190,
+    width: 290,
+    height: 290,
   },
   {
     url: '/images/reviews/sl-badge-l-g-2021.png',
     alt: 'Super Lawyers',
-    width: 179,
-    height: 149,
+    width: 180,
+    height: 150,
   },
-];
+]
+
+export const SOCIAL_MEDIA = [
+  {
+    id: 1,
+    slug: 'https://www.linkedin.com/company/scarinci-hollenbeck-llc',
+    title: 'LinkedIn',
+  },
+  {
+    id: 1,
+    slug: 'https://www.facebook.com/ScarinciHollenbeck',
+    title: 'Facebook',
+  },
+]

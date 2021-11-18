@@ -1,8 +1,8 @@
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import { createMarkup } from 'utils/helpers';
-import styles from 'styles/Banner.module.css';
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import styles from 'styles/Banner.module.css'
+import { createMarkup } from 'utils/helpers'
 
 export default function SingleSubHeader({
   title,
@@ -34,18 +34,20 @@ export default function SingleSubHeader({
               {isBlog && (
                 <p className="text-white mb-2">
                   <strong>Author: </strong>
-                  {authors.map((author, index) => (author.user_url === '' ? (
-                    <span key={author.display_name}>{author.display_name}</span>
-                  ) : (
-                    <a
-                      href={author.user_url}
-                      key={author.display_name}
-                      className="text-underline text-white"
-                    >
-                      {author.display_name}
-                      {index < authors.length - 1 && <>, </>}
-                    </a>
-                  )))}
+                  {authors.map((author, index) =>
+                    author.user_url === '' ? (
+                      <span key={author.display_name}>{author.display_name}</span>
+                    ) : (
+                      <a
+                        href={author.user_url}
+                        key={author.display_name}
+                        className="text-underline text-white"
+                      >
+                        {author.display_name}
+                        {index < authors.length - 1 && <>, </>}
+                      </a>
+                    )
+                  )}
                   <span className="mx-3">|</span>
                   {date}
                 </p>
@@ -69,5 +71,5 @@ export default function SingleSubHeader({
         </Row>
       </Container>
     </div>
-  );
+  )
 }

@@ -1,17 +1,15 @@
-import Link from 'next/link';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import AttorneyCard from 'components/shared/attorney-card';
-import { sortByKey } from 'utils/helpers';
-import grayTitleStyles from 'styles/BigGrayTitle.module.css';
-import textStyles from 'styles/Text.module.css';
-import fontStyles from 'styles/Fonts.module.css';
+import AttorneyCard from 'components/shared/attorney-card'
+import Link from 'next/link'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import grayTitleStyles from 'styles/BigGrayTitle.module.css'
+import fontStyles from 'styles/Fonts.module.css'
+import textStyles from 'styles/Text.module.css'
+import { sortByKey } from 'utils/helpers'
 
-export default function LocationsBody({
-  attorneys, practices, map, title,
-}) {
-  const officeTitle = title === 'Washington D.C.' ? 'Washington, D.C.' : title;
+export default function LocationsBody({ attorneys, practices, map, title }) {
+  const officeTitle = title === 'Washington D.C.' ? 'Washington, D.C.' : title
   return (
     <>
       <h4 className={grayTitleStyles.title}>{officeTitle}</h4>
@@ -51,39 +49,41 @@ export default function LocationsBody({
           <Col sm={12} md={6} className="col-sm-12 col-md-6">
             <ul className={`${textStyles.blueTitle} mx-0 px-0`}>
               {practices.map(
-                (p, i) => practices.length / 2 > i && (
-                <li key={p.title} className="mb-3">
-                  <Link href={p.slug}>
-                    <a className={`${textStyles.blueTitle} ${fontStyles.ft12rem}`}>
-                      <strong>
-                        <u>{p.title}</u>
-                      </strong>
-                    </a>
-                  </Link>
-                </li>
-                ),
+                (p, i) =>
+                  practices.length / 2 > i && (
+                    <li key={p.title} className="mb-3">
+                      <Link href={p.slug}>
+                        <a className={`${textStyles.blueTitle} ${fontStyles.ft12rem}`}>
+                          <strong>
+                            <u>{p.title}</u>
+                          </strong>
+                        </a>
+                      </Link>
+                    </li>
+                  )
               )}
             </ul>
           </Col>
           <Col sm={12} md={6}>
             <ul className={`${textStyles.blueTitle} mx-0 px-0`}>
               {practices.map(
-                (p, i) => practices.length / 2 <= i && (
-                <li key={p.title} className="mb-3">
-                  <Link href={p.slug}>
-                    <a className={`${textStyles.blueTitle} ${fontStyles.ft12rem}`}>
-                      <strong>
-                        <u>{p.title}</u>
-                      </strong>
-                    </a>
-                  </Link>
-                </li>
-                ),
+                (p, i) =>
+                  practices.length / 2 <= i && (
+                    <li key={p.title} className="mb-3">
+                      <Link href={p.slug}>
+                        <a className={`${textStyles.blueTitle} ${fontStyles.ft12rem}`}>
+                          <strong>
+                            <u>{p.title}</u>
+                          </strong>
+                        </a>
+                      </Link>
+                    </li>
+                  )
               )}
             </ul>
           </Col>
         </Row>
       </Container>
     </>
-  );
+  )
 }

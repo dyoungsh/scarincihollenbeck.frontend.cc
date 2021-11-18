@@ -1,9 +1,9 @@
-import { useRouter } from 'next/router';
-import SiteLoader from 'components/shared/site-loader';
-import { SITE_URL, CORE_PRACTICES } from 'utils/constants';
-import { urlify } from 'utils/helpers';
-import { getPracticeContent } from 'pages/api/practice-content';
-import PracticePage from 'components/pages/practice-page';
+import PracticePage from 'components/pages/practice-page'
+import SiteLoader from 'components/shared/site-loader'
+import { useRouter } from 'next/router'
+import { getPracticeContent } from 'pages/api/practice-content'
+import { CORE_PRACTICES, SITE_URL } from 'utils/constants'
+import { urlify } from 'utils/helpers'
 
 export default function PracticeSingleType({
   corePractices,
@@ -12,21 +12,21 @@ export default function PracticeSingleType({
   type,
   slug,
 }) {
-  const router = useRouter();
-  const practiceUrl = router.asPath.replace('/practices/', '').replace('/practice/', '');
-  const canoncialUrl = `${SITE_URL}/practice/${practice.slug}`;
+  const router = useRouter()
+  const practiceUrl = router.asPath.replace('/practices/', '').replace('/practice/', '')
+  const canoncialUrl = `${SITE_URL}/practice/${practice.slug}`
 
   if (router.isFallback) {
-    return <SiteLoader />;
+    return <SiteLoader />
   }
 
   const tabs = Object.keys(practice.content).map((key) => ({
     title: practice.content[key][0].title,
     content: practice.content[key][1].content.replace(/(\r\n|\n|\r)/gm, '<p>'),
     slug: urlify(practice.content[key][0].title),
-  }));
+  }))
 
-  const body = tabs.filter((tab) => tab.slug === type)[0];
+  const body = tabs.filter((tab) => tab.slug === type)[0]
 
   const practiceProps = {
     corePractices,
@@ -36,18 +36,18 @@ export default function PracticeSingleType({
     canoncialUrl,
     body,
     slug,
-  };
+  }
 
-  return <PracticePage {...practiceProps} />;
+  return <PracticePage {...practiceProps} />
 }
 
 export async function getServerSideProps({ params }) {
-  const request = await getPracticeContent(params.slug);
+  const request = await getPracticeContent(params.slug)
 
   if (request.status === 404) {
     return {
       notFound: true,
-    };
+    }
   }
 
   return {
@@ -58,5 +58,5 @@ export async function getServerSideProps({ params }) {
       type: params.type,
       slug: params.slug,
     },
-  };
+  }
 }

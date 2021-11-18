@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import fontStyles from 'styles/Fonts.module.css';
-import textStyles from 'styles/Text.module.css';
+import Link from 'next/link'
+import fontStyles from 'styles/Fonts.module.css'
+import textStyles from 'styles/Text.module.css'
 
 export default function PracticeCovidResourceBox({ title, link, message }) {
   return (
@@ -19,5 +19,5 @@ export default function PracticeCovidResourceBox({ title, link, message }) {
         </Link>
       </h5>
     </div>
-  );
+  )
 }

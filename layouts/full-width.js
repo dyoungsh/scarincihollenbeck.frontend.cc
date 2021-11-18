@@ -1,6 +1,6 @@
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
 
 const FullWidth = ({ children }) => (
   <Container>
@@ -8,6 +8,6 @@ const FullWidth = ({ children }) => (
       <Col sm={12}>{children}</Col>
     </Row>
   </Container>
-);
+)
 
-export default FullWidth;
+export default FullWidth

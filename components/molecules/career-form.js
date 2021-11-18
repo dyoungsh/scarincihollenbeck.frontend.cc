@@ -1,11 +1,11 @@
-import { useRouter } from 'next/router';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button';
-import FormScripts from 'components/shared/form-scripts';
+import FormScripts from 'components/shared/form-scripts'
+import { useRouter } from 'next/router'
+import Button from 'react-bootstrap/Button'
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
 
 export default function CareerForm({ contact, title }) {
-  const router = useRouter();
+  const router = useRouter()
 
   return (
     <div className="px-2 my-3 border-top">
@@ -126,5 +126,5 @@ export default function CareerForm({ contact, title }) {
         </Button>
       </form>
     </div>
-  );
+  )
 }

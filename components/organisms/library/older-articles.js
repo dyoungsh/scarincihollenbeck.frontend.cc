@@ -1,49 +1,49 @@
-import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
-import Link from 'next/link';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button';
-import { BASE_API_URL } from 'utils/constants';
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import React, { useEffect, useState } from 'react'
+import Button from 'react-bootstrap/Button'
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
+import { BASE_API_URL } from 'utils/constants'
 
 export default function OlderArticles({ initialArticles, query }) {
-  const [loading, setLoading] = useState(false);
-  const [pageIndex, setPageIndex] = useState(2);
-  const [url, setUrl] = useState(`${BASE_API_URL}/wp-json/category/posts/${query}/${pageIndex}`);
-  const [message, setMessage] = useState('');
-  const [articleList, setArticleList] = useState(initialArticles || []);
-  const router = useRouter();
-  const isAuthor = router.asPath.includes('author');
+  const [loading, setLoading] = useState(false)
+  const [pageIndex, setPageIndex] = useState(2)
+  const [url, setUrl] = useState(`${BASE_API_URL}/wp-json/category/posts/${query}/${pageIndex}`)
+  const [message, setMessage] = useState('')
+  const [articleList, setArticleList] = useState(initialArticles || [])
+  const router = useRouter()
+  const isAuthor = router.asPath.includes('author')
 
   useEffect(() => {
     if (isAuthor) {
       setUrl(
-        `https://wp.scarincihollenbeck.com/wp-json/author/posts/${router.query.slug}/${pageIndex}`,
-      );
+        `https://wp.scarincihollenbeck.com/wp-json/author/posts/${router.query.slug}/${pageIndex}`
+      )
     }
-  }, [router]);
+  }, [router])
 
   async function handleClick() {
-    setLoading(true);
-    setPageIndex((pi) => (pi += 1));
+    setLoading(true)
+    setPageIndex((pi) => (pi += 1))
 
     const getOlderPosts = await fetch(url)
       .then((data) => data.json())
       .catch((err) => {
-        console.error(err);
-        setMessage('There was an error loading more posts...');
-      });
+        console.error(err)
+        setMessage('There was an error loading more posts...')
+      })
     if (!getOlderPosts) {
-      setLoading(false);
+      setLoading(false)
     }
 
     if (!Object.keys(getOlderPosts).includes('results')) {
-      setLoading(false);
-      setMessage('There are no more articles for this query...');
+      setLoading(false)
+      setMessage('There are no more articles for this query...')
     } else {
-      getOlderPosts.results.shift();
-      setLoading(false);
-      setArticleList((articles) => [...articles, ...getOlderPosts.results]);
+      getOlderPosts.results.shift()
+      setLoading(false)
+      setArticleList((articles) => [...articles, ...getOlderPosts.results])
     }
   }
   return (
@@ -58,8 +58,8 @@ export default function OlderArticles({ initialArticles, query }) {
           <strong>{message}</strong>
         </div>
       ) : (
-        articleList
-        && articleList.map((article) => (
+        articleList &&
+        articleList.map((article) => (
           <Col key={article.imgAlt} sm={12} md={10} className="mx-3 mb-3">
             <Link href={article.link}>
               <a className="text-dark">
@@ -79,5 +79,5 @@ export default function OlderArticles({ initialArticles, query }) {
         </Button>
       </Col>
     </Row>
-  );
+  )
 }

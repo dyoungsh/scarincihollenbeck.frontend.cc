@@ -1,12 +1,13 @@
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import styles from 'styles/AttorneyArchives.module.css';
-import Keyword from './keyword';
-import Letter from './letter';
-import Practices from './practices';
-import ArchiveAttorneyFitlersTitle from './title';
-import ArchiveAttorneyFitlersLocation from './location';
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import styles from 'styles/AttorneyArchives.module.css'
+
+import Keyword from './keyword'
+import Letter from './letter'
+import ArchiveAttorneyFitlersLocation from './location'
+import Practices from './practices'
+import ArchiveAttorneyFitlersTitle from './title'
 
 export default function ArchiveAttorneyFilters({
   practices,
@@ -44,5 +45,5 @@ export default function ArchiveAttorneyFilters({
         </Row>
       </Container>
     </>
-  );
+  )
 }

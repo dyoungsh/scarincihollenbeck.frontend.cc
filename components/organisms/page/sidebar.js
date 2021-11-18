@@ -1,5 +1,5 @@
-import TrendingStories from 'components/trending-stories';
-import SubscriptionMessage from 'components/subscription-message';
+import SubscriptionMessage from 'components/subscription-message'
+import TrendingStories from 'components/trending-stories'
 
 export default function PagesSidebar({ posts, covidPage }) {
   return (
@@ -12,5 +12,5 @@ export default function PagesSidebar({ posts, covidPage }) {
       <br />
       <SubscriptionMessage />
     </>
-  );
+  )
 }

@@ -1,10 +1,10 @@
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Dropdown from 'react-bootstrap/Dropdown';
-import styles from 'styles/AttorneyArchives.module.css';
-import megaMenuStyles from 'styles/MegaMenu.module.css';
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Dropdown from 'react-bootstrap/Dropdown'
+import DropdownButton from 'react-bootstrap/DropdownButton'
+import Row from 'react-bootstrap/Row'
+import styles from 'styles/AttorneyArchives.module.css'
+import megaMenuStyles from 'styles/MegaMenu.module.css'
 
 function PracticeListItem({ title, onSelect, pChildren }) {
   return (
@@ -29,7 +29,7 @@ function PracticeListItem({ title, onSelect, pChildren }) {
         </Dropdown.Item>
       ))}
     </div>
-  );
+  )
 }
 
 export default function ArchiveAttorneyFitlersPractices({ practices, onSelect }) {
@@ -40,16 +40,16 @@ export default function ArchiveAttorneyFitlersPractices({ practices, onSelect })
    * */
 
   // bankruptcy, intel, public
-  const bce = practices.filter((b) => (b.ID === 28345 || b.ID === 29587 || b.ID === 28276 ? b : ''));
+  const bce = practices.filter((b) => (b.ID === 28345 || b.ID === 29587 || b.ID === 28276 ? b : ''))
 
   // commerical, labor, tax
-  const cl = practices.filter((b) => (b.ID === 29624 || b.ID === 28271 || b.ID === 29588 ? b : ''));
+  const cl = practices.filter((b) => (b.ID === 29624 || b.ID === 28271 || b.ID === 29588 ? b : ''))
 
   // corporate
-  const li = practices.filter((b) => b.ID === 28270);
+  const li = practices.filter((b) => b.ID === 28270)
 
   // env, litigation
-  const pt = practices.filter((b) => (b.ID === 28273 || b.ID === 28274 ? b : ''));
+  const pt = practices.filter((b) => (b.ID === 28273 || b.ID === 28274 ? b : ''))
 
   return (
     <DropdownButton
@@ -102,5 +102,5 @@ export default function ArchiveAttorneyFitlersPractices({ practices, onSelect })
         </Row>
       </Container>
     </DropdownButton>
-  );
+  )
 }

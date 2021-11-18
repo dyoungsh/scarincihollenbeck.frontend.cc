@@ -1,12 +1,11 @@
+import LineTitle from 'components/atoms/LineTitle'
+import Accolade from 'components/molecules/home/Accolade'
+import PageLink from 'components/molecules/home/PageLink'
 import React from 'react'
 import styled from 'styled-components'
-import LineTitle from 'components/atoms/LineTitle'
-import PageLink from 'components/molecules/home/PageLink'
-import Accolade from 'components/molecules/home/Accolade'
-
 import { AWARDS } from 'utils/constants'
 
-const Awards = () => {
+const FirmAwards = () => {
   return (
     <BlockContainer>
       <LineTitle title="Awards & Accolades" />
@@ -22,6 +21,10 @@ const Awards = () => {
 
 const BlockContainer = styled.div`
   margin-top: 96px;
+  padding: 16px;
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    padding 0;
+  }
 `
 
 const AwardContainer = styled.div`
@@ -29,10 +32,12 @@ const AwardContainer = styled.div`
   flex-direction: column;
   margin-top: 72px;
   margin-bottom: 48px;
+  padding: 16px;
 
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
     flex-direction: row;
+    padding: 0;
   }
 `
 
-export default Awards
+export default FirmAwards

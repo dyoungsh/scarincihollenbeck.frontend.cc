@@ -45,7 +45,7 @@ const RedBanner = styled.div`
   }
 `
 const TextContainer = styled.div`
-  margin: 15em 8em;
+  margin: 15em 13em;
 `
 const Text = styled.p`
   ${(props) => props.theme.fonts.xxxxxxxl};

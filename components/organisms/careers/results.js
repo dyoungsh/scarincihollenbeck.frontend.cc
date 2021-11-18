@@ -1,18 +1,18 @@
-import Link from 'next/link';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import styles from 'styles/Text.module.css';
+import Link from 'next/link'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import styles from 'styles/Text.module.css'
 
 const checkAllOffices = (location) => {
-  const splitLocs = location.split(',').filter((i) => i.trim() !== 'NJ');
+  const splitLocs = location.split(',').filter((i) => i.trim() !== 'NJ')
 
   if (splitLocs.length > 1) {
-    return 'Multiple locations';
+    return 'Multiple locations'
   }
 
-  return location;
-};
+  return location
+}
 
 function checkForEmptyResults() {
   return (
@@ -27,7 +27,7 @@ function checkForEmptyResults() {
         </Col>
       </Row>
     </Container>
-  );
+  )
 }
 
 function renderResults(positions) {
@@ -65,13 +65,13 @@ function renderResults(positions) {
         </Row>
       </Container>
     </div>
-  );
+  )
 }
 
 export default function ArchiveCareersResults({ positions }) {
   if (positions <= 0) {
-    return checkForEmptyResults();
+    return checkForEmptyResults()
   }
 
-  return renderResults(positions);
+  return renderResults(positions)
 }

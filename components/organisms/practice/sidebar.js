@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import fontStyles from 'styles/Fonts.module.css';
+import Link from 'next/link'
+import fontStyles from 'styles/Fonts.module.css'
 
 export default function PracticeSidebar({ title, content }) {
   return (
@@ -29,5 +29,5 @@ export default function PracticeSidebar({ title, content }) {
         `}
       </style>
     </>
-  );
+  )
 }

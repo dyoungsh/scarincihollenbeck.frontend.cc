@@ -1,13 +1,13 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import textStyles from 'styles/Text.module.css';
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import textStyles from 'styles/Text.module.css'
 
 export default function PostBreadCrumbs() {
-  const router = useRouter();
+  const router = useRouter()
   const crumbs = router.asPath
     .split('/')
     .filter((crumb) => crumb !== '')
-    .filter((crumb) => crumb.indexOf('https:') < 0);
+    .filter((crumb) => crumb.indexOf('https:') < 0)
 
   return (
     <ul className="list-inline">
@@ -15,9 +15,7 @@ export default function PostBreadCrumbs() {
         <Link href="/">
           <a className={`${textStyles.redTitle} text-uppercase`}>
             <strong>
-              Home
-              {' '}
-              <span className="mx-2"> | </span>
+              Home <span className="mx-2"> | </span>
             </strong>
           </a>
         </Link>
@@ -26,9 +24,7 @@ export default function PostBreadCrumbs() {
         <Link href={`/library/category/${crumbs[0]}`}>
           <a className={`${textStyles.redTitle} text-uppercase`}>
             <strong>
-              {crumbs[0].replace(/-/g, ' ')}
-              {' '}
-              <span className="mx-2"> | </span>
+              {crumbs[0].replace(/-/g, ' ')} <span className="mx-2"> | </span>
             </strong>
           </a>
         </Link>
@@ -42,5 +38,5 @@ export default function PostBreadCrumbs() {
         </Link>
       </li>
     </ul>
-  );
+  )
 }

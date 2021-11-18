@@ -1,13 +1,13 @@
-import { useRouter } from 'next/router';
-import Link from 'next/link';
-import Dropdown from 'react-bootstrap/Dropdown';
-import styles from 'styles/Tabs.module.css';
-import { urlify } from 'utils/helpers';
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import Dropdown from 'react-bootstrap/Dropdown'
+import styles from 'styles/Tabs.module.css'
+import { urlify } from 'utils/helpers'
 
 export default function PracticeLinks({ links, practiceUrl }) {
-  const router = useRouter();
-  const tabLinks = links.content;
-  const isArticlesPage = router.asPath.includes('articles');
+  const router = useRouter()
+  const tabLinks = links.content
+  const isArticlesPage = router.asPath.includes('articles')
 
   return (
     <>
@@ -66,5 +66,5 @@ export default function PracticeLinks({ links, practiceUrl }) {
         </Dropdown>
       </div>
     </>
-  );
+  )
 }

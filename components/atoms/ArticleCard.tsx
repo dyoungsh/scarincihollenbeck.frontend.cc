@@ -1,18 +1,17 @@
-import React from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react'
 import styled from 'styled-components'
 import { createMarkup } from 'utils/helpers'
 
 interface Props {
-  id: number
   slug: string
   image: string
   title: string
   description: string
 }
 
-const ArticleCard: React.FC<Props> = ({ id, slug, image, title, description }: Props) => {
+const ArticleCard: React.FC<Props> = ({ slug, image, title, description }: Props) => {
   return (
     <Card>
       <Link href={slug}>
@@ -35,11 +34,10 @@ const Card = styled.div`
   border-radius: 8px;
   box-shadow: ${(props) => props.theme.colors.shadowLight};
   display: flex;
-  flex-direction: row;
-  height: 150px;
-  width: 100%;
-  margin: auto;
+  flex-direction: column;
+  width: 300px;
   transition: all 0.2s;
+  margin: auto;
   margin-bottom: 24px;
 
   &:hover {
@@ -58,9 +56,25 @@ const Card = styled.div`
   span {
     img {
       transition: all 0.2s;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
 
       &:hover {
         transform: scale(1.1);
+      }
+    }
+  }
+
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    flex-direction: row;
+    height: 150px;
+    width: 100%;
+
+    span {
+      img {
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        border-top-right-radius: 0px;
       }
     }
   }

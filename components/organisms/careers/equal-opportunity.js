@@ -1,10 +1,10 @@
-import Link from 'next/link';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import lineStyles from 'styles/LineHeader.module.css';
-import basicStyles from 'styles/BasicContent.module.css';
-import textStyles from 'styles/Text.module.css';
+import Link from 'next/link'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import basicStyles from 'styles/BasicContent.module.css'
+import lineStyles from 'styles/LineHeader.module.css'
+import textStyles from 'styles/Text.module.css'
 
 export default function ArchiveCareersEqualOpportunity() {
   return (
@@ -37,8 +37,7 @@ export default function ArchiveCareersEqualOpportunity() {
             </p>
             <p>
               <strong>
-                Read more about
-                {' '}
+                Read more about{' '}
                 <Link href="/diversity">
                   <a className={textStyles.redTitle}>
                     <u>Scarinci Hollenbeck&apos;s commitment to diversity</u>
@@ -50,5 +49,5 @@ export default function ArchiveCareersEqualOpportunity() {
         </Row>
       </Container>
     </>
-  );
+  )
 }

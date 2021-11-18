@@ -89,4 +89,4 @@ export const checkboxes = [
     name: 'Litigation',
     property: 'column_two',
   },
-];
+]

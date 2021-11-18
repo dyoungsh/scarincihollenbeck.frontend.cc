@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import textStyles from 'styles/Text.module.css';
-import formsStyles from 'styles/Forms.module.css';
+import Link from 'next/link'
+import formsStyles from 'styles/Forms.module.css'
+import textStyles from 'styles/Text.module.css'
 
 export default function ArchivePracticeSimpleList({ list }) {
   return (
@@ -18,5 +18,5 @@ export default function ArchivePracticeSimpleList({ list }) {
       </ul>
       <style jsx>{' li { font-size: 16px; }'}</style>
     </div>
-  );
+  )
 }

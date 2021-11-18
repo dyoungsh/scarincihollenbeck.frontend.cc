@@ -1,14 +1,12 @@
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
-import textStyles from 'styles/Text.module.css';
-import { createMarkup } from 'utils/helpers';
+import Button from 'react-bootstrap/Button'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import textStyles from 'styles/Text.module.css'
+import { createMarkup } from 'utils/helpers'
 
-export default function ArchiveAttorneySelected({
-  select, userInput, clearQuery, clearAll,
-}) {
-  const nonUserInputResults = select.filter((a) => a.key !== 'query');
+export default function ArchiveAttorneySelected({ select, userInput, clearQuery, clearAll }) {
+  const nonUserInputResults = select.filter((a) => a.key !== 'query')
 
   return (
     <Container className="border-bottom">
@@ -55,5 +53,5 @@ export default function ArchiveAttorneySelected({
         </Col>
       </Row>
     </Container>
-  );
+  )
 }

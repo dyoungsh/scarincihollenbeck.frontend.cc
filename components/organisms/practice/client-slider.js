@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import Carousel from 'react-multi-carousel';
+import Image from 'next/image'
+import Carousel from 'react-multi-carousel'
 
 const responsive = {
   superLargeDesktop: {
@@ -19,7 +19,7 @@ const responsive = {
     breakpoint: { max: 464, min: 0 },
     items: 1,
   },
-};
+}
 
 export default function PracticeClientSlider({ content }) {
   return (
@@ -36,5 +36,5 @@ export default function PracticeClientSlider({ content }) {
         </div>
       ))}
     </Carousel>
-  );
+  )
 }

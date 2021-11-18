@@ -1,6 +1,6 @@
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import GlobalSearch from 'components/shared/global-search';
+import GlobalSearch from 'components/shared/global-search'
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
 
 export default function SearchBar() {
   return (
@@ -39,5 +39,5 @@ export default function SearchBar() {
         </Col>
       </Row>
     </Col>
-  );
+  )
 }

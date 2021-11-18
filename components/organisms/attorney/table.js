@@ -1,9 +1,9 @@
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import { createMarkup } from 'utils/helpers';
-import styles from 'styles/Table.module.css';
-import marginStyles from 'styles/Margins.module.css';
-import grayTitleStyles from 'styles/BigGrayTitle.module.css';
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
+import grayTitleStyles from 'styles/BigGrayTitle.module.css'
+import marginStyles from 'styles/Margins.module.css'
+import styles from 'styles/Table.module.css'
+import { createMarkup } from 'utils/helpers'
 
 export default function AttorneyProfileTab({ content, title }) {
   return (
@@ -28,19 +28,12 @@ export default function AttorneyProfileTab({ content, title }) {
                     dangerouslySetInnerHTML={createMarkup(b[1].c)}
                   />
                 </>
-              )}
-              {' '}
-              {b[2] && (
-              <small>
-                (
-                {b[2].c}
-                )
-              </small>
-              )}
+              )}{' '}
+              {b[2] && <small>({b[2].c})</small>}
             </p>
           </div>
         ))}
       </Col>
     </Row>
-  );
+  )
 }

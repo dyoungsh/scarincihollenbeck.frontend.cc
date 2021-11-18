@@ -1,9 +1,9 @@
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import CareerForm from 'components/molecules/career-form';
-import styles from 'styles/BasicContent.module.css';
-import { createMarkup } from 'utils/helpers';
+import CareerForm from 'components/molecules/career-form'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import styles from 'styles/BasicContent.module.css'
+import { createMarkup } from 'utils/helpers'
 
 export default function SingleCareerBody({ title, position, contact }) {
   return (
@@ -15,5 +15,5 @@ export default function SingleCareerBody({ title, position, contact }) {
         </Col>
       </Row>
     </Container>
-  );
+  )
 }

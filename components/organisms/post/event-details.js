@@ -1,5 +1,5 @@
-import fontStyles from 'styles/Fonts.module.css';
-import { createMarkup } from 'utils/helpers';
+import fontStyles from 'styles/Fonts.module.css'
+import { createMarkup } from 'utils/helpers'
 
 export default function EventDetails({ eDetails }) {
   return (
@@ -16,18 +16,12 @@ export default function EventDetails({ eDetails }) {
         </strong>
       </div>
       <p>
-        <strong>Date: </strong>
-        {' '}
-        {eDetails.date}
+        <strong>Date: </strong> {eDetails.date}
         <br />
-        <strong>Start: </strong>
-        {' '}
-        {eDetails.start}
+        <strong>Start: </strong> {eDetails.start}
         <br />
-        <strong>End: </strong>
-        {' '}
-        {eDetails.end}
+        <strong>End: </strong> {eDetails.end}
       </p>
     </>
-  );
+  )
 }

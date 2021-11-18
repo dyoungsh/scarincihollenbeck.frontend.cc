@@ -1,6 +1,6 @@
-import { createMarkup } from 'utils/helpers';
-import marginStyles from 'styles/Margins.module.css';
-import grayTitleStyles from 'styles/BigGrayTitle.module.css';
+import grayTitleStyles from 'styles/BigGrayTitle.module.css'
+import marginStyles from 'styles/Margins.module.css'
+import { createMarkup } from 'utils/helpers'
 
 export default function AttorneyProfileBody({ content, title }) {
   return (
@@ -9,5 +9,5 @@ export default function AttorneyProfileBody({ content, title }) {
       <div dangerouslySetInnerHTML={createMarkup(content)} />
       <style jsx>{' div { font-size: 1rem;  } '}</style>
     </div>
-  );
+  )
 }

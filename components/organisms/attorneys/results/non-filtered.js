@@ -1,7 +1,7 @@
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import AttorneyCard from 'components/shared/attorney-card';
-import textStyles from 'styles/Text.module.css';
+import AttorneyCard from 'components/shared/attorney-card'
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
+import textStyles from 'styles/Text.module.css'
 
 function AttorneyCards(title, content) {
   return (
@@ -26,32 +26,33 @@ function AttorneyCards(title, content) {
         </Col>
       ))}
     </Row>
-  );
+  )
 }
 
 export default function ArchiveAttorneyResultsNonFiltered({ attorneys }) {
   /// managing partners
-  const managingPartners = attorneys.filter((a) => a.designation === 'Managing Partner');
+  const managingPartners = attorneys.filter((a) => a.designation === 'Managing Partner')
 
   // partners & nyc managing partner
   const partners = attorneys.filter(
-    (a) => a.designation === 'Partner'
-      || a.designation === 'NYC Managing Partner'
-      || a.designation === 'Washington, D.C. Managing Partner'
-      || a.designation === 'Red Bank, NJ Managing Partner',
-  );
+    (a) =>
+      a.designation === 'Partner' ||
+      a.designation === 'NYC Managing Partner' ||
+      a.designation === 'Washington, D.C. Managing Partner' ||
+      a.designation === 'Red Bank, NJ Managing Partner'
+  )
 
   // counsel
-  const counsel = attorneys.filter((a) => a.designation === 'Counsel');
+  const counsel = attorneys.filter((a) => a.designation === 'Counsel')
 
   // of counsel & counsel emeritus
-  const ofCounsel = attorneys.filter((a) => a.designation.indexOf('Of Counsel') > -1);
+  const ofCounsel = attorneys.filter((a) => a.designation.indexOf('Of Counsel') > -1)
 
   // senior associates
-  const seniorAssociates = attorneys.filter((a) => a.designation === 'Senior Associate');
+  const seniorAssociates = attorneys.filter((a) => a.designation === 'Senior Associate')
 
   // associates
-  const associates = attorneys.filter((a) => a.designation === 'Associate');
+  const associates = attorneys.filter((a) => a.designation === 'Associate')
 
   return (
     <div>
@@ -62,5 +63,5 @@ export default function ArchiveAttorneyResultsNonFiltered({ attorneys }) {
       {AttorneyCards('Senior Associates', seniorAssociates)}
       {AttorneyCards('Associates', associates)}
     </div>
-  );
+  )
 }

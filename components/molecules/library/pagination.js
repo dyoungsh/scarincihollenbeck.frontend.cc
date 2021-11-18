@@ -1,13 +1,7 @@
-import Button from 'react-bootstrap/Button';
-import React from 'react';
+import React from 'react'
+import Button from 'react-bootstrap/Button'
 
-export default function ArticlePagination({
-  handleNextPage,
-  handlePrevPage,
-  page,
-  setPage,
-  nrofpages,
-}) {
+export default function ArticlePagination({ handleNextPage, handlePrevPage, page, nrofpages }) {
   return (
     <>
       <div className="d-flex mb-3">
@@ -29,5 +23,5 @@ export default function ArticlePagination({
         `}
       </style>
     </>
-  );
+  )
 }

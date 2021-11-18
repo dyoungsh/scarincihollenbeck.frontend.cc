@@ -1,14 +1,12 @@
-import Link from 'next/link';
-import Slider from 'react-slick';
-import fontStyles from 'styles/Fonts.module.css';
-import marginStyles from 'styles/Margins.module.css';
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import Link from 'next/link'
+import Slider from 'react-slick'
+import fontStyles from 'styles/Fonts.module.css'
+import marginStyles from 'styles/Margins.module.css'
 
-export default function AttorneyProfileSidebar({
-  services, contact, educationLink, awards,
-}) {
+export default function AttorneyProfileSidebar({ services, contact, educationLink, awards }) {
   const settings = {
     dots: false,
     fade: true,
@@ -19,7 +17,7 @@ export default function AttorneyProfileSidebar({
     speed: 2000,
     autoplaySpeed: 4000,
     cssEase: 'linear',
-  };
+  }
 
   return (
     <div className={marginStyles.mtMinusMd2}>
@@ -85,5 +83,5 @@ export default function AttorneyProfileSidebar({
         </div>
       )}
     </div>
-  );
+  )
 }

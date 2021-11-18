@@ -1,17 +1,19 @@
-import Head from 'next/head'
-import { NextSeo } from 'next-seo'
-import Container from 'layouts/Container'
+import ArticleHero from 'components/organisms/home/ArticleHero'
+import FirmLeadership from 'components/organisms/home/FirmLeadership'
 import HomeBanner from 'components/organisms/home/HomeBanner'
 import HoneyComb from 'components/organisms/home/HoneyComb'
 import MainTag from 'components/organisms/home/MainTag'
 import WhoWeAre from 'components/organisms/home/WhoWeAre'
-import FirmLeadership from 'components/organisms/home/FirmLeadership'
-import Awards from 'components/organisms/home/Awards'
-import ArticleHero from 'components/organisms/home/ArticleHero'
+import Container from 'layouts/Container'
+import Head from 'next/head'
+import { NextSeo } from 'next-seo'
+import { ArticleList, FeaturedArticle, Leadership, Office, SEO } from 'types/Home'
+import { SITE_URL } from 'utils/constants'
 import { sortByKey } from 'utils/helpers'
 import { buildBusinessSchema } from 'utils/json-ld-schemas'
-import { SITE_URL } from 'utils/constants'
-import { SEO, Office, Leadership, FeaturedArticle, ArticleList } from 'types/Home'
+
+import FirmAwards from '~/components/organisms/home/FirmAwards'
+
 import OfficeLocations from '../organisms/home/OfficeLocations'
 
 interface Props {
@@ -71,7 +73,7 @@ const HomePage: React.FC<Props> = ({
         <HoneyComb />
         <WhoWeAre />
         <FirmLeadership leadership={leadership} />
-        <Awards />
+        <FirmAwards />
         <OfficeLocations locations={sortByKey(locations, 'id')} />
         <ArticleHero featuredPost={featuredPost} articleList={articleList} />
       </Container>

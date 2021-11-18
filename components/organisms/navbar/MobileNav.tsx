@@ -1,7 +1,7 @@
-import React, { useState, useRef } from 'react'
-import styled from 'styled-components'
 import Burger from 'components/molecules/mobile-menu/Burger'
 import Menu from 'components/molecules/mobile-menu/Menu'
+import React, { useRef, useState } from 'react'
+import styled from 'styled-components'
 
 const MobileNav = () => {
   const [open, setOpen] = useState(false)

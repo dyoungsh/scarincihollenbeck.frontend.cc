@@ -1,12 +1,12 @@
-import { useRouter } from 'next/router';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button';
-import FormScripts from 'components/shared/form-scripts';
+import FormScripts from 'components/shared/form-scripts'
+import { useRouter } from 'next/router'
+import Button from 'react-bootstrap/Button'
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
 
 export default function AttorneyProfileContactForm({ forwardEmail, currentAttorney }) {
-  const router = useRouter();
-  const emailVarName = ['One', 'Two', 'Three', 'Four'];
+  const router = useRouter()
+  const emailVarName = ['One', 'Two', 'Three', 'Four']
 
   return (
     <div className="px-2 mb-3">
@@ -121,5 +121,5 @@ export default function AttorneyProfileContactForm({ forwardEmail, currentAttorn
         </Button>
       </form>
     </div>
-  );
+  )
 }

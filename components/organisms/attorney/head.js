@@ -1,13 +1,11 @@
-import Head from 'next/head';
-import { NextSeo } from 'next-seo';
-import { buildBusinessSchema, buildAttorneyProfileSchema } from 'utils/json-ld-schemas';
+import Head from 'next/head'
+import { NextSeo } from 'next-seo'
+import { buildAttorneyProfileSchema, buildBusinessSchema } from 'utils/json-ld-schemas'
 
 export default function AttorneyProfileHead({ seo }) {
-  const {
-    title, canonicalLink, metaDescription, image, designation, socialMediaLinks,
-  } = seo;
+  const { title, canonicalLink, metaDescription, image, designation, socialMediaLinks } = seo
 
-  const fullCanonicalUrl = `https://scarincihollenbeck.com/${canonicalLink}`;
+  const fullCanonicalUrl = `https://scarincihollenbeck.com/${canonicalLink}`
   return (
     <>
       <NextSeo
@@ -54,12 +52,12 @@ export default function AttorneyProfileHead({ seo }) {
                 fullCanonicalUrl,
                 image,
                 socialMediaLinks,
-                designation,
-              ),
+                designation
+              )
             ),
           }}
         />
       </Head>
     </>
-  );
+  )
 }

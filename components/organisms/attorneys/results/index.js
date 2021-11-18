@@ -1,6 +1,7 @@
-import Container from 'react-bootstrap/Container';
-import Filtered from './filtered';
-import NotFiltered from './non-filtered';
+import Container from 'react-bootstrap/Container'
+
+import Filtered from './filtered'
+import NotFiltered from './non-filtered'
 
 export default function ArchiveAttorneyResults({ attorneys, select, userInput }) {
   return (
@@ -11,5 +12,5 @@ export default function ArchiveAttorneyResults({ attorneys, select, userInput })
         <NotFiltered attorneys={attorneys} />
       )}
     </Container>
-  );
+  )
 }

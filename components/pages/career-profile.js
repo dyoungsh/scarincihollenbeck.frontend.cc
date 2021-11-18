@@ -1,11 +1,11 @@
-import { NextSeo } from 'next-seo';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import SingleSubHeader from 'layouts/single-sub-header';
-import SingleCareerBody from 'components/organisms/career/body';
-import SubscriptionMessage from 'components/molecules/subscription/subscription-message';
-import CommonSidebarLinks from 'components/molecules/common-sidebar-links';
+import CommonSidebarLinks from 'components/molecules/common-sidebar-links'
+import SubscriptionMessage from 'components/molecules/subscription/subscription-message'
+import SingleCareerBody from 'components/organisms/career/body'
+import SingleSubHeader from 'layouts/single-sub-header'
+import { NextSeo } from 'next-seo'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
 
 export default function CareerProfile({ career, canonicalUrl }) {
   return (
@@ -38,5 +38,5 @@ export default function CareerProfile({ career, canonicalUrl }) {
         </Row>
       </Container>
     </>
-  );
+  )
 }

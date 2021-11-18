@@ -1,17 +1,16 @@
-import Image from 'next/image';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import ProfileTitle from 'components/organisms/attorney/profile-title';
-import ProfileDetails from 'components/organisms/attorney/profile-details';
-import ContactIcons from 'components/organisms/attorney/contact-icons';
-import profileStyles from 'styles/ProfileImage.module.css';
-import styles from 'styles/Banner.module.css';
-
-import { useState, useEffect } from 'react';
+import ContactIcons from 'components/organisms/attorney/contact-icons'
+import ProfileDetails from 'components/organisms/attorney/profile-details'
+import ProfileTitle from 'components/organisms/attorney/profile-title'
+import Image from 'next/image'
+import { useEffect, useState } from 'react'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import styles from 'styles/Banner.module.css'
+import profileStyles from 'styles/ProfileImage.module.css'
 
 export default function AttorneyProfileHeader({ image, profile, slug }) {
-  const [designation, setDesiganation] = useState(profile.title);
+  const [designation, setDesiganation] = useState(profile.title)
   const {
     name,
     title,
@@ -25,29 +24,29 @@ export default function AttorneyProfileHeader({ image, profile, slug }) {
     vizibility,
     socialMedia,
     additionalHeaderLinks,
-  } = profile;
+  } = profile
 
-  const contact = { phoneNumber, email };
+  const contact = { phoneNumber, email }
 
-  const linkedIn = socialMedia.filter((a) => a.channel === 'LinkedIn')[0];
+  const linkedIn = socialMedia.filter((a) => a.channel === 'LinkedIn')[0]
 
   useEffect(() => {
     if (title === 'Red Bank, NJ Managing Partner') {
-      setDesiganation('Red Bank, NJ  Office Managing Partner');
+      setDesiganation('Red Bank, NJ  Office Managing Partner')
     }
 
     if (title === 'NYC Managing Partner') {
-      setDesiganation('NYC Office Managing Partner');
+      setDesiganation('NYC Office Managing Partner')
     }
 
     if (title === 'Managing Partner') {
-      setDesiganation('Firm Managing Partner');
+      setDesiganation('Firm Managing Partner')
     }
 
     if (title === 'Washington, D.C. Managing Partner') {
-      setDesiganation('Washington, D.C. Office Managing Partner');
+      setDesiganation('Washington, D.C. Office Managing Partner')
     }
-  });
+  })
 
   return (
     <>
@@ -99,5 +98,5 @@ export default function AttorneyProfileHeader({ image, profile, slug }) {
         </Container>
       </div>
     </>
-  );
+  )
 }

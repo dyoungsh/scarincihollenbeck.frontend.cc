@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import fontStyles from 'styles/Fonts.module.css';
+import Link from 'next/link'
+import fontStyles from 'styles/Fonts.module.css'
 
 export default function NonGraphQLTrendingStories({ title, content }) {
   return (
@@ -18,9 +18,7 @@ export default function NonGraphQLTrendingStories({ title, content }) {
               {typeof c.author === 'string' && (
                 <div className="my-0 py-0 d-block">
                   <small>
-                    <strong>Author: </strong>
-                    {' '}
-                    {c.author}
+                    <strong>Author: </strong> {c.author}
                   </small>
                 </div>
               )}
@@ -44,5 +42,5 @@ export default function NonGraphQLTrendingStories({ title, content }) {
         `}
       </style>
     </>
-  );
+  )
 }

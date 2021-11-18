@@ -1,9 +1,9 @@
 /* eslint-disable no-underscore-dangle */
-import Image from 'next/image';
-import Link from 'next/link';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Image from 'next/image'
+import Link from 'next/link'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
 
 export default function ArticleHeroPage({ link, content }) {
   return (
@@ -42,5 +42,5 @@ export default function ArticleHeroPage({ link, content }) {
         )}
       </Row>
     </Container>
-  );
+  )
 }

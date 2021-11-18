@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import fontStyles from 'styles/Fonts.module.css';
+import Link from 'next/link'
+import fontStyles from 'styles/Fonts.module.css'
 
 export default function RelatedAttorneys({ attorneys }) {
   return (
@@ -17,9 +17,7 @@ export default function RelatedAttorneys({ attorneys }) {
             {a.designation && (
               <div className="my-0 py-0 d-block">
                 <small>
-                  <strong>Title: </strong>
-                  {' '}
-                  {a.designation}
+                  <strong>Title: </strong> {a.designation}
                 </small>
               </div>
             )}
@@ -46,5 +44,5 @@ export default function RelatedAttorneys({ attorneys }) {
         `}
       </style>
     </div>
-  );
+  )
 }

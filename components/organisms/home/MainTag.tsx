@@ -23,7 +23,7 @@ const MainTag = () => (
 
 const TextContainer = styled.div`
   text-align: center;
-  margin: 4rem 0;
+  margin: 4rem 3rem;
 
   h1 {
     ${(props) => props.theme.fonts.xxxxxl}

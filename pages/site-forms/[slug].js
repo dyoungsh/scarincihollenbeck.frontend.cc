@@ -1,24 +1,22 @@
-import React, { useEffect, useState } from 'react';
-
-import { useRouter } from 'next/router';
-import SiteLoader from 'components/shared/site-loader';
-
-import { SITE_FORM_SLUGS, BASE_API_URL } from 'utils/constants';
-import SiteFormPage from 'components/pages/site-form-page';
+import SiteFormPage from 'components/pages/site-form-page'
+import SiteLoader from 'components/shared/site-loader'
+import { useRouter } from 'next/router'
+import React, { useEffect, useState } from 'react'
+import { BASE_API_URL, SITE_FORM_SLUGS } from 'utils/constants'
 
 export default function SiteForms({ attorneys, practices, isNewAttorney }) {
-  const [attorney, setAttorney] = useState('');
-  const router = useRouter();
+  const [attorney, setAttorney] = useState('')
+  const router = useRouter()
   if (router.isFallback) {
-    return <SiteLoader />;
+    return <SiteLoader />
   }
 
   // set input form when attorney is not listed
   useEffect(() => {
     if (attorney === ' ') {
-      setAttorney('');
+      setAttorney('')
     }
-  }, [attorney]);
+  }, [attorney])
 
   const siteFormProps = {
     attorney,
@@ -26,27 +24,27 @@ export default function SiteForms({ attorneys, practices, isNewAttorney }) {
     attorneys,
     practices,
     isNewAttorney,
-  };
+  }
 
-  return <SiteFormPage {...siteFormProps} />;
+  return <SiteFormPage {...siteFormProps} />
 }
 
 export async function getStaticPaths() {
-  const urls = SITE_FORM_SLUGS.map((slug) => slug);
+  const urls = SITE_FORM_SLUGS.map((slug) => slug)
 
   return {
     paths: urls || [],
     fallback: true,
-  };
+  }
 }
 
 export async function getStaticProps({ params }) {
-  const practiceRequest = await fetch(`${BASE_API_URL}/wp-json/wp/v2/practices?per_page=100`).then(
-    (data) => data.json(),
-  );
-  const attorneyRequest = await fetch(`${BASE_API_URL}/wp-json/wp/v2/attorneys?per_page=100`).then(
-    (data) => data.json(),
-  );
+  const practiceRequest = await fetch(
+    `${BASE_API_URL}/wp-json/wp/v2/practices?per_page=100`
+  ).then((data) => data.json())
+  const attorneyRequest = await fetch(
+    `${BASE_API_URL}/wp-json/wp/v2/attorneys?per_page=100`
+  ).then((data) => data.json())
 
   return {
     props: {
@@ -58,16 +56,16 @@ export async function getStaticProps({ params }) {
           link: attorney.link.replace('wp.', ''),
         }))
         .sort((a, b) => {
-          if (a.name > b.name) return 1;
-          return -1;
+          if (a.name > b.name) return 1
+          return -1
         }),
       practices: practiceRequest
         .map((practice) => practice.title.rendered.replace(/&#038;/g, '&').replace(/&#8217;/g, "'"))
         .sort((a, b) => {
-          if (a > b) return 1;
-          return -1;
+          if (a > b) return 1
+          return -1
         }),
     },
     revalidate: 1,
-  };
+  }
 }

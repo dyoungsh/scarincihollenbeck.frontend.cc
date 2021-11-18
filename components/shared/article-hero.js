@@ -1,14 +1,14 @@
 /* eslint-disable no-underscore-dangle */
-import Image from 'next/image';
-import Link from 'next/link';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import styles from 'styles/ArticleHero.module.css';
-import { formatDate, createMarkup, setTextLen } from 'utils/helpers';
+import Image from 'next/image'
+import Link from 'next/link'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import styles from 'styles/ArticleHero.module.css'
+import { createMarkup, formatDate, setTextLen } from 'utils/helpers'
 
 export default function ArticleHero({ content }) {
-  const articleList = content.filter((_, i) => i !== 0);
+  const articleList = content.filter((_, i) => i !== 0)
 
   return (
     <Container>
@@ -32,15 +32,17 @@ export default function ArticleHero({ content }) {
             <strong>Published: </strong>
             <span className="mr-3">{formatDate(content[0].date)}</span>
             <strong>Author: </strong>
-            {content[0]._embedded.author.map((a) => (a.name === 'Scarinci Hollenbeck' ? (
-              <span key={a.name} className={styles.link}>
-                {a.name}
-              </span>
-            ) : (
-              <a key={a.name} href={a.link.replace('wp.', '')} className={styles.link}>
-                {a.name}
-              </a>
-            )))}
+            {content[0]._embedded.author.map((a) =>
+              a.name === 'Scarinci Hollenbeck' ? (
+                <span key={a.name} className={styles.link}>
+                  {a.name}
+                </span>
+              ) : (
+                <a key={a.name} href={a.link.replace('wp.', '')} className={styles.link}>
+                  {a.name}
+                </a>
+              )
+            )}
           </p>
           <hr />
           <p dangerouslySetInnerHTML={createMarkup(setTextLen(content[0].excerpt.rendered, 220))} />
@@ -80,8 +82,8 @@ export default function ArticleHero({ content }) {
                           dangerouslySetInnerHTML={createMarkup(
                             setTextLen(
                               article.excerpt.rendered.replace('<p>', '').replace('</p>', ''),
-                              130,
-                            ),
+                              130
+                            )
                           )}
                         />
                       </p>
@@ -94,5 +96,5 @@ export default function ArticleHero({ content }) {
         </Col>
       </Row>
     </Container>
-  );
+  )
 }

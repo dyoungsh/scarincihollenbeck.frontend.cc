@@ -1,31 +1,27 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { useRouter } from 'next/router';
-import Col from 'react-bootstrap/Col';
-import { FacebookShareButton, LinkedinShareButton, TwitterShareButton } from 'react-share';
-import ContactForm from 'components/shared/contact-form';
-import PostBreadcrumbs from 'components/organisms/post/post-breadcrumbs';
-import AuthorBio from 'components/organisms/post/author-bio';
-import { createMarkup, urlify } from 'utils/helpers';
-import { SITE_URL } from 'utils/constants';
-import pageContentStyles from 'styles/PageContent.module.css';
-import grayTitleStyles from 'styles/BigGrayTitle.module.css';
+import AuthorBio from 'components/organisms/post/author-bio'
+import PostBreadcrumbs from 'components/organisms/post/post-breadcrumbs'
+import ContactForm from 'components/shared/contact-form'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import Col from 'react-bootstrap/Col'
+import { FacebookShareButton, LinkedinShareButton, TwitterShareButton } from 'react-share'
+import grayTitleStyles from 'styles/BigGrayTitle.module.css'
+import pageContentStyles from 'styles/PageContent.module.css'
+import { SITE_URL } from 'utils/constants'
+import { createMarkup, urlify } from 'utils/helpers'
 
 function DisplayListTags({ title, children }) {
   return (
     <div className="mb-0 d-print-none">
       <ul className="no-dots list-inline mb-1">
         <li className="list-inline-item">
-          <strong>
-            {title}
-            :
-            {' '}
-          </strong>
+          <strong>{title}: </strong>
         </li>
         {children}
       </ul>
     </div>
-  );
+  )
 }
 export default function PostBody({
   featuredImage,
@@ -36,8 +32,8 @@ export default function PostBody({
   caption,
   categories,
 }) {
-  const router = useRouter();
-  const postUrl = `${SITE_URL}${router.asPath}`;
+  const router = useRouter()
+  const postUrl = `${SITE_URL}${router.asPath}`
 
   return (
     <Col sm={12} md={9}>
@@ -109,5 +105,5 @@ export default function PostBody({
       </div>
       <style jsx>{'.underline:hover { text-decoration: underline }'}</style>
     </Col>
-  );
+  )
 }

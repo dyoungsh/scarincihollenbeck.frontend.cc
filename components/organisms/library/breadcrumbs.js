@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import fontStyles from 'styles/Fonts.module.css';
-import textStyles from 'styles/Text.module.css';
+import Link from 'next/link'
+import fontStyles from 'styles/Fonts.module.css'
+import textStyles from 'styles/Text.module.css'
 
 export default function Breadcrumbs({ pageTitle, parentCategory }) {
   return (
@@ -15,12 +15,7 @@ export default function Breadcrumbs({ pageTitle, parentCategory }) {
           </Link>
           {parentCategory && (
             <Link href={`/library?term=${parentCategory.slug}`}>
-              <a className={textStyles.redTitle}>
-                {parentCategory.name}
-                {' '}
-                |
-                {' '}
-              </a>
+              <a className={textStyles.redTitle}>{parentCategory.name} | </a>
             </Link>
           )}
           <Link href={`/library?term=${pageTitle}`}>
@@ -29,5 +24,5 @@ export default function Breadcrumbs({ pageTitle, parentCategory }) {
         </strong>
       </p>
     </div>
-  );
+  )
 }
