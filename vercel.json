@@ -30,6 +30,11 @@
       "source": "/practices/mergers-acquistions",
       "destination": "/practices/mergers-acquisitions",
       "statusCode": 301
+    },
+    {
+     "source": "/firm-events/cybersecurity-strategies-for-small-and-midsize-businesses-virtual-event%ef%bf%bc/",
+      "destination": "/firm-events/cybersecurity-strategies-for-small-and-midsize-businesses-virtual-event ",
+      "statusCode": 301
     }
   ]
 }
